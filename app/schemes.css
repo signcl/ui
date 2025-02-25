@@ -46,9 +46,9 @@
 [data-theme='dark'] {
   /* --primary-c: 0.02; */
   --primary-c: 0.01;
-  --primary-h: 4.45;
+  --primary-h: 257.2136;
   --secondary-c: 0.212;
-  --secondary-h: 8;
+  --secondary-h: 257.2136;
 
   /* OKLCH lightness helpers */
   --fg-l: 78%;
