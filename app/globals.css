@@ -71,6 +71,11 @@
   }
 }
 
+/* Fix storybook docs story background color */
+.docs-story {
+  background-color: var(--color-bg);
+}
+
 .floating {
   background: var(--floating-ui-bg);
   box-shadow: var(--floating-ui-shadow);
