@@ -11,8 +11,8 @@ type AccordionVariant = 'outline' | 'separated'
 const accordionVariants = cva('', {
   variants: {
     variant: {
-      outline: 'divide-y rounded-md border my-2 w-full',
-      separated: 'space-y-3 my-2',
+      outline: 'divide-y rounded-md border w-full',
+      separated: 'space-y-3',
     },
   },
   defaultVariants: {
@@ -66,7 +66,7 @@ function AccordionContent({ className, children, ...props }: React.ComponentProp
       )}
       {...props}
     >
-      <div className='px-3 pb-2'>{children}</div>
+      <div className='p-3 pt-0'>{children}</div>
     </AccordionPrimitive.Content>
   )
 }
