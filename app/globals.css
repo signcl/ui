@@ -1,21 +1,93 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Need migration */
+@plugin 'tailwindcss-animate';
 
-@media (prefers-color-scheme: dark) {
+@import './kladewind.css';
+@import './schemes.css';
+
+@layer base {
+  /*
+    The default border color has changed to `currentColor` in Tailwind CSS v4,
+    so we've added these compatibility styles to make sure everything still
+    looks the same as it did with Tailwind CSS v3.
+
+    If we ever want to remove these styles, we need to add an explicit border
+    color utility to any element that depends on these defaults.
+  */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: color-mix(in oklab, var(--color-fg) 30%, transparent);
+  }
+
+  /* Global config from my all time favorite Kladenets */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Floating UI */
+    --order-floating: 106;
+    /* --floating-ui-bg: theme(colors.bg / 60%); */
+    /* chrome lck color bug workaround, should be removed when bug fixed */
+    --floating-ui-bg: --theme(--color-white / 90%);
+    --floating-ui-backdrop: saturate(2) blur(40px);
+    /* --floating-ui-shadow: 0 0 0 0.5px theme(colors.black / 40%), 0 20px 60px 0 theme(colors.ac / 20%); */
+    --floating-ui-shadow:
+      0 0 0 0.5px --theme(--color-black / 40%),
+      0 20px 60px 0 color-mix(in oklch, --theme(--color-ac / 20%) 60%, --theme(--color-black / 20%));
+    --floating-ui-border: 1px solid --theme(--color-white / 40%);
+    --form-line-height: 1.2;
+
+    /* Global custom colors */
+    /* --container-color: theme(colors.bg / 80%); */
+    /* chrome lck color bug workaround, should be removed when bug fixed */
+    --container-color: --theme(--color-white / 80%);
+
+    /* Used by btn border colors */
+    --btn-border-top-color: --theme(--color-fg / 30%);
+    --btn-border-bottom-color: --theme(--color-fg / 50%);
+  }
+
+  /* Dark theme overrides */
+  [data-theme='dark'] {
+    --floating-ui-bg: --theme(--color-bg / 20%);
+    --floating-ui-backdrop: brightness(0.5) saturate(2) contrast(0.9) blur(40px);
+    --floating-ui-shadow: 0 0 0 0.5px --theme(--color-black / 80%), 0 20px 60px 0 --theme(--color-black / 60%);
+    --floating-ui-border: 1px solid --theme(--color-fg / 20%);
+
+    --container-color: --theme(--color-bg / 40%);
+
+    /* Used by .filter-auto-dark-factor */
+    --filter-auto-dark-factor: 1;
+
+    /* Used by btn border colors */
+    --btn-border-top-color: --theme(--color-fg / 80%);
+    --btn-border-bottom-color: --theme(--color-fg / 20%);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.floating {
+  background: var(--floating-ui-bg);
+  box-shadow: var(--floating-ui-shadow);
+  border: var(--floating-ui-border);
+  /* width: max-content; */
+  -webkit-backdrop-filter: var(--floating-ui-backdrop);
+  backdrop-filter: var(--floating-ui-backdrop);
+  outline: none;
+  z-index: var(--z-index, var(--order-floating));
+}
+
+.floating-solid {
+  background: var(--bg-color);
+  box-shadow: var(--floating-ui-shadow);
+  border: var(--floating-ui-border);
+  /* width: max-content; */
+  -webkit-backdrop-filter: var(--floating-ui-backdrop);
+  backdrop-filter: var(--floating-ui-backdrop);
+  outline: none;
+  z-index: var(--z-index, var(--order-floating));
+
+  @supports (color: oklch(0% 0 0)) {
+    background: var(--color-bg);
+  }
 }

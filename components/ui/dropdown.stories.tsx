@@ -1,0 +1,233 @@
+import { useState } from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { within, userEvent } from '@storybook/test'
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuRadioGroup,
+  DropdownMenuIcon,
+} from './dropdown'
+import { Button } from './button'
+import { IconArrowBackUpDouble } from '@tabler/icons-react'
+
+const meta = {
+  title: 'UI/Dropdown Menu',
+  component: DropdownMenu,
+  parameters: {
+    layout: 'centered',
+  },
+  // tags: ['autodocs'],
+} satisfies Meta<typeof DropdownMenu>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Basic: Story = {
+  render: () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button>Open Menu</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem>New Tab</DropdownMenuItem>
+        <DropdownMenuItem>New Window</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
+}
+
+export const BasicOpen: Story = {
+  render: () => (
+    <DropdownMenu open>
+      <DropdownMenuTrigger asChild>
+        <Button>Open Menu</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem>New Tab</DropdownMenuItem>
+        <DropdownMenuItem>New Window</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
+}
+
+export const WithShortcuts: Story = {
+  render: () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button>Actions</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem>
+          New Tab
+          <DropdownMenuShortcut>⌘T</DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          New Window
+          <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuItem disabled>
+          New Private Window
+          <DropdownMenuShortcut>⇧⌘N</DropdownMenuShortcut>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const trigger = canvas.getByText('Actions')
+    await userEvent.click(trigger)
+  },
+}
+
+export const WithSubmenus: Story = {
+  render: () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button>Edit</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuLabel>Actions</DropdownMenuLabel>
+        <DropdownMenuItem>
+          Copy
+          <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuSub>
+          <DropdownMenuSubTrigger>More Tools</DropdownMenuSubTrigger>
+          <DropdownMenuSubContent>
+            <DropdownMenuItem>Save Page As...</DropdownMenuItem>
+            <DropdownMenuItem>Create Shortcut...</DropdownMenuItem>
+            <DropdownMenuItem>Name Window...</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuSub>
+              <DropdownMenuSubTrigger>More Tools</DropdownMenuSubTrigger>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem>Save Page As...</DropdownMenuItem>
+                <DropdownMenuItem>Create Shortcut...</DropdownMenuItem>
+                <DropdownMenuItem>Name Window...</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          </DropdownMenuSubContent>
+        </DropdownMenuSub>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const trigger = canvas.getByText('Edit')
+    await userEvent.click(trigger)
+  },
+}
+
+export const WithCheckboxes: Story = {
+  render: () => {
+    const [showStatusBar, setShowStatusBar] = useState(true)
+    const [showActivityBar, setShowActivityBar] = useState(false)
+
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button>View</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuCheckboxItem checked={showStatusBar} onCheckedChange={setShowStatusBar}>
+            Status Bar
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem checked={showActivityBar} onCheckedChange={setShowActivityBar}>
+            Activity Bar
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuItem>
+            <DropdownMenuIcon>
+              <IconArrowBackUpDouble />
+            </DropdownMenuIcon>
+            <span>Mark All as Unread</span>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    )
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const trigger = canvas.getByText('View')
+    await userEvent.click(trigger)
+  },
+}
+
+export const WithRadioGroup: Story = {
+  render: () => {
+    const [position, setPosition] = useState('bottom')
+
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button>Position</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+            <DropdownMenuRadioItem value='top'>Top</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='bottom'>Bottom</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='right'>Right</DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    )
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const trigger = canvas.getByText('Position')
+    await userEvent.click(trigger)
+  },
+}

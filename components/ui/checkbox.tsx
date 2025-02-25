@@ -1,0 +1,29 @@
+'use client'
+
+import * as React from 'react'
+import { Check } from 'lucide-react'
+import { cn } from '@/utils/cn'
+
+function Checkbox({ className, ...props }: React.ComponentProps<'input'>) {
+  return (
+    <div className='relative inline-flex'>
+      <input
+        type='checkbox'
+        data-slot='checkbox'
+        className={cn(
+          'peer bg-bg/10 size-4 cursor-pointer appearance-none rounded-sm border',
+          'disabled:cursor-not-allowed disabled:opacity-50',
+          'checked:border-ac checked:bg-ac',
+          'focus-ring',
+          className
+        )}
+        {...props}
+      />
+      <div className='text-bg pointer-events-none absolute flex size-4 items-center justify-center opacity-0 peer-checked:opacity-100'>
+        <Check className='size-3.5' />
+      </div>
+    </div>
+  )
+}
+
+export { Checkbox }
