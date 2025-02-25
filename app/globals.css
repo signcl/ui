@@ -26,7 +26,6 @@
   /* Global config from my all time favorite Kladenets */
   :root {
     /* Floating UI */
-    --order-floating: 106;
     /* --floating-ui-bg: theme(colors.bg / 60%); */
     /* chrome lck color bug workaround, should be removed when bug fixed */
     --floating-ui-bg: --theme(--color-white / 90%);
@@ -36,7 +35,6 @@
       0 0 0 0.5px --theme(--color-black / 40%),
       0 20px 60px 0 color-mix(in oklch, --theme(--color-ac / 20%) 60%, --theme(--color-black / 20%));
     --floating-ui-border: 1px solid --theme(--color-white / 40%);
-    --form-line-height: 1.2;
 
     /* Global custom colors */
     /* --container-color: theme(colors.bg / 80%); */
@@ -74,30 +72,4 @@
 /* Fix storybook docs story background color */
 .docs-story {
   background-color: var(--color-bg);
-}
-
-.floating {
-  background: var(--floating-ui-bg);
-  box-shadow: var(--floating-ui-shadow);
-  border: var(--floating-ui-border);
-  /* width: max-content; */
-  -webkit-backdrop-filter: var(--floating-ui-backdrop);
-  backdrop-filter: var(--floating-ui-backdrop);
-  outline: none;
-  z-index: var(--z-index, var(--order-floating));
-}
-
-.floating-solid {
-  background: var(--bg-color);
-  box-shadow: var(--floating-ui-shadow);
-  border: var(--floating-ui-border);
-  /* width: max-content; */
-  -webkit-backdrop-filter: var(--floating-ui-backdrop);
-  backdrop-filter: var(--floating-ui-backdrop);
-  outline: none;
-  z-index: var(--z-index, var(--order-floating));
-
-  @supports (color: oklch(0% 0 0)) {
-    background: var(--color-bg);
-  }
 }

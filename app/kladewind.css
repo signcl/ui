@@ -261,3 +261,11 @@
 @utility focus-ring {
   @apply focus-visible:border-ac focus-visible:ring-ac/30 focus:outline-none focus-visible:ring-2;
 }
+
+@utility floating {
+  background-color: var(--floating-ui-bg);
+  box-shadow: var(--floating-ui-shadow);
+  border: var(--floating-ui-border);
+  backdrop-filter: var(--floating-ui-backdrop);
+  @apply z-100 outline-none;
+}
