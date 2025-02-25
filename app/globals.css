@@ -67,6 +67,11 @@
     color: var(--color-fg);
     background-color: var(--color-bg);
   }
+
+  p {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
 }
 
 /* Fix storybook docs story background color */
