@@ -64,6 +64,11 @@
     --btn-border-top-color: --theme(--color-fg / 80%);
     --btn-border-bottom-color: --theme(--color-fg / 20%);
   }
+
+  body {
+    color: var(--color-fg);
+    background-color: var(--color-bg);
+  }
 }
 
 .floating {
