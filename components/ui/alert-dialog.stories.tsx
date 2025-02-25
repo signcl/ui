@@ -12,6 +12,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from './alert-dialog'
+import { Checkbox } from './checkbox'
+import { Label } from './label'
 
 const meta = {
   title: 'UI/Alert Dialog',
@@ -124,9 +126,9 @@ export const LongContent: Story = {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Terms & Conditions</AlertDialogTitle>
-          <AlertDialogDescription className='max-h-[300px] overflow-auto'>
+          <AlertDialogDescription className='space-y-4'>
             {Array.from({ length: 10 }).map((_, i) => (
-              <p key={i} className='mb-4'>
+              <p key={i}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat.
@@ -161,12 +163,12 @@ export const Interactive: Story = {
             <div className='space-y-4'>
               <p>Please confirm your understanding of the following:</p>
               <div className='flex items-center gap-2'>
-                <input type='checkbox' id='confirm1' />
-                <label htmlFor='confirm1'>I understand this action is permanent</label>
+                <Checkbox type='checkbox' id='confirm1' />
+                <Label htmlFor='confirm1'>I understand this action is permanent</Label>
               </div>
               <div className='flex items-center gap-2'>
-                <input type='checkbox' id='confirm2' />
-                <label htmlFor='confirm2'>I have backed up my data</label>
+                <Checkbox type='checkbox' id='confirm2' />
+                <Label htmlFor='confirm2'>I have backed up my data</Label>
               </div>
             </div>
           </AlertDialogDescription>

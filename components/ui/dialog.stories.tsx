@@ -10,6 +10,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from './dialog'
+import { Label } from './label'
+import { Input } from './input'
+import { Checkbox } from './checkbox'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select'
 
 const meta = {
   title: 'UI/Dialog',
@@ -41,18 +45,18 @@ export const Basic: Story = {
           <DialogTitle>Edit Profile</DialogTitle>
           <DialogDescription>Make changes to your profile here. Click save when you’re done.</DialogDescription>
         </DialogHeader>
-        <div className='grid gap-2'>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <label htmlFor='name' className='text-right'>
+        <div className='grid gap-4'>
+          <div>
+            <Label htmlFor='name' className='text-right'>
               Name
-            </label>
-            <input id='name' className='col-span-3 rounded border p-2' placeholder='Enter your name' />
+            </Label>
+            <Input id='name' placeholder='Enter your name' />
           </div>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <label htmlFor='username' className='text-right'>
+          <div>
+            <Label htmlFor='username' className='text-right'>
               Username
-            </label>
-            <input id='username' className='col-span-3 rounded border p-2' placeholder='@username' />
+            </Label>
+            <Input id='username' placeholder='@username' />
           </div>
         </div>
         <DialogFooter>
@@ -75,18 +79,18 @@ export const BasicOpen: Story = {
           <DialogTitle>Edit Profile</DialogTitle>
           <DialogDescription>Make changes to your profile here. Click save when you’re done.</DialogDescription>
         </DialogHeader>
-        <div className='grid gap-2'>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <label htmlFor='name' className='text-right'>
+        <div className='grid gap-4'>
+          <div>
+            <Label htmlFor='name' className='text-right'>
               Name
-            </label>
-            <input id='name' className='col-span-3 rounded border p-2' placeholder='Enter your name' />
+            </Label>
+            <Input id='name' placeholder='Enter your name' />
           </div>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <label htmlFor='username' className='text-right'>
+          <div>
+            <Label htmlFor='username' className='text-right'>
               Username
-            </label>
-            <input id='username' className='col-span-3 rounded border p-2' placeholder='@username' />
+            </Label>
+            <Input id='username' placeholder='@username' />
           </div>
         </div>
         <DialogFooter>
@@ -110,9 +114,9 @@ export const LongContent: Story = {
           <DialogTitle>Terms of Service</DialogTitle>
           <DialogDescription>Please read our terms of service carefully.</DialogDescription>
         </DialogHeader>
-        <div className='max-h-[60vh] overflow-auto'>
+        <div className='space-y-4 overflow-auto'>
           {Array.from({ length: 15 }).map((_, i) => (
-            <p key={i} className='mb-4'>
+            <p key={i}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
               ea commodo consequat.
@@ -140,25 +144,28 @@ export const WithForm: Story = {
           <DialogTitle>Account Settings</DialogTitle>
           <DialogDescription>Update your account preferences and notifications.</DialogDescription>
         </DialogHeader>
-        <form className='grid gap-2'>
-          <div className='flex items-center gap-4'>
-            <input type='checkbox' id='marketing' />
-            <label htmlFor='marketing'>Receive marketing emails</label>
-          </div>
-          <div className='flex items-center gap-4'>
-            <input type='checkbox' id='updates' />
-            <label htmlFor='updates'>Receive product updates</label>
-          </div>
-          <div className='grid gap-2'>
-            <label htmlFor='timezone'>Timezone</label>
-            <select id='timezone' className='rounded border p-2'>
-              <option>UTC-8</option>
-              <option>UTC-7</option>
-              <option>UTC-6</option>
-              <option>UTC-5</option>
-            </select>
-          </div>
-        </form>
+        <div className='flex items-center gap-2'>
+          <Checkbox type='checkbox' id='marketing' />
+          <Label htmlFor='marketing'>Receive marketing emails</Label>
+        </div>
+        <div className='flex items-center gap-2'>
+          <Checkbox type='checkbox' id='updates' />
+          <Label htmlFor='updates'>Receive product updates</Label>
+        </div>
+        <div>
+          <Label htmlFor='timezone'>Receive product updates</Label>
+          <Select>
+            <SelectTrigger id='timezone'>
+              <SelectValue placeholder='Select a timezone' />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value='utc-8'>UTC-8</SelectItem>
+              <SelectItem value='utc-7'>UTC-7</SelectItem>
+              <SelectItem value='utc-6'>UTC-6</SelectItem>
+              <SelectItem value='utc-5'>UTC-5</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
         <DialogFooter>
           <Button variant='link'>Reset</Button>
           <Button tint='accent'>Save preferences</Button>
@@ -178,17 +185,17 @@ export const Destructive: Story = {
       <DialogContent>
         <DialogHeader>
           <DialogTitle className='text-red-600'>Delete Account</DialogTitle>
-          <DialogDescription className='text-red-500'>
+          <DialogDescription>
             This action cannot be undone. This will permanently delete your account and remove your data from our
             servers.
           </DialogDescription>
         </DialogHeader>
-        <div className='grid gap-2'>
-          <div className='flex items-center gap-4'>
-            <input type='checkbox' id='confirm' />
-            <label htmlFor='confirm'>I understand that this action is permanent</label>
-          </div>
+
+        <div className='flex items-center gap-2'>
+          <Checkbox type='checkbox' id='confirm' />
+          <Label htmlFor='confirm'>I understand that this action is permanent</Label>
         </div>
+
         <DialogFooter>
           <Button variant='link'>Cancel</Button>
           <Button tint='red'>Delete Account</Button>

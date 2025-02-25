@@ -74,13 +74,7 @@ function DialogTitle({ className, ...props }: React.ComponentProps<typeof Dialog
 DialogTitle.displayName = DialogPrimitive.Title.displayName
 
 function DialogDescription({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Description>) {
-  return (
-    <DialogPrimitive.Description
-      data-slot='dialog-description'
-      className={cn('text-fg text-sm', className)}
-      {...props}
-    />
-  )
+  return <DialogPrimitive.Description data-slot='dialog-description' className={cn('my-2', className)} {...props} />
 }
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 

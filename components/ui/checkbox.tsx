@@ -6,7 +6,7 @@ import { cn } from '@/utils/cn'
 
 function Checkbox({ className, ...props }: React.ComponentProps<'input'>) {
   return (
-    <div className='relative inline-flex'>
+    <div className='relative inline-flex [&+label]:pb-0'>
       <input
         type='checkbox'
         data-slot='checkbox'
