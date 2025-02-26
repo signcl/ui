@@ -3,8 +3,8 @@
 'use client'
 
 import { ComponentProps } from 'react'
-import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
 import { DayPicker } from 'react-day-picker'
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
 
 // We can remove date-fns if no custom locale is needed:
 // https://daypicker.dev/upgrading
@@ -59,9 +59,9 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
       components={{
         Chevron: ({ ...props }) => {
           if (props.orientation === 'left') {
-            return <ChevronLeftIcon className='size-4' />
+            return <IconChevronLeft className='size-4' />
           } else {
-            return <ChevronRightIcon className='size-4' />
+            return <IconChevronRight className='size-4' />
           }
         },
       }}

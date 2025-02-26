@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { ChevronDown } from 'lucide-react'
+import { IconChevronDown } from '@tabler/icons-react'
 import { cva } from 'class-variance-authority'
 import { cn } from '@/utils/cn'
 
@@ -41,7 +41,7 @@ function AccordionTrigger({ className, children, ...props }: React.ComponentProp
       <AccordionPrimitive.Trigger
         data-slot='accordion-trigger'
         className={cn(
-          'flex w-full items-center justify-between gap-x-3 px-3 py-3 text-left',
+          'flex w-full items-center justify-between gap-x-3 p-3 text-left',
           'data-[state=open]:from-fg/5 data-[state=open]:to-fg/0 data-[state=open]:bg-linear-to-b [&[data-state=open]>svg]:rotate-180',
           'focus-ring',
           className
@@ -49,7 +49,7 @@ function AccordionTrigger({ className, children, ...props }: React.ComponentProp
         {...props}
       >
         <div className='font-medium'>{children}</div>
-        <ChevronDown className='size-4 transition-transform duration-200' />
+        <IconChevronDown className='size-4 transition-transform duration-200' />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

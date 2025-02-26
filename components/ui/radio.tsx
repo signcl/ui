@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Circle } from 'lucide-react'
+import { IconCircle } from '@tabler/icons-react'
 import { cn } from '@/utils/cn'
 
 function Radio({ className, ...props }: React.ComponentProps<'input'>) {
@@ -20,7 +20,7 @@ function Radio({ className, ...props }: React.ComponentProps<'input'>) {
         {...props}
       />
       <div className='text-bg pointer-events-none absolute flex size-4 items-center justify-center opacity-0 peer-checked:opacity-100'>
-        <Circle className='size-2 fill-current' />
+        <IconCircle className='size-2 fill-current' />
       </div>
     </div>
   )

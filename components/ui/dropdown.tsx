@@ -2,8 +2,7 @@
 
 import * as React from 'react'
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import { ChevronRight } from 'lucide-react'
-import { IconCheck } from '@tabler/icons-react'
+import { IconCheck, IconChevronRight } from '@tabler/icons-react'
 
 import { cn } from '@/utils/cn'
 
@@ -87,7 +86,7 @@ function DropdownMenuSubTrigger({
       {...props}
     >
       {children}
-      <ChevronRight className='ml-auto self-center' />
+      <IconChevronRight className='ml-auto self-center' />
     </DropdownMenuPrimitive.SubTrigger>
   )
 }

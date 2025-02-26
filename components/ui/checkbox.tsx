@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Check } from 'lucide-react'
+import { IconCheck } from '@tabler/icons-react'
 import { cn } from '@/utils/cn'
 
 function Checkbox({ className, ...props }: React.ComponentProps<'input'>) {
@@ -20,7 +20,7 @@ function Checkbox({ className, ...props }: React.ComponentProps<'input'>) {
         {...props}
       />
       <div className='text-bg pointer-events-none absolute flex size-4 items-center justify-center opacity-0 peer-checked:opacity-100'>
-        <Check className='size-3.5' />
+        <IconCheck className='size-3.5' />
       </div>
     </div>
   )
