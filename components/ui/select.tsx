@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import { IconChevronCompactDown, IconChevronCompactUp, IconChevronDown } from '@tabler/icons-react'
 
 import { cn } from '@/utils/cn'
 
@@ -12,7 +12,12 @@ const SelectGroup = SelectPrimitive.Group
 
 const SelectValue = SelectPrimitive.Value
 
-function SelectTrigger({ className, children, ...props }: React.ComponentProps<typeof SelectPrimitive.Trigger>) {
+export interface SelectTriggerProps extends React.ComponentProps<typeof SelectPrimitive.Trigger> {
+  withoutIcon?: boolean
+  icon?: React.ReactNode
+}
+
+function SelectTrigger({ className, children, withoutIcon, icon, ...props }: SelectTriggerProps) {
   return (
     <SelectPrimitive.Trigger
       data-slot='trigger'
@@ -24,9 +29,9 @@ function SelectTrigger({ className, children, ...props }: React.ComponentProps<t
       {...props}
     >
       {children}
-      <SelectPrimitive.Icon asChild>
-        <ChevronDown className='size-4' />
-      </SelectPrimitive.Icon>
+      {!withoutIcon && (
+        <SelectPrimitive.Icon asChild>{icon ? icon : <IconChevronDown className='size-4' />}</SelectPrimitive.Icon>
+      )}
     </SelectPrimitive.Trigger>
   )
 }
@@ -36,13 +41,13 @@ function SelectScrollUpButton({ className, ...props }: React.ComponentProps<type
     <SelectPrimitive.ScrollUpButton
       data-slot='scroll-up'
       className={cn(
-        'absolute top-0 right-0 left-0 z-51 flex h-6 cursor-default items-center justify-center pb-4',
+        'absolute top-0 right-0 left-0 z-51 flex h-6 cursor-default items-center justify-center pt-2 pb-4',
         'hover:from-ac/20 hover:text-ac hover:bg-linear-to-b',
         className
       )}
       {...props}
     >
-      {/* <ChevronUp className='size-4' /> */}
+      <IconChevronCompactUp className='size-4' />
     </SelectPrimitive.ScrollUpButton>
   )
 }
@@ -55,13 +60,13 @@ function SelectScrollDownButton({
     <SelectPrimitive.ScrollDownButton
       data-slot='scroll-down'
       className={cn(
-        'absolute right-0 bottom-0 left-0 z-51 flex h-6 cursor-default items-center justify-center pt-4',
+        'absolute right-0 bottom-0 left-0 z-51 flex h-6 cursor-default items-center justify-center pt-4 pb-2',
         'hover:from-ac/20 hover:text-ac hover:bg-linear-to-t',
         className
       )}
       {...props}
     >
-      {/* <ChevronDown className='size-4' /> */}
+      <IconChevronCompactDown className='size-4' />
     </SelectPrimitive.ScrollDownButton>
   )
 }
