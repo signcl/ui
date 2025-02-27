@@ -36,6 +36,18 @@
       ]
     },
     {
+      "name": "command",
+      "type": "registry:component",
+      "title": "Command",
+      "description": "Command component",
+      "files": [
+        {
+          "path": "components/ui/command.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "copy-button",
       "type": "registry:component",
       "title": "Copy Button",
