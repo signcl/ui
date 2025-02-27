@@ -1,6 +1,6 @@
 'use client'
 
-import { useCopyToClipboard } from '@/lib/use-copy-to-clipboard'
+import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard'
 
 interface CopyButtonProps {
   /**
