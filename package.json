@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:build": "storybook build",
+    "registry:build": "shadcn build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",
@@ -28,6 +29,7 @@
     "react": "^19.0.0",
     "react-day-picker": "^9.5.1",
     "react-dom": "^19.0.0",
+    "shadcn": "^2.4.0-canary.10",
     "sonner": "^2.0.1",
     "tailwind-merge": "^3.0.2"
   },

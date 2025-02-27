@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "signcl/ui",
+  "homepage": "https://github.com/signcl/ui",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "Accordion",
+      "description": "A simple accordion component",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "components/ui/accordion.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "utils/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    }
+  ]
+}
