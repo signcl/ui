@@ -1,0 +1,49 @@
+'use client'
+
+import React, { useState } from 'react'
+import { IconCheck, IconCopy } from '@tabler/icons-react'
+
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { CopyButton } from '@/components/ui/copy-button'
+
+export interface CommandProps extends React.ComponentProps<'div'> {
+  command: string
+}
+
+export function Command({ command }: CommandProps) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(command).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1000)
+    })
+  }
+
+  return (
+    <Input
+      value={command}
+      onClick={handleCopy}
+      aria-label='Copy command'
+      readOnly
+      rightSection={
+        <CopyButton value={command} timeout={2000} className='flex items-center'>
+          {({ copied, copy }) => (
+            <Button
+              variant={copied ? 'solid' : 'default'}
+              tint={'accent'}
+              size={'icon'}
+              onClick={copy}
+              aria-label={'Copy command'}
+              disabled={!command}
+            >
+              {copied ? <IconCheck size='1.125rem' /> : <IconCopy size='1.125rem' />}
+            </Button>
+          )}
+        </CopyButton>
+      }
+      rightSectionClassName='pr-1'
+    />
+  )
+}
