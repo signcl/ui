@@ -7,7 +7,7 @@
       "name": "accordion",
       "type": "registry:component",
       "title": "Accordion",
-      "description": "A simple accordion component",
+      "description": "Accordion component",
       "registryDependencies": ["button"],
       "files": [
         {
@@ -16,6 +16,23 @@
         },
         {
           "path": "utils/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:component",
+      "title": "Copy Button",
+      "description": "Copy button component with copied state",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "components/ui/copy-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "utils/use-copy-to-clipboard.ts",
           "type": "registry:lib"
         }
       ]

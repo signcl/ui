@@ -3,7 +3,7 @@
   "name": "accordion",
   "type": "registry:component",
   "title": "Accordion",
-  "description": "A simple accordion component",
+  "description": "Accordion component",
   "registryDependencies": [
     "button"
   ],
