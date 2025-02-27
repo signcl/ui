@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { IconChevronDown } from '@tabler/icons-react'
 import { cva } from 'class-variance-authority'
-import { cn } from '@/utils/cn'
+import { cn } from '@/lib/cn'
 
 type AccordionVariant = 'outline' | 'separated'
 

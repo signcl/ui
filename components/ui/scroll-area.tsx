@@ -6,7 +6,7 @@
 
 import React from 'react'
 import * as RadixScrollArea from '@radix-ui/react-scroll-area'
-import { cn } from '@/utils/cn'
+import { cn } from '@/lib/cn'
 
 export interface ScrollAreaProps extends React.ComponentProps<typeof RadixScrollArea.Root> {
   /** Scrollbar size in pixels */

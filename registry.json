@@ -8,14 +8,29 @@
       "type": "registry:component",
       "title": "Accordion",
       "description": "Accordion component",
-      "registryDependencies": ["button"],
       "files": [
         {
           "path": "components/ui/accordion.tsx",
           "type": "registry:component"
         },
         {
-          "path": "utils/cn.ts",
+          "path": "lib/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:component",
+      "title": "Alert Dialog",
+      "description": "Alert dialog component",
+      "files": [
+        {
+          "path": "components/ui/alert-dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "lib/cn.ts",
           "type": "registry:lib"
         }
       ]
@@ -32,7 +47,40 @@
           "type": "registry:component"
         },
         {
-          "path": "utils/use-copy-to-clipboard.ts",
+          "path": "hooks/use-copy-to-clipboard.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "Pagination",
+      "description": "Pagination component",
+      "registryDependencies": ["select"],
+      "files": [
+        {
+          "path": "components/ui/pagination.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "title": "Select",
+      "description": "Select component",
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "lib/cn.ts",
           "type": "registry:lib"
         }
       ]

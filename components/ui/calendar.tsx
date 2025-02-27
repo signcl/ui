@@ -10,7 +10,7 @@ import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
 // https://daypicker.dev/upgrading
 import { zhCN } from 'date-fns/locale'
 
-import { cn } from '@/utils/cn'
+import { cn } from '@/lib/cn'
 
 export type CalendarProps = ComponentProps<typeof DayPicker>
 

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog",
+  "type": "registry:component",
+  "title": "Alert Dialog",
+  "description": "Alert dialog component",
+  "files": [
+    {
+      "path": "components/ui/alert-dialog.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'\n\nimport { cn } from '@/lib/cn'\n\nconst AlertDialog = AlertDialogPrimitive.Root\n\nconst AlertDialogTrigger = AlertDialogPrimitive.Trigger\n\nconst AlertDialogPortal = AlertDialogPrimitive.Portal\n\nfunction AlertDialogOverlay({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Overlay>) {\n  return (\n    <AlertDialogPrimitive.Overlay\n      data-slot='alert-dialog-overlay'\n      className={cn(\n        'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/20',\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDialogContent({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Content>) {\n  return (\n    <AlertDialogPortal>\n      <AlertDialogOverlay />\n      <AlertDialogPrimitive.Content\n        data-slot='alert-dialog-content'\n        className={cn(\n          'floating fixed top-[50%] left-[50%] grid max-h-[calc(100dvh-10px)] w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-3 overflow-y-auto border p-4 duration-200 sm:rounded-lg',\n          'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',\n          className\n        )}\n        {...props}\n      />\n    </AlertDialogPortal>\n  )\n}\n\nconst AlertDialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (\n  <div className={cn('flex flex-col', className)} {...props} />\n)\nAlertDialogHeader.displayName = 'AlertDialogHeader'\n\nconst AlertDialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (\n  <div className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)} {...props} />\n)\nAlertDialogFooter.displayName = 'AlertDialogFooter'\n\nfunction AlertDialogTitle({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Title>) {\n  return (\n    <AlertDialogPrimitive.Title\n      data-slot='alert-dialog-title'\n      className={cn('text-lg font-semibold', className)}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDialogDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {\n  return (\n    <AlertDialogPrimitive.Description\n      data-slot='alert-dialog-description'\n      className={cn('my-2', className)}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDialogAction({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Action>) {\n  return <AlertDialogPrimitive.Action data-slot='alert-dialog-action' className={cn(className)} {...props} />\n}\n\nfunction AlertDialogCancel({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Cancel>) {\n  return <AlertDialogPrimitive.Cancel data-slot='alert-dialog-cancel' className={cn(className)} {...props} />\n}\n\nexport {\n  AlertDialog,\n  AlertDialogPortal,\n  AlertDialogOverlay,\n  AlertDialogTrigger,\n  AlertDialogContent,\n  AlertDialogHeader,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogDescription,\n  AlertDialogAction,\n  AlertDialogCancel,\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

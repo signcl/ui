@@ -1,4 +1,4 @@
-import { cn } from '@/utils/cn'
+import { cn } from '@/lib/cn'
 import { useRef } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { IconChevronUp, IconChevronDown, IconAdjustments, IconRestore, IconAdjustmentsCog } from '@tabler/icons-react'
