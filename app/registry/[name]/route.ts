@@ -5,10 +5,12 @@ import path from 'path'
 import { promises as fs } from 'fs'
 import { registryItemSchema } from 'shadcn/registry'
 
+type Params = Promise<{ name: string }>
+
 // This route shows an example for serving a component using a route handler.
-export async function GET(request: Request, { params }: { params: { name: string } }) {
+export async function GET(request: Request, { params }: { params: Params }) {
   try {
-    const { name } = params
+    const { name } = await params
     // Cache the registry import
     const registryData = await import('@/registry.json')
     const registry = registryData.default
