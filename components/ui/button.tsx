@@ -1,8 +1,8 @@
-import type { ButtonHTMLAttributes } from 'react'
-import { Slot, Slottable } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
+import { Slot, Slottable } from '@radix-ui/react-slot'
 
 import { cn } from '@/lib/cn'
+
 import { Loading } from './loading'
 
 const buttonVariantsConfig = {
@@ -148,8 +148,7 @@ const buttonVariants = cva(
   }
 )
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
-  as?: string
+export interface ButtonProps extends React.ComponentProps<'button'>, VariantProps<typeof buttonVariants> {
   /**
    * @link https://www.radix-ui.com/primitives/docs/utilities/slot
    */
@@ -166,7 +165,6 @@ function Button({
   variant,
   size,
   tint,
-  as,
   asChild = false,
   loading = false,
   leftSection,
@@ -176,7 +174,7 @@ function Button({
   children,
   ...props
 }: ButtonProps) {
-  const Comp = as ? as : asChild ? Slot : 'button'
+  const Comp = asChild ? Slot : 'button'
   return (
     <Comp
       data-slot='button'

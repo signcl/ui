@@ -1,7 +1,8 @@
-import { cn } from '@/lib/cn'
-import { useRef } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { IconChevronUp, IconChevronDown, IconAdjustments, IconRestore, IconAdjustmentsCog } from '@tabler/icons-react'
+import { IconAdjustments, IconAdjustmentsCog, IconChevronDown, IconChevronUp, IconRestore } from '@tabler/icons-react'
+
+import { cn } from '@/lib/cn'
+
 import { Button } from '@/components/ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 
@@ -69,8 +70,6 @@ function Input({
   defaultValue,
   ...props
 }: InputProps) {
-  const inputRef = useRef<HTMLInputElement | null>(null)
-
   const triggerChange = (newValue: number) => {
     if (disabled) return
 
@@ -188,7 +187,6 @@ function Input({
             (rightSection || type === 'number') && 'pr-[2em]',
             className
           )}
-          ref={inputRef}
           onKeyDown={handleKeyDown}
           onChange={onChange}
           disabled={disabled}
@@ -196,6 +194,7 @@ function Input({
           min={min}
           max={max}
           step={step}
+          ref={props.ref}
           {...props}
         />
         {rightSection || (type === 'number' && !hideControls) ? (
