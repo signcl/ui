@@ -1,9 +1,10 @@
 'use client'
 
 import * as React from 'react'
+import { cva, VariantProps } from 'class-variance-authority'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { IconChevronDown } from '@tabler/icons-react'
-import { cva } from 'class-variance-authority'
+
 import { cn } from '@/lib/cn'
 
 type AccordionVariant = 'outline' | 'separated'
@@ -35,7 +36,33 @@ const accordionItemVariants = cva('', {
   },
 })
 
-function AccordionTrigger({ className, children, ...props }: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
+export const Accordion = ({
+  className,
+  variant = 'outline',
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Root> & VariantProps<typeof accordionVariants>) => (
+  <AccordionPrimitive.Root data-slot='accordion' className={cn(accordionVariants({ variant }), className)} {...props} />
+)
+Accordion.displayName = 'Accordion'
+
+interface AccordionItemProps
+  extends React.ComponentProps<typeof AccordionPrimitive.Item>,
+    VariantProps<typeof accordionItemVariants> {}
+
+export function AccordionItem({ className, variant = 'outline', ...props }: AccordionItemProps) {
+  return (
+    <AccordionPrimitive.Item
+      className={cn(accordionItemVariants({ variant }), variant === 'separated' && 'data-[state=open]:bg-transparent')}
+      {...props}
+    />
+  )
+}
+
+export function AccordionTrigger({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
   return (
     <AccordionPrimitive.Header className='flex'>
       <AccordionPrimitive.Trigger
@@ -55,7 +82,11 @@ function AccordionTrigger({ className, children, ...props }: React.ComponentProp
   )
 }
 
-function AccordionContent({ className, children, ...props }: React.ComponentProps<typeof AccordionPrimitive.Content>) {
+export function AccordionContent({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Content>) {
   return (
     <AccordionPrimitive.Content
       data-slot='accordion-content'
@@ -73,7 +104,7 @@ function AccordionContent({ className, children, ...props }: React.ComponentProp
 
 type AccordionRootProps = React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>
 
-interface AccordionProps extends Omit<AccordionRootProps, 'type' | 'value' | 'onValueChange'> {
+interface AccordionSingletonProps extends Omit<AccordionRootProps, 'type' | 'value' | 'onValueChange'> {
   items: {
     id: string | number
     label: React.ReactNode
@@ -84,7 +115,14 @@ interface AccordionProps extends Omit<AccordionRootProps, 'type' | 'value' | 'on
   defaultValue?: string
 }
 
-function Accordion({ items, variant = 'outline', className, itemProps, defaultValue, ...props }: AccordionProps) {
+export function AccordionSingleton({
+  items,
+  variant = 'outline',
+  className,
+  itemProps,
+  defaultValue,
+  ...props
+}: AccordionSingletonProps) {
   const [value, setValue] = React.useState<string | undefined>(defaultValue)
 
   return (
@@ -103,7 +141,7 @@ function Accordion({ items, variant = 'outline', className, itemProps, defaultVa
           value={String(item.id)}
           className={cn(
             accordionItemVariants({ variant }),
-            variant === 'separated' && value === String(item.id) && 'bg-transparent'
+            variant === 'separated' && 'data-[state=open]:bg-transparent'
           )}
           {...itemProps}
         >
@@ -114,5 +152,3 @@ function Accordion({ items, variant = 'outline', className, itemProps, defaultVa
     </AccordionPrimitive.Root>
   )
 }
-
-export { Accordion }
