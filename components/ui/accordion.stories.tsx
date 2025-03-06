@@ -74,7 +74,7 @@ export const SingleItem: Story = {
       <AccordionItem value='item-2'>
         <AccordionTrigger>Second item</AccordionTrigger>
         <AccordionContent>
-          This is the second item&apos;s content. Notice it starts expanded because defaultValue is "item-2".
+          This is the second item&apos;s content. Notice it starts expanded because defaultValue is “item-2”.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value='item-3'>
@@ -169,7 +169,7 @@ export const NestedAccordions: Story = {
       </AccordionItem>
       <AccordionItem value='item-2'>
         <AccordionTrigger>Secondary category</AccordionTrigger>
-        <AccordionContent>This category doesn't have any nested accordions.</AccordionContent>
+        <AccordionContent>This category doesn’t have any nested accordions.</AccordionContent>
       </AccordionItem>
       <AccordionItem value='item-3'>
         <AccordionTrigger>Tertiary category</AccordionTrigger>

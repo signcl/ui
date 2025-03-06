@@ -52,7 +52,11 @@ interface AccordionItemProps
 export function AccordionItem({ className, variant = 'outline', ...props }: AccordionItemProps) {
   return (
     <AccordionPrimitive.Item
-      className={cn(accordionItemVariants({ variant }), variant === 'separated' && 'data-[state=open]:bg-transparent')}
+      className={cn(
+        accordionItemVariants({ variant }),
+        variant === 'separated' && 'data-[state=open]:bg-transparent',
+        className
+      )}
       {...props}
     />
   )
