@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Toaster } from '@/components/ui/sonner'
 import { toast } from 'sonner'
+import type { Meta, StoryObj } from '@storybook/react'
+
+import { Toaster } from '@/components/ui/sonner'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

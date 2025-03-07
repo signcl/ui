@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Label } from './label'
-import { Input } from '@/components/ui/input'
+
 import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
+
+import { Label } from './label'
 
 const meta = {
   title: 'UI/Label',

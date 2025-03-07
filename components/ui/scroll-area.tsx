@@ -3,9 +3,9 @@
 // Migrated and modifed from Mantine v6 and shadcn ScrollArea component
 // https://github.com/mantinedev/mantine/tree/v6/src/mantine-core/src/ScrollArea
 // https://ui.shadcn.com/docs/components/scroll-area
-
 import React from 'react'
 import * as RadixScrollArea from '@radix-ui/react-scroll-area'
+
 import { cn } from '@/lib/cn'
 
 export interface ScrollAreaProps extends React.ComponentProps<typeof RadixScrollArea.Root> {

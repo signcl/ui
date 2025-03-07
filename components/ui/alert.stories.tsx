@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Alert, alertVariantsConfig } from '@/components/ui/alert'
 import { IconAlertCircle } from '@tabler/icons-react'
+
+import { Alert, alertVariantsConfig } from '@/components/ui/alert'
 
 // <Pagination
 // className='my-2'

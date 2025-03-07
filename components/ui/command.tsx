@@ -1,11 +1,12 @@
 'use client'
 
 import * as React from 'react'
-import { type DialogProps } from '@radix-ui/react-dialog'
 import { Command as CommandPrimitive } from 'cmdk'
+import { type DialogProps } from '@radix-ui/react-dialog'
 import { IconSearch } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
+
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 
 function Command({ className, ...props }: React.ComponentProps<typeof CommandPrimitive>) {

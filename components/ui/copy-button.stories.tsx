@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { IconCheck, IconClipboard } from '@tabler/icons-react'
 
 import { Button } from '@/components/ui/button'
+
 import { CopyButton } from './copy-button'
 
 const meta: Meta<typeof CopyButton> = {

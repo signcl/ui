@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { IconRefresh, IconSearch } from '@tabler/icons-react'
 
-import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 // <Pagination
 // className='my-2'

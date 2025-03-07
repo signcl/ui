@@ -1,17 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { Button } from '@/components/ui/button' // Assuming you have a Button component
+
+import { Input } from './input'
+import { Label } from './label'
 import {
   Sheet,
-  SheetTrigger,
+  SheetClose,
   SheetContent,
-  SheetHeader,
-  SheetTitle,
   SheetDescription,
   SheetFooter,
-  SheetClose,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from './sheet'
-import { Label } from './label'
-import { Input } from './input'
 
 /**
  * Sheet is a dialog that slides in from the edge of the screen.

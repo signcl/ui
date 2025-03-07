@@ -1,25 +1,25 @@
 import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { within, userEvent } from '@storybook/test'
+import { userEvent, within } from '@storybook/test'
+import { IconArrowBackUpDouble } from '@tabler/icons-react'
 
+import { Button } from './button'
 import {
   DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
   DropdownMenuCheckboxItem,
-  DropdownMenuRadioItem,
+  DropdownMenuContent,
+  DropdownMenuIcon,
+  DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-  DropdownMenuRadioGroup,
-  DropdownMenuIcon,
+  DropdownMenuTrigger,
 } from './dropdown'
-import { Button } from './button'
-import { IconArrowBackUpDouble } from '@tabler/icons-react'
 
 const meta = {
   title: 'UI/Dropdown Menu',

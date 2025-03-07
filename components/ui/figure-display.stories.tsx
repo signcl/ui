@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { Figure } from './figure-display'
 
 // Sample data for the stories

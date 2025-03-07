@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 import * as SliderPrimitive from '@radix-ui/react-slider'
+import { IconRestore } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
-import { IconRestore } from '@tabler/icons-react'
 
 interface Mark {
   value: number

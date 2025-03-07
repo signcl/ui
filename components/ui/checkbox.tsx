@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { IconCheck } from '@tabler/icons-react'
+
 import { cn } from '@/lib/cn'
 
 function Checkbox({ className, ...props }: React.ComponentProps<'input'>) {

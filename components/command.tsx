@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import { IconCheck, IconCopy } from '@tabler/icons-react'
 
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { CopyButton } from '@/components/ui/copy-button'
+import { Input } from '@/components/ui/input'
 
 export interface CommandProps extends React.ComponentProps<'div'> {
   command: string

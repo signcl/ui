@@ -3,12 +3,11 @@
 'use client'
 
 import { ComponentProps } from 'react'
-import { DayPicker } from 'react-day-picker'
-import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
-
 // We can remove date-fns if no custom locale is needed:
 // https://daypicker.dev/upgrading
 import { zhCN } from 'date-fns/locale'
+import { DayPicker } from 'react-day-picker'
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
 

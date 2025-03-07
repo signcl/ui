@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { ScrollArea } from '@/components/ui/scroll-area'
 
 const content = Array(10)

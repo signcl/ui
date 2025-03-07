@@ -4,6 +4,7 @@ import { ComponentProps, Fragment } from 'react'
 import { IconChevronLeft, IconChevronRight, IconDots } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select'
 
 function PaginationPrimitive({ className, ...props }: ComponentProps<'nav'>) {

@@ -3,16 +3,17 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { IconCalendar, IconSearch } from '@tabler/icons-react'
 
 import { Button } from '@/components/ui/button'
+
 import {
   Command,
   CommandDialog,
-  CommandInput,
-  CommandList,
   CommandEmpty,
   CommandGroup,
+  CommandInput,
   CommandItem,
-  CommandShortcut,
+  CommandList,
   CommandSeparator,
+  CommandShortcut,
 } from './command'
 
 const meta: Meta<typeof Command> = {

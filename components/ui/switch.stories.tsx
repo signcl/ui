@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Switch } from '@/components/ui/switch'
 import { IconMoon, IconSun } from '@tabler/icons-react'
+
+import { Switch } from '@/components/ui/switch'
 
 // <Pagination
 // className='my-2'

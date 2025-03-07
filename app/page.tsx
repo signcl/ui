@@ -1,8 +1,8 @@
 import { getBaseUrl } from '@/utils/getBaseUrl'
 
+import { Command } from '@/components/command'
 import { Button } from '@/components/ui/button'
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { Command } from '@/components/command'
 
 const Home = async () => {
   const registryData = await import('@/registry.json')

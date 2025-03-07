@@ -1,15 +1,14 @@
 'use client'
 
 // https://ui.shadcn.com/docs/components/sonner
-
 import { Toaster as Sonner } from 'sonner'
-
 import {
   IconAlertCircleFilled,
   IconAlertTriangleFilled,
   IconCircleCheckFilled,
   IconInfoCircleFilled,
 } from '@tabler/icons-react'
+
 import { Loading } from './loading'
 
 type ToasterProps = React.ComponentProps<typeof Sonner>

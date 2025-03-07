@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/test'
+
 import { Button } from '@/components/ui/button'
+
+import { Checkbox } from './checkbox'
 import {
   Dialog,
   DialogContent,
@@ -10,9 +13,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from './dialog'
-import { Label } from './label'
 import { Input } from './input'
-import { Checkbox } from './checkbox'
+import { Label } from './label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select'
 
 const meta = {
