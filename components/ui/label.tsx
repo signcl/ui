@@ -1,12 +1,11 @@
 'use client'
 
-import * as LabelPrimitive from '@radix-ui/react-label'
 import { cva, type VariantProps } from 'class-variance-authority'
+import * as LabelPrimitive from '@radix-ui/react-label'
+
 import { cn } from '@/lib/cn'
 
-const labelVariants = cva(
-  'pb-2 flex font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50'
-)
+const labelVariants = cva('flex font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50')
 
 function Label({
   className,
