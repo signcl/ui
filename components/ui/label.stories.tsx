@@ -32,7 +32,7 @@ export const Basic: Story = {
 // Label with input
 export const WithInput: Story = {
   render: () => (
-    <div className='grid w-full max-w-sm'>
+    <div className='grid w-full max-w-sm gap-y-2'>
       <Label htmlFor='email'>Email</Label>
       <Input type='email' id='email' placeholder='Enter your email' />
     </div>
@@ -42,7 +42,7 @@ export const WithInput: Story = {
 // Label with required field
 export const Required: Story = {
   render: () => (
-    <div className='grid w-full max-w-sm'>
+    <div className='grid w-full max-w-sm gap-y-2'>
       <Label htmlFor='username'>
         Username <span className='text-red-500'>*</span>
       </Label>
@@ -78,7 +78,7 @@ export const WithSwitch: Story = {
 // Disabled state
 export const Disabled: Story = {
   render: () => (
-    <div className='grid w-full max-w-sm'>
+    <div className='grid w-full max-w-sm gap-y-2'>
       <Label htmlFor='disabled-input' className='text-fg/50'>
         Disabled Field
       </Label>
@@ -90,10 +90,10 @@ export const Disabled: Story = {
 // Label with help text
 export const WithHelpText: Story = {
   render: () => (
-    <div className='grid w-full max-w-sm'>
+    <div className='grid w-full max-w-sm gap-y-2'>
       <Label htmlFor='password'>Password</Label>
       <Input type='password' id='password' />
-      <div className='text-fg/60 my-1 text-xs'>Password must be at least 8 characters long</div>
+      <div className='text-fg/60 text-xs'>Password must be at least 8 characters long</div>
     </div>
   ),
 }
@@ -122,12 +122,12 @@ export const WithNestedContent: Story = {
 // Label with error state
 export const WithError: Story = {
   render: () => (
-    <div className='grid w-full max-w-sm'>
+    <div className='grid w-full max-w-sm gap-y-2'>
       <Label htmlFor='error-input' className='text-red-600'>
         Invalid Input
       </Label>
       <Input type='text' id='error-input' className='border-red-600' />
-      <div className='my-1 text-xs text-red-600'>This field is required</div>
+      <div className='text-xs text-red-600'>This field is required</div>
     </div>
   ),
 }

@@ -48,13 +48,13 @@ export const Basic: Story = {
           <DialogDescription>Make changes to your profile here. Click save when you’re done.</DialogDescription>
         </DialogHeader>
         <div className='grid gap-4'>
-          <div>
+          <div className='space-y-2'>
             <Label htmlFor='name' className='text-right'>
               Name
             </Label>
             <Input id='name' placeholder='Enter your name' />
           </div>
-          <div>
+          <div className='space-y-2'>
             <Label htmlFor='username' className='text-right'>
               Username
             </Label>
@@ -82,13 +82,13 @@ export const BasicOpen: Story = {
           <DialogDescription>Make changes to your profile here. Click save when you’re done.</DialogDescription>
         </DialogHeader>
         <div className='grid gap-4'>
-          <div>
+          <div className='space-y-2'>
             <Label htmlFor='name' className='text-right'>
               Name
             </Label>
             <Input id='name' placeholder='Enter your name' />
           </div>
-          <div>
+          <div className='space-y-2'>
             <Label htmlFor='username' className='text-right'>
               Username
             </Label>
@@ -154,7 +154,7 @@ export const WithForm: Story = {
           <Checkbox type='checkbox' id='updates' />
           <Label htmlFor='updates'>Receive product updates</Label>
         </div>
-        <div>
+        <div className='space-y-2'>
           <Label htmlFor='timezone'>Receive product updates</Label>
           <Select>
             <SelectTrigger id='timezone'>
