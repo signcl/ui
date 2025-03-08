@@ -27,8 +27,9 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         caption_label: 'ml-1 text-sm font-medium',
         dropdowns: 'flex place-items-center',
         nav: 'flex gap-2 absolute top-0.5 right-0.5 leading-none',
-        button_next: 'disabled:opacity-50 outline-hidden focus-ring rounded-sm',
-        button_previous: 'disabled:opacity-50 outline-hidden focus-ring rounded-sm',
+        button_next: 'aria-disabled:opacity-50 aria-disabled:cursor-not-allowed outline-hidden focus-ring rounded-sm',
+        button_previous:
+          'aria-disabled:opacity-50 aria-disabled:cursor-not-allowed outline-hidden focus-ring rounded-sm',
         month_grid: 'w-full border-collapse space-y-1',
         weekdays: 'flex',
         weekday: 'w-8 font-normal text-[0.8rem]',
