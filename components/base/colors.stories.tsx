@@ -16,9 +16,9 @@ type Story = StoryObj<typeof meta>
 
 // Helper component to display a color sample
 const ColorSwatch = ({ className, name }: { className: string; name: string }) => (
-  <div className='flex flex-col gap-2'>
-    <div className={`size-24 rounded-md ${className} flex items-center justify-center`} />
-    <div className='text-sm'>{name}</div>
+  <div className='flex flex-col gap-1'>
+    <div className={`size-20 rounded-md ${className} flex items-center justify-center`} />
+    <div className='text-xs'>{name}</div>
     <div className='text-xs text-fg/60'>{className}</div>
   </div>
 )
