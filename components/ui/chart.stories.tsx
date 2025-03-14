@@ -16,9 +16,16 @@ import {
   YAxis,
 } from 'recharts'
 import type { Meta, StoryObj } from '@storybook/react'
-import { IconChartBar, IconChartLine, IconChartPie } from '@tabler/icons-react'
+import { IconChartBar, IconChartLine } from '@tabler/icons-react'
 
-import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from './chart'
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+} from './chart'
 
 const meta = {
   args: {},
@@ -91,140 +98,140 @@ export const CompleteChartExample: Story = {
       revenue: {
         label: 'Revenue',
         theme: {
-          light: '#3B82F6', // blue-500
-          dark: '#60A5FA', // blue-400
+          light: 'var(--color-blue-600)',
+          dark: 'var(--color-blue-600)',
         },
       },
       expenses: {
         label: 'Expenses',
         theme: {
-          light: '#EF4444', // red-500
-          dark: '#F87171', // red-400
+          light: 'var(--color-red-600)',
+          dark: 'var(--color-red-600)',
         },
       },
       profit: {
         label: 'Profit',
         theme: {
-          light: '#10B981', // emerald-500
-          dark: '#34D399', // emerald-400
+          light: 'var(--color-emerald-600)',
+          dark: 'var(--color-emerald-600)',
         },
       },
-    }
+    } satisfies ChartConfig
 
     const barChartConfig = {
       sales: {
         label: 'Sales',
         icon: IconChartBar,
         theme: {
-          light: '#8B5CF6', // violet-500
-          dark: '#A78BFA', // violet-400
+          light: 'var(--color-violet-600)',
+          dark: 'var(--color-violet-600)',
         },
       },
       returns: {
         label: 'Returns',
         icon: IconChartBar,
         theme: {
-          light: '#F59E0B', // amber-500
-          dark: '#FBBF24', // amber-400
+          light: 'var(--color-amber-600)',
+          dark: 'var(--color-amber-600)',
         },
       },
-    }
+    } satisfies ChartConfig
 
     const pieChartConfig = {
       'Social Media': {
         label: 'Social Media',
         theme: {
-          light: '#3B82F6', // blue-500
-          dark: '#60A5FA', // blue-400
+          light: 'var(--color-blue-600)',
+          dark: 'var(--color-blue-600)',
         },
       },
       'Direct': {
         label: 'Direct',
         theme: {
-          light: '#10B981', // emerald-500
-          dark: '#34D399', // emerald-400
+          light: 'var(--color-emerald-600)',
+          dark: 'var(--color-emerald-600)',
         },
       },
       'Email': {
         label: 'Email',
         theme: {
-          light: '#F59E0B', // amber-500
-          dark: '#FBBF24', // amber-400
+          light: 'var(--color-amber-600)',
+          dark: 'var(--color-amber-600)',
         },
       },
       'Referral': {
         label: 'Referral',
         theme: {
-          light: '#8B5CF6', // violet-500
-          dark: '#A78BFA', // violet-400
+          light: 'var(--color-violet-600)',
+          dark: 'var(--color-violet-600)',
         },
       },
       'Organic Search': {
         label: 'Organic Search',
         theme: {
-          light: '#EC4899', // pink-500
-          dark: '#F472B6', // pink-400
+          light: 'var(--color-pink-600)',
+          dark: 'var(--color-pink-600)',
         },
       },
-    }
+    } satisfies ChartConfig
 
     const areaChartConfig = {
       mobile: {
         label: 'Mobile',
         icon: IconChartLine,
         theme: {
-          light: '#6366F1', // indigo-500
-          dark: '#818CF8', // indigo-400
+          light: 'var(--color-indigo-600)',
+          dark: 'var(--color-indigo-600)',
         },
       },
       desktop: {
         label: 'Desktop',
         icon: IconChartLine,
         theme: {
-          light: '#14B8A6', // teal-500
-          dark: '#2DD4BF', // teal-400
+          light: 'var(--color-teal-600)',
+          dark: 'var(--color-teal-600)',
         },
       },
       tablet: {
         label: 'Tablet',
         icon: IconChartLine,
         theme: {
-          light: '#F97316', // orange-500
-          dark: '#FB923C', // orange-400
+          light: 'var(--color-orange-600)',
+          dark: 'var(--color-orange-600)',
         },
       },
-    }
+    } satisfies ChartConfig
 
     const radialBarConfig = {
       'Goal 1': {
         label: 'Goal 1',
         theme: {
-          light: '#8884d8',
-          dark: '#9c95e0',
+          light: 'var(--color-purple-600)',
+          dark: 'var(--color-purple-600)',
         },
       },
       'Goal 2': {
         label: 'Goal 2',
         theme: {
-          light: '#83a6ed',
-          dark: '#9cbcf2',
+          light: 'var(--color-blue-600)',
+          dark: 'var(--color-blue-600)',
         },
       },
       'Goal 3': {
         label: 'Goal 3',
         theme: {
-          light: '#8dd1e1',
-          dark: '#a7eaf6',
+          light: 'var(--color-cyan-600)',
+          dark: 'var(--color-cyan-600)',
         },
       },
       'Goal 4': {
         label: 'Goal 4',
         theme: {
-          light: '#82ca9d',
-          dark: '#9ee0b5',
+          light: 'var(--color-green-600)',
+          dark: 'var(--color-green-600)',
         },
       },
-    }
+    } satisfies ChartConfig
 
     return (
       <div className='space-y-12 w-full max-w-[900px] p-6'>
@@ -293,9 +300,20 @@ export const CompleteChartExample: Story = {
             <ChartContainer config={pieChartConfig} className='h-[300px]'>
               <PieChart>
                 <Pie data={pieChartData} dataKey='value' nameKey='name' cx='50%' cy='50%' outerRadius={80} label>
-                  {pieChartData.map(entry => (
-                    <Cell key={`cell-${entry.name}`} fill={`var(--color-${entry.name.replace(/\s+/g, '-')})`} />
-                  ))}
+                  {pieChartData.map(entry => {
+                    // Get the color directly from the config instead of using CSS variables
+                    const isDarkMode = document.documentElement.classList.contains('dark')
+                    // Type assertion to ensure entry.name is treated as a key of pieChartConfig
+                    const entryName = entry.name as keyof typeof pieChartConfig
+                    const configItem = pieChartConfig[entryName]
+                    const fillColor = configItem?.theme
+                      ? isDarkMode
+                        ? configItem.theme.dark
+                        : configItem.theme.light
+                      : undefined
+
+                    return <Cell key={`cell-${entry.name}`} fill={fillColor} />
+                  })}
                 </Pie>
                 <ChartTooltip content={<ChartTooltipContent />} />
                 <ChartLegend content={<ChartLegendContent />} />
@@ -322,9 +340,20 @@ export const CompleteChartExample: Story = {
                   cornerRadius={10}
                   label={{ fill: '#666', position: 'insideStart' }}
                 >
-                  {radialBarChartData.map(entry => (
-                    <Cell key={`cell-${entry.name}`} fill={`var(--color-${entry.name.replace(/\s+/g, '-')})`} />
-                  ))}
+                  {radialBarChartData.map(entry => {
+                    // Get the color directly from the config instead of using CSS variables
+                    const isDarkMode = document.documentElement.classList.contains('dark')
+                    // Type assertion to ensure entry.name is treated as a key of radialBarConfig
+                    const entryName = entry.name as keyof typeof radialBarConfig
+                    const configItem = radialBarConfig[entryName]
+                    const fillColor = configItem?.theme
+                      ? isDarkMode
+                        ? configItem.theme.dark
+                        : configItem.theme.light
+                      : undefined
+
+                    return <Cell key={`cell-${entry.name}`} fill={fillColor} />
+                  })}
                 </RadialBar>
                 <ChartLegend content={<ChartLegendContent />} />
                 <ChartTooltip content={<ChartTooltipContent />} />
@@ -383,7 +412,7 @@ export const CompleteChartExample: Story = {
               <CartesianGrid strokeDasharray='3 3' />
               <XAxis dataKey='month' />
               <YAxis />
-              <ChartTooltip content={<ChartTooltipContent indicator='line' className='shadow-lg' />} />
+              <ChartTooltip content={<ChartTooltipContent indicator='line' />} />
               <ChartLegend content={<ChartLegendContent />} />
               <Line
                 type='monotone'
@@ -421,9 +450,7 @@ export const CompleteChartExample: Story = {
               <CartesianGrid strokeDasharray='3 3' />
               <XAxis dataKey='category' />
               <YAxis />
-              <ChartTooltip
-                content={<ChartTooltipContent indicator='dashed' className='shadow-lg border-blue-200' />}
-              />
+              <ChartTooltip content={<ChartTooltipContent indicator='dashed' />} />
               <ChartLegend content={<ChartLegendContent />} />
               <Bar dataKey='sales' fill='var(--color-sales)' radius={[4, 4, 0, 0]} />
               <Bar dataKey='returns' fill='var(--color-returns)' radius={[4, 4, 0, 0]} />
