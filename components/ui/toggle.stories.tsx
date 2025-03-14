@@ -34,6 +34,7 @@ export const WithIcon: Story = {
 
 export const IconOnly: Story = {
   args: {
+    'variant': 'icon',
     'aria-label': 'Toggle microphone',
     'children': <IconMicrophone />,
   },

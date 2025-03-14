@@ -13,6 +13,7 @@ const toggleVariants = cva(
       variant: {
         default: 'border border-transparent',
         outline: 'border hover:bg-fg/5 hover:text-ac hover:border-fg/40 data-[state=on]:border-ac',
+        icon: 'border border-transparent',
       },
       size: {
         sm: 'text-xs px-[0.5em] py-[0.25em] rounded-sm',
@@ -20,6 +21,23 @@ const toggleVariants = cva(
         lg: 'text-lg px-[0.8em] py-[0.325em]',
       },
     },
+    compoundVariants: [
+      {
+        variant: 'icon',
+        size: 'sm',
+        className: 'text-xs p-[0.25em] rounded-sm',
+      },
+      {
+        variant: 'icon',
+        size: 'default',
+        className: 'text-base p-[0.25em]',
+      },
+      {
+        variant: 'icon',
+        size: 'lg',
+        className: 'text-lg p-[0.325em]',
+      },
+    ],
     defaultVariants: {
       variant: 'default',
       size: 'default',
