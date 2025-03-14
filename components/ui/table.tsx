@@ -47,14 +47,14 @@ function TableHead({ className, ...props }: React.ComponentProps<'th'>) {
   return (
     <th
       data-slot='table-head'
-      className={cn('text-fg/60 h-10 px-2 text-left align-middle font-medium', className)}
+      className={cn('text-fg/60 px-2 py-1.5 text-left align-middle font-medium', className)}
       {...props}
     />
   )
 }
 
 function TableCell({ className, ...props }: React.ComponentProps<'td'>) {
-  return <td data-slot='table-cell' className={cn('p-2 align-middle', className)} {...props} />
+  return <td data-slot='table-cell' className={cn('px-2 py-1.5 align-middle', className)} {...props} />
 }
 
 function TableCaption({ className, ...props }: React.ComponentProps<'caption'>) {
