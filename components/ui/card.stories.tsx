@@ -250,7 +250,7 @@ export const WithTabs: Story = {
               <div className='space-y-2'>
                 <Label htmlFor='language'>Language</Label>
                 <Select>
-                  <SelectTrigger>
+                  <SelectTrigger id='language'>
                     <SelectValue placeholder='Select a language' />
                   </SelectTrigger>
                   <SelectContent>
