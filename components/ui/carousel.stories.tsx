@@ -4,7 +4,14 @@ import { IconCode, IconHeartFilled, IconInfoCircle, IconPhoto } from '@tabler/ic
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from '@/components/ui/carousel'
 
 const meta = {
   title: 'UI/Carousel',
@@ -64,7 +71,7 @@ export const MultipleItems: Story = {
 
 export const CustomControls: Story = {
   render: () => {
-    const [api, setApi] = React.useState<any>()
+    const [api, setApi] = React.useState<CarouselApi>()
     const [current, setCurrent] = React.useState(0)
     const [count, setCount] = React.useState(0)
 
@@ -170,7 +177,7 @@ export const AutoplayCarousel: Story = {
   render: () => {
     // Note: In a real implementation, you would use Embla Carousel's autoplay plugin
     // This is a simplified version for demonstration purposes
-    const [api, setApi] = React.useState<any>()
+    const [api, setApi] = React.useState<CarouselApi>()
 
     React.useEffect(() => {
       if (!api) return

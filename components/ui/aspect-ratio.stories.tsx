@@ -23,11 +23,13 @@ type Story = StoryObj<typeof meta>
 // Helper to create a placeholder image with specified dimensions and label
 const PlaceholderImage = ({ ratio, label }: { ratio: number; label: string }) => (
   <div className='relative overflow-hidden bg-fg/10 rounded-md'>
-    <img
-      src={`https://placehold.co/600x${Math.round(600 / ratio)}`}
-      alt='Placeholder image'
-      className='object-cover size-full'
-    />
+    <picture>
+      <img
+        src={`https://placehold.co/600x${Math.round(600 / ratio)}`}
+        alt='Placeholder image'
+        className='object-cover size-full'
+      />
+    </picture>
     {/* <div className='size-64 bg-ac/50' /> */}
     <div className='absolute inset-0 flex items-center justify-center text-lg font-semibold text-fg'>{label}</div>
   </div>

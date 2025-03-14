@@ -77,7 +77,6 @@ export const Basic: Story = {
  */
 export const WithDialog: Story = {
   render: () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [open, setOpen] = useState(false)
 
     return (

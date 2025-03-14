@@ -88,7 +88,9 @@ export const WithForm: Story = {
 export const WithImage: Story = {
   render: () => (
     <Card className='w-[350px] overflow-hidden'>
-      <img src='https://placehold.co/600x400' alt='Card cover' className='w-full h-48 object-cover' />
+      <picture>
+        <img src='https://placehold.co/600x400' alt='Card cover' className='w-full h-48 object-cover' />
+      </picture>
       <CardHeader>
         <CardTitle>Mountain Retreat</CardTitle>
         <CardDescription>Explore the beauty of nature</CardDescription>
@@ -203,7 +205,9 @@ export const HorizontalLayout: Story = {
   render: () => (
     <Card className='flex flex-row w-[600px]'>
       <div className='w-1/3'>
-        <img src='https://placehold.co/300x400' alt='Product' className='h-full w-full object-cover' />
+        <picture>
+          <img src='https://placehold.co/300x400' alt='Product' className='h-full w-full object-cover' />
+        </picture>
       </div>
       <div className='w-2/3 flex flex-col'>
         <CardHeader>
