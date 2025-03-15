@@ -13,7 +13,7 @@ function Command({ className, ...props }: React.ComponentProps<typeof CommandPri
   return (
     <CommandPrimitive
       data-slot='command'
-      className={cn('floating flex h-full w-full flex-col overflow-hidden rounded-md', className)}
+      className={cn('border flex h-full w-full flex-col overflow-hidden rounded-md', className)}
       {...props}
     />
   )
@@ -22,8 +22,8 @@ function Command({ className, ...props }: React.ComponentProps<typeof CommandPri
 const CommandDialog = ({ children, ...props }: DialogProps) => {
   return (
     <Dialog {...props}>
-      <DialogContent className='overflow-hidden border-none p-0'>
-        <Command>{children}</Command>
+      <DialogContent className='overflow-hidden p-0'>
+        <Command className='border-none'>{children}</Command>
       </DialogContent>
     </Dialog>
   )
