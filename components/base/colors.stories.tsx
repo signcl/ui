@@ -29,51 +29,51 @@ export const Colors: Story = {
       <div className='space-y-4 bg-gray-600'>
         <h2 className='text-2xl font-semibold'>Foreground Colors</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11 gap-4'>
-          <ColorSwatch className='bg-fg/5' name='Foreground 50' />
-          <ColorSwatch className='bg-fg/10' name='Foreground 100' />
-          <ColorSwatch className='bg-fg/20' name='Foreground 200' />
-          <ColorSwatch className='bg-fg/30' name='Foreground 300' />
-          <ColorSwatch className='bg-fg/40' name='Foreground 400' />
-          <ColorSwatch className='bg-fg/50' name='Foreground 500' />
-          <ColorSwatch className='bg-fg/60' name='Foreground 600' />
-          <ColorSwatch className='bg-fg/70' name='Foreground 700' />
-          <ColorSwatch className='bg-fg/80' name='Foreground 800' />
-          <ColorSwatch className='bg-fg/90' name='Foreground 900' />
-          <ColorSwatch className='bg-fg/95' name='Foreground 950' />
+          <ColorSwatch className='bg-fg/5' name='Foreground 5%' />
+          <ColorSwatch className='bg-fg/10' name='Foreground 10%' />
+          <ColorSwatch className='bg-fg/20' name='Foreground 20%' />
+          <ColorSwatch className='bg-fg/30' name='Foreground 30%' />
+          <ColorSwatch className='bg-fg/40' name='Foreground 40%' />
+          <ColorSwatch className='bg-fg/50' name='Foreground 50%' />
+          <ColorSwatch className='bg-fg/60' name='Foreground 60%' />
+          <ColorSwatch className='bg-fg/70' name='Foreground 70%' />
+          <ColorSwatch className='bg-fg/80' name='Foreground 80%' />
+          <ColorSwatch className='bg-fg/90' name='Foreground 90%' />
+          <ColorSwatch className='bg-fg/100' name='Foreground 100%' />
         </div>
       </div>
 
       <div className='space-y-4 bg-gray-600'>
         <h2 className='text-2xl font-semibold'>Background Colors</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11 gap-4'>
-          <ColorSwatch className='bg-bg/5' name='Background 50' />
-          <ColorSwatch className='bg-bg/10' name='Background 100' />
-          <ColorSwatch className='bg-bg/20' name='Background 200' />
-          <ColorSwatch className='bg-bg/30' name='Background 300' />
-          <ColorSwatch className='bg-bg/40' name='Background 400' />
-          <ColorSwatch className='bg-bg/50' name='Background 500' />
-          <ColorSwatch className='bg-bg/60' name='Background 600' />
-          <ColorSwatch className='bg-bg/70' name='Background 700' />
-          <ColorSwatch className='bg-bg/80' name='Background 800' />
-          <ColorSwatch className='bg-bg/90' name='Background 900' />
-          <ColorSwatch className='bg-bg/95' name='Background 950' />
+          <ColorSwatch className='bg-bg/5' name='Background 5%' />
+          <ColorSwatch className='bg-bg/10' name='Background 10%' />
+          <ColorSwatch className='bg-bg/20' name='Background 20%' />
+          <ColorSwatch className='bg-bg/30' name='Background 30%' />
+          <ColorSwatch className='bg-bg/40' name='Background 40%' />
+          <ColorSwatch className='bg-bg/50' name='Background 50%' />
+          <ColorSwatch className='bg-bg/60' name='Background 60%' />
+          <ColorSwatch className='bg-bg/70' name='Background 70%' />
+          <ColorSwatch className='bg-bg/80' name='Background 80%' />
+          <ColorSwatch className='bg-bg/90' name='Background 90%' />
+          <ColorSwatch className='bg-bg/100' name='Background 100%' />
         </div>
       </div>
 
       <div className='space-y-4'>
         <h2 className='text-2xl font-semibold'>Accent Colors</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11 gap-4'>
-          <ColorSwatch className='bg-ac/5' name='Accent 50' />
-          <ColorSwatch className='bg-ac/10' name='Accent 100' />
-          <ColorSwatch className='bg-ac/20' name='Accent 200' />
-          <ColorSwatch className='bg-ac/30' name='Accent 300' />
-          <ColorSwatch className='bg-ac/40' name='Accent 400' />
-          <ColorSwatch className='bg-ac/50' name='Accent 500' />
-          <ColorSwatch className='bg-ac/60' name='Accent 600' />
-          <ColorSwatch className='bg-ac/70' name='Accent 700' />
-          <ColorSwatch className='bg-ac/80' name='Accent 800' />
-          <ColorSwatch className='bg-ac/90' name='Accent 900' />
-          <ColorSwatch className='bg-ac/95' name='Accent 950' />
+          <ColorSwatch className='bg-ac/5' name='Accent 5%' />
+          <ColorSwatch className='bg-ac/10' name='Accent 10%' />
+          <ColorSwatch className='bg-ac/20' name='Accent 20%' />
+          <ColorSwatch className='bg-ac/30' name='Accent 30%' />
+          <ColorSwatch className='bg-ac/40' name='Accent 40%' />
+          <ColorSwatch className='bg-ac/50' name='Accent 50%' />
+          <ColorSwatch className='bg-ac/60' name='Accent 60%' />
+          <ColorSwatch className='bg-ac/70' name='Accent 70%' />
+          <ColorSwatch className='bg-ac/80' name='Accent 80%' />
+          <ColorSwatch className='bg-ac/90' name='Accent 90%' />
+          <ColorSwatch className='bg-ac/100' name='Accent 100%' />
         </div>
       </div>
 
