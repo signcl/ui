@@ -283,9 +283,22 @@
 }
 
 @utility floating {
-  background-color: var(--floating-ui-bg);
-  box-shadow: var(--floating-ui-shadow);
-  border: var(--floating-ui-border);
-  backdrop-filter: var(--floating-ui-backdrop);
-  @apply z-100 outline-none;
+  box-shadow:
+    0 0 0 0.5px color-mix(in oklab, var(--color-black) 40%, transparent),
+    0 20px 60px 0
+      color-mix(
+        in oklch,
+        color-mix(in oklab, var(--color-ac) 20%, transparent) 60%,
+        color-mix(in oklab, var(--color-black) 20%, transparent)
+      );
+  backdrop-filter: saturate(2) blur(40px);
+  @apply z-100 border border-white/40 bg-white/90 outline-none;
+
+  @variant dark {
+    box-shadow:
+      0 0 0 0.5px color-mix(in oklab, var(--color-black) 80%, transparent),
+      0 20px 60px 0 color-mix(in oklab, var(--color-black) 60%, transparent);
+    backdrop-filter: brightness(0.5) saturate(2) contrast(0.9) blur(40px);
+    @apply bg-bg/20 border-fg/20;
+  }
 }
