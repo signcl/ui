@@ -5,7 +5,6 @@
   --font-sans: ui-sans-serif, system-ui, 'Helvetica Neue', Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --font-logo: var(--fontstack-figures);
 
   /* Colors */
   --color-fg: oklch(clamp(0%, calc(var(--fg-l) + var(--lch-l-offset)), 100%) var(--primary-c) var(--primary-h));
