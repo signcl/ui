@@ -53,7 +53,7 @@ function DialogContent({ className, children, ...props }: React.ComponentProps<t
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
 const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)} {...props} />
+  <div className={cn('flex flex-col gap-3 text-center sm:text-left text-balance', className)} {...props} />
 )
 DialogHeader.displayName = 'DialogHeader'
 
@@ -74,7 +74,7 @@ function DialogTitle({ className, ...props }: React.ComponentProps<typeof Dialog
 DialogTitle.displayName = DialogPrimitive.Title.displayName
 
 function DialogDescription({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Description>) {
-  return <DialogPrimitive.Description data-slot='dialog-description' className={cn('my-2', className)} {...props} />
+  return <DialogPrimitive.Description data-slot='dialog-description' className={cn(className)} {...props} />
 }
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 

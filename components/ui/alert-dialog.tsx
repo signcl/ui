@@ -42,7 +42,7 @@ function AlertDialogContent({ className, ...props }: React.ComponentProps<typeof
 }
 
 const AlertDialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn('flex flex-col', className)} {...props} />
+  <div className={cn('flex flex-col gap-3 text-balance', className)} {...props} />
 )
 AlertDialogHeader.displayName = 'AlertDialogHeader'
 
@@ -65,13 +65,7 @@ function AlertDialogDescription({
   className,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {
-  return (
-    <AlertDialogPrimitive.Description
-      data-slot='alert-dialog-description'
-      className={cn('my-2', className)}
-      {...props}
-    />
-  )
+  return <AlertDialogPrimitive.Description data-slot='alert-dialog-description' className={cn(className)} {...props} />
 }
 
 function AlertDialogAction({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Action>) {
