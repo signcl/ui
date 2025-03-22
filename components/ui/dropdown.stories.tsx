@@ -206,6 +206,45 @@ export const WithCheckboxes: Story = {
   },
 }
 
+export const WithHiddenIndicators: Story = {
+  render: () => {
+    const [showStatusBar, setShowStatusBar] = useState(true)
+    const [position, setPosition] = useState('bottom')
+
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button>Hidden Indicators</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>Checkbox with hidden indicator</DropdownMenuLabel>
+          <DropdownMenuCheckboxItem checked={showStatusBar} onCheckedChange={setShowStatusBar} hideIndicator>
+            Status Bar (no indicator)
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuLabel>Radio group with hidden indicators</DropdownMenuLabel>
+          <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+            <DropdownMenuRadioItem value='top' hideIndicator>
+              Top (no indicator)
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='bottom' hideIndicator>
+              Bottom (no indicator)
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='right' hideIndicator>
+              Right (no indicator)
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    )
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const trigger = canvas.getByText('Hidden Indicators')
+    await userEvent.click(trigger)
+  },
+}
+
 export const WithRadioGroup: Story = {
   render: () => {
     const [position, setPosition] = useState('bottom')

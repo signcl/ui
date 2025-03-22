@@ -118,24 +118,30 @@ function DropdownMenuCheckboxItem({
   className,
   children,
   checked,
+  hideIndicator,
   ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem>) {
+}: React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem> & {
+  hideIndicator?: boolean
+}) {
   return (
     <DropdownMenuPrimitive.CheckboxItem
       data-slot='dropdown-menu-checkbox-item'
       className={cn(
         'relative flex cursor-default items-start py-1.5 pr-3 pl-8 outline-hidden select-none',
         'focus:bg-ac/10 focus:text-ac data-disabled:pointer-events-none data-disabled:opacity-50',
+        hideIndicator && 'pl-3 data-[state=checked]:text-ac',
         className
       )}
       checked={checked}
       {...props}
     >
-      <span className='absolute top-2.5 left-3 flex size-4 items-center justify-center'>
-        <DropdownMenuPrimitive.ItemIndicator asChild>
-          <IconCheck className='size-4' />
-        </DropdownMenuPrimitive.ItemIndicator>
-      </span>
+      {!hideIndicator && (
+        <span className='absolute top-2.5 left-3 flex size-4 items-center justify-center'>
+          <DropdownMenuPrimitive.ItemIndicator asChild>
+            <IconCheck className='size-4' />
+          </DropdownMenuPrimitive.ItemIndicator>
+        </span>
+      )}
       {children}
     </DropdownMenuPrimitive.CheckboxItem>
   )
@@ -144,24 +150,30 @@ function DropdownMenuCheckboxItem({
 function DropdownMenuRadioItem({
   className,
   children,
+  hideIndicator,
   ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem>) {
+}: React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem> & {
+  hideIndicator?: boolean
+}) {
   return (
     <DropdownMenuPrimitive.RadioItem
       data-slot='dropdown-menu-radio-item'
       className={cn(
         'relative flex cursor-default items-start py-1.5 pr-3 pl-8 outline-hidden select-none',
         'focus:bg-ac/10 focus:text-ac data-disabled:pointer-events-none data-disabled:opacity-50',
+        hideIndicator && 'pl-3 data-[state=checked]:text-ac',
         className
       )}
       {...props}
     >
-      <span className='absolute top-2.5 left-3 flex size-4 items-center justify-center'>
-        <DropdownMenuPrimitive.ItemIndicator asChild>
-          {/* <IconCircleDotFilled className='size-3' /> */}
-          <div className='size-1.5 rounded-full bg-current' />
-        </DropdownMenuPrimitive.ItemIndicator>
-      </span>
+      {!hideIndicator && (
+        <span className='absolute top-2.5 left-3 flex size-4 items-center justify-center'>
+          <DropdownMenuPrimitive.ItemIndicator asChild>
+            {/* <IconCircleDotFilled className='size-3' /> */}
+            <div className='size-1.5 rounded-full bg-current' />
+          </DropdownMenuPrimitive.ItemIndicator>
+        </span>
+      )}
       {children}
     </DropdownMenuPrimitive.RadioItem>
   )
