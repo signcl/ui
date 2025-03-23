@@ -254,6 +254,8 @@
   --shadow-border: 0 0 0 1px color-mix(in oklab, var(--color-fg) 30%, transparent);
   --shadow-border-t: 0 -1px 0 0 color-mix(in oklab, var(--color-fg) 30%, transparent);
   --shadow-border-b: 0 1px 0 0 color-mix(in oklab, var(--color-fg) 30%, transparent);
+  --shadow-border-r: 1px 0 0 0 color-mix(in oklab, var(--color-fg) 30%, transparent);
+  --shadow-border-l: -1px 0 0 0 color-mix(in oklab, var(--color-fg) 30%, transparent);
   --inset-shadow-input: inset 0 1px 1px color-mix(in oklab, var(--color-black) 10%, transparent);
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
