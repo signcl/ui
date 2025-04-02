@@ -19,6 +19,7 @@ const badgeVariantsConfig = {
   },
   tint: {
     default: 'bg-gray-500/10 text-gray-600',
+    accent: 'bg-ac/10 text-ac',
     red: 'bg-red-500/10 text-red-600',
     orange: 'bg-orange-500/10 text-orange-600',
     amber: 'bg-amber-500/10 text-amber-600',
@@ -60,6 +61,7 @@ const dotVariants = cva('absolute top-1/2 -translate-y-1/2 rounded-full', {
     },
     tint: {
       default: 'bg-gray-600',
+      accent: 'bg-ac',
       red: 'bg-red-600',
       orange: 'bg-orange-600',
       amber: 'bg-amber-600',
@@ -92,6 +94,7 @@ const badgeVariants = cva(
     variants: badgeVariantsConfig,
     compoundVariants: [
       { variant: 'solid', tint: 'default', className: 'bg-gray-600 border-gray-600 text-bg' },
+      { variant: 'solid', tint: 'accent', className: 'bg-ac border-ac text-bg' },
       { variant: 'solid', tint: 'red', className: 'bg-red-600 border-red-600 text-bg' },
       { variant: 'solid', tint: 'orange', className: 'bg-orange-600 border-orange-600 text-bg' },
       { variant: 'solid', tint: 'amber', className: 'bg-amber-600 border-amber-600 text-bg' },
