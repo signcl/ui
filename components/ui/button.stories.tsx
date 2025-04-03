@@ -221,6 +221,49 @@ export const VariantLink: Story = {
   },
 }
 
+export const VariantCombinations: Story = {
+  render: args => {
+    return (
+      <div className='space-y-4'>
+        <div className='flex items-start gap-2'>
+          <Button variant={'default'}>Solid</Button>
+          <Button variant={'solid'}>Solid</Button>
+          <Button variant={'outline'}>Outline</Button>
+          <Button variant={'link'}>Link</Button>
+        </div>
+        <div className='flex items-start gap-2'>
+          <Button variant={'default'} size={'sm'}>
+            Solid
+          </Button>
+          <Button variant={'solid'} size={'sm'}>
+            Solid
+          </Button>
+          <Button variant={'outline'} size={'sm'}>
+            Outline
+          </Button>
+          <Button variant={'link'} size={'sm'}>
+            Link
+          </Button>
+        </div>
+        <div className='flex items-start gap-2'>
+          <Button variant={'default'} size={'lg'}>
+            Solid
+          </Button>
+          <Button variant={'solid'} size={'lg'}>
+            Solid
+          </Button>
+          <Button variant={'outline'} size={'lg'}>
+            Outline
+          </Button>
+          <Button variant={'link'} size={'lg'}>
+            Link
+          </Button>
+        </div>
+      </div>
+    )
+  },
+}
+
 export const LeftSection: Story = {
   args: { leftSection: <IconExternalLink size={'1.125rem'} /> },
   render: args => <Button {...args} />,
