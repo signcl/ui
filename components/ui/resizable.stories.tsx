@@ -21,16 +21,16 @@ type Story = StoryObj<typeof meta>
 // Basic horizontal resizable panels
 export const Basic: Story = {
   render: () => (
-    <div className='h-[400px] w-[600px] border rounded-lg bg-bg p-4'>
+    <div className='bg-bg h-[400px] w-[600px] rounded-lg border p-4'>
       <ResizablePanelGroup direction='horizontal'>
         <ResizablePanel defaultSize={25} minSize={20}>
-          <div className='flex h-full items-center justify-center p-6 bg-red-500/10 rounded'>
+          <div className='flex h-full items-center justify-center rounded bg-red-500/10 p-6'>
             <span className='font-medium'>Sidebar</span>
           </div>
         </ResizablePanel>
         <ResizableHandle />
         <ResizablePanel defaultSize={75}>
-          <div className='flex h-full items-center justify-center p-6 bg-blue-500/10 rounded'>
+          <div className='flex h-full items-center justify-center rounded bg-blue-500/10 p-6'>
             <span className='font-medium'>Content</span>
           </div>
         </ResizablePanel>
@@ -42,22 +42,22 @@ export const Basic: Story = {
 // Vertical resizable panels
 export const Vertical: Story = {
   render: () => (
-    <div className='h-[400px] w-[600px] border rounded-lg bg-bg p-4'>
+    <div className='bg-bg h-[400px] w-[600px] rounded-lg border p-4'>
       <ResizablePanelGroup direction='vertical'>
         <ResizablePanel defaultSize={25} minSize={15}>
-          <div className='flex h-full items-center justify-center p-6 bg-green-500/10 rounded'>
+          <div className='flex h-full items-center justify-center rounded bg-green-500/10 p-6'>
             <span className='font-medium'>Header</span>
           </div>
         </ResizablePanel>
         <ResizableHandle />
         <ResizablePanel defaultSize={60}>
-          <div className='flex h-full items-center justify-center p-6 bg-purple-500/10 rounded'>
+          <div className='flex h-full items-center justify-center rounded bg-purple-500/10 p-6'>
             <span className='font-medium'>Content</span>
           </div>
         </ResizablePanel>
         <ResizableHandle />
         <ResizablePanel defaultSize={15}>
-          <div className='flex h-full items-center justify-center p-6 bg-amber-500/10 rounded'>
+          <div className='flex h-full items-center justify-center rounded bg-amber-500/10 p-6'>
             <span className='font-medium'>Footer</span>
           </div>
         </ResizablePanel>
@@ -69,10 +69,10 @@ export const Vertical: Story = {
 // Nested resizable panels
 export const NestedWithHandles: Story = {
   render: () => (
-    <div className='h-[500px] w-[800px] border rounded-lg bg-bg p-4'>
+    <div className='bg-bg h-[500px] w-[800px] rounded-lg border p-4'>
       <ResizablePanelGroup direction='horizontal'>
         <ResizablePanel defaultSize={20} minSize={15}>
-          <div className='flex h-full items-center justify-center p-6 bg-red-500/10 rounded'>
+          <div className='flex h-full items-center justify-center rounded bg-red-500/10 p-6'>
             <span className='font-medium'>Navigation</span>
           </div>
         </ResizablePanel>
@@ -80,13 +80,13 @@ export const NestedWithHandles: Story = {
         <ResizablePanel defaultSize={50}>
           <ResizablePanelGroup direction='vertical'>
             <ResizablePanel defaultSize={60}>
-              <div className='flex h-full items-center justify-center p-6 bg-blue-500/10 rounded'>
+              <div className='flex h-full items-center justify-center rounded bg-blue-500/10 p-6'>
                 <span className='font-medium'>Main Content</span>
               </div>
             </ResizablePanel>
             <ResizableHandle withHandle />
             <ResizablePanel defaultSize={40}>
-              <div className='flex h-full items-center justify-center p-6 bg-green-500/10 rounded'>
+              <div className='flex h-full items-center justify-center rounded bg-green-500/10 p-6'>
                 <span className='font-medium'>Details</span>
               </div>
             </ResizablePanel>
@@ -94,7 +94,7 @@ export const NestedWithHandles: Story = {
         </ResizablePanel>
         <ResizableHandle withHandle />
         <ResizablePanel defaultSize={30}>
-          <div className='flex h-full items-center justify-center p-6 bg-purple-500/10 rounded'>
+          <div className='flex h-full items-center justify-center rounded bg-purple-500/10 p-6'>
             <span className='font-medium'>Properties</span>
           </div>
         </ResizablePanel>
@@ -106,7 +106,7 @@ export const NestedWithHandles: Story = {
 // Code editor layout example
 export const CodeEditorLayout: Story = {
   render: () => (
-    <div className='h-[600px] w-[900px] border rounded-lg bg-bg overflow-hidden'>
+    <div className='bg-bg h-[600px] w-[900px] overflow-hidden rounded-lg border'>
       <ResizablePanelGroup direction='horizontal'>
         <ResizablePanel defaultSize={15} minSize={10}>
           <div className='flex h-full flex-col bg-gray-100 dark:bg-gray-800'>

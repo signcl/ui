@@ -116,7 +116,7 @@ export const ResponsiveBehavior = {
     <div className='mx-auto w-full max-w-3xl space-y-8'>
       <div className='rounded border p-4'>
         <h3 className='mb-2 text-lg font-medium'>Desktop View (Resize to see mobile view)</h3>
-        <p className='mb-4 text-sm text-fg/60'>
+        <p className='text-fg/60 mb-4 text-sm'>
           This demonstrates how the component responds to different screen sizes
         </p>
 

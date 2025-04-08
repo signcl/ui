@@ -83,7 +83,7 @@ export function DataTable<TData, TValue>({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant='outline' tint='default'>
-              <IconFilter className='h-4 w-4 mr-2' />
+              <IconFilter className='mr-2 h-4 w-4' />
               Columns
             </Button>
           </DropdownMenuTrigger>
@@ -106,7 +106,7 @@ export function DataTable<TData, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className='rounded-md border border-fg/10'>
+      <div className='border-fg/10 rounded-md border'>
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map(headerGroup => (
@@ -141,7 +141,7 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
       <div className='flex items-center justify-end space-x-2 py-4'>
-        <div className='flex-1 text-sm text-fg/60'>
+        <div className='text-fg/60 flex-1 text-sm'>
           {table.getFilteredSelectedRowModel().rows.length} of {table.getFilteredRowModel().rows.length} row(s)
           selected.
         </div>
@@ -173,7 +173,7 @@ export function getSortableHeader<TData, TValue>(
       <Button
         variant='link'
         onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-        className='flex items-center gap-x-1 p-0 h-auto'
+        className='flex h-auto items-center gap-x-1 p-0'
       >
         {header}
         {column.getIsSorted() === 'asc' ? (

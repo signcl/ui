@@ -50,7 +50,7 @@ export const WithMaxLength: Story = {
   render: args => (
     <div className='space-y-2'>
       <Textarea {...args} maxLength={100} placeholder='This textarea has a maximum length of 100 characters' />
-      <p className='text-xs text-fg/60'>Maximum length: 100 characters</p>
+      <p className='text-fg/60 text-xs'>Maximum length: 100 characters</p>
     </div>
   ),
 }

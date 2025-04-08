@@ -89,7 +89,7 @@ export const WithImage: Story = {
   render: () => (
     <Card className='w-[350px] overflow-hidden'>
       <picture>
-        <img src='https://placehold.co/600x400' alt='Card cover' className='w-full h-48 object-cover' />
+        <img src='https://placehold.co/600x400' alt='Card cover' className='h-48 w-full object-cover' />
       </picture>
       <CardHeader>
         <CardTitle>Mountain Retreat</CardTitle>
@@ -102,7 +102,7 @@ export const WithImage: Story = {
         </p>
       </CardContent>
       <CardFooter className='flex justify-between'>
-        <div className='text-sm text-muted-foreground'>$199/night</div>
+        <div className='text-muted-foreground text-sm'>$199/night</div>
         <Button size='sm'>Book now</Button>
       </CardFooter>
     </Card>
@@ -118,7 +118,7 @@ export const Pricing: Story = {
           <CardDescription>Perfect for individuals</CardDescription>
           <div className='mt-2 flex items-baseline'>
             <span className='text-4xl font-bold'>$9</span>
-            <span className='ml-1 text-muted-foreground'>/month</span>
+            <span className='text-muted-foreground ml-1'>/month</span>
           </div>
         </CardHeader>
         <CardContent>
@@ -141,14 +141,14 @@ export const Pricing: Story = {
           <Button className='w-full'>Get Started</Button>
         </CardFooter>
       </Card>
-      <Card className='w-[300px] border-primary'>
+      <Card className='border-primary w-[300px]'>
         <CardHeader>
-          <div className='text-primary text-sm font-medium uppercase mb-1'>Popular</div>
+          <div className='text-primary mb-1 text-sm font-medium uppercase'>Popular</div>
           <CardTitle>Professional</CardTitle>
           <CardDescription>Perfect for small teams</CardDescription>
           <div className='mt-2 flex items-baseline'>
             <span className='text-4xl font-bold'>$29</span>
-            <span className='ml-1 text-muted-foreground'>/month</span>
+            <span className='text-muted-foreground ml-1'>/month</span>
           </div>
         </CardHeader>
         <CardContent>
@@ -203,13 +203,13 @@ export const Compact: Story = {
 
 export const HorizontalLayout: Story = {
   render: () => (
-    <Card className='flex flex-row w-[600px]'>
+    <Card className='flex w-[600px] flex-row'>
       <div className='w-1/3'>
         <picture>
           <img src='https://placehold.co/300x400' alt='Product' className='h-full w-full object-cover' />
         </picture>
       </div>
-      <div className='w-2/3 flex flex-col'>
+      <div className='flex w-2/3 flex-col'>
         <CardHeader>
           <CardTitle>Ergonomic Chair</CardTitle>
           <CardDescription>Professional Office Furniture</CardDescription>

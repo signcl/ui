@@ -173,7 +173,7 @@ export const Basic: Story = {
   },
   render: args => (
     <div className='container mx-auto'>
-      <h2 className='text-xl font-bold tracking-tight mb-4'>Payment Management</h2>
+      <h2 className='mb-4 text-xl font-bold tracking-tight'>Payment Management</h2>
       <DataTable {...args} />
     </div>
   ),

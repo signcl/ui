@@ -39,7 +39,7 @@ export const Default: Story = {
             </p>
             <div className='flex items-center pt-2'>
               <IconCalendar className='mr-2 h-4 w-4 opacity-70' />
-              <span className='text-xs text-muted-foreground'>Added March 2024</span>
+              <span className='text-muted-foreground text-xs'>Added March 2024</span>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ export const UserProfile: Story = {
       <HoverCardTrigger asChild>
         <a
           href='#'
-          className='inline-flex items-center justify-center text-sm font-medium underline underline-offset-4 hover:text-primary'
+          className='hover:text-primary inline-flex items-center justify-center text-sm font-medium underline underline-offset-4'
         >
           @johndoe
         </a>
@@ -70,7 +70,7 @@ export const UserProfile: Story = {
             <p className='text-sm'>Software developer and UI/UX enthusiast. Building awesome web experiences.</p>
             <div className='flex items-center pt-2'>
               <IconCalendar className='mr-2 h-4 w-4 opacity-70' />
-              <span className='text-xs text-muted-foreground'>Joined December 2023</span>
+              <span className='text-muted-foreground text-xs'>Joined December 2023</span>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ export const UserProfile: Story = {
 
 export const Placement: Story = {
   render: () => (
-    <div className='flex gap-8 flex-wrap justify-center'>
+    <div className='flex flex-wrap justify-center gap-8'>
       {(['top', 'right', 'bottom', 'left'] as const).map(side => (
         <HoverCard key={side}>
           <HoverCardTrigger asChild>

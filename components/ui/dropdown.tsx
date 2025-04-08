@@ -129,7 +129,7 @@ function DropdownMenuCheckboxItem({
       className={cn(
         'relative flex cursor-default items-start py-1.5 pr-3 pl-8 outline-hidden select-none',
         'focus:bg-ac/10 focus:text-ac data-disabled:pointer-events-none data-disabled:opacity-50',
-        hideIndicator && 'pl-3 data-[state=checked]:text-ac',
+        hideIndicator && 'data-[state=checked]:text-ac pl-3',
         className
       )}
       checked={checked}
@@ -161,7 +161,7 @@ function DropdownMenuRadioItem({
       className={cn(
         'relative flex cursor-default items-start py-1.5 pr-3 pl-8 outline-hidden select-none',
         'focus:bg-ac/10 focus:text-ac data-disabled:pointer-events-none data-disabled:opacity-50',
-        hideIndicator && 'pl-3 data-[state=checked]:text-ac',
+        hideIndicator && 'data-[state=checked]:text-ac pl-3',
         className
       )}
       {...props}
@@ -199,7 +199,7 @@ function DropdownMenuSeparator({ className, ...props }: React.ComponentProps<typ
   return (
     <DropdownMenuPrimitive.Separator
       data-slot='dropdown-menu-separator'
-      className={cn('-mx-1 h-1 bg-fg/5', className)}
+      className={cn('bg-fg/5 -mx-1 h-1', className)}
       {...props}
     />
   )

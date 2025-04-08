@@ -44,7 +44,7 @@ export const Default: Story = {
             ))}
           </InputOTPGroup>
         </InputOTP>
-        <div className='text-xs text-fg/60'>Value: {value || 'N/A'}</div>
+        <div className='text-fg/60 text-xs'>Value: {value || 'N/A'}</div>
       </div>
     )
   },

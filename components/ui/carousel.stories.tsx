@@ -107,7 +107,7 @@ export const CustomControls: Story = {
           <Button
             variant='outline'
             size='sm'
-            className='size-8 p-0 rounded-full'
+            className='size-8 rounded-full p-0'
             disabled={current === 0}
             onClick={() => api?.scrollPrev()}
           >
@@ -120,7 +120,7 @@ export const CustomControls: Story = {
           <Button
             variant='outline'
             size='sm'
-            className='size-8 p-0 rounded-full'
+            className='size-8 rounded-full p-0'
             disabled={current === count - 1}
             onClick={() => api?.scrollNext()}
           >
@@ -206,7 +206,7 @@ export const AutoplayCarousel: Story = {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-        <p className='mt-4 text-center text-sm text-fg/70'>This carousel automatically advances every 3 seconds.</p>
+        <p className='text-fg/70 mt-4 text-center text-sm'>This carousel automatically advances every 3 seconds.</p>
       </div>
     )
   },

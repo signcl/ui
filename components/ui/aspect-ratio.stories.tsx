@@ -22,16 +22,16 @@ type Story = StoryObj<typeof meta>
 
 // Helper to create a placeholder image with specified dimensions and label
 const PlaceholderImage = ({ ratio, label }: { ratio: number; label: string }) => (
-  <div className='relative overflow-hidden bg-fg/10 rounded-md'>
+  <div className='bg-fg/10 relative overflow-hidden rounded-md'>
     <picture>
       <img
         src={`https://placehold.co/600x${Math.round(600 / ratio)}`}
         alt='Placeholder image'
-        className='object-cover size-full'
+        className='size-full object-cover'
       />
     </picture>
     {/* <div className='size-64 bg-ac/50' /> */}
-    <div className='absolute inset-0 flex items-center justify-center text-lg font-semibold text-fg'>{label}</div>
+    <div className='text-fg absolute inset-0 flex items-center justify-center text-lg font-semibold'>{label}</div>
   </div>
 )
 
@@ -115,7 +115,7 @@ export const Ultrawide21by9: Story = {
 
 export const GalleryGrid: Story = {
   render: () => (
-    <div className='grid grid-cols-3 gap-4 w-[600px]'>
+    <div className='grid w-[600px] grid-cols-3 gap-4'>
       {[
         { ratio: 1, label: '1:1' },
         { ratio: 4 / 3, label: '4:3' },

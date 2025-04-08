@@ -60,7 +60,7 @@ export const Basic: Story = {
     variant: 'icon',
   },
   render: args => (
-    <div className='flex flex-col space-y-4 items-center'>
+    <div className='flex flex-col items-center space-y-4'>
       <Label htmlFor='text-alignment'>Text Alignment</Label>
       <ToggleGroup {...args} id='text-alignment' aria-label='Text alignment'>
         <ToggleGroupItem value='left' aria-label='Left aligned'>
@@ -87,7 +87,7 @@ export const Multiple: Story = {
     defaultValue: ['bold'],
   },
   render: args => (
-    <div className='flex flex-col space-y-4 items-center'>
+    <div className='flex flex-col items-center space-y-4'>
       <Label htmlFor='text-formatting'>Text Formatting</Label>
       <ToggleGroup {...args} id='text-formatting' aria-label='Text formatting'>
         <ToggleGroupItem variant={'icon'} value='bold' aria-label='Bold'>
@@ -110,7 +110,7 @@ export const Multiple: Story = {
 export const Sizes: Story = {
   render: () => (
     <div className='flex flex-col space-y-8'>
-      <div className='flex flex-col space-y-2 items-center'>
+      <div className='flex flex-col items-center space-y-2'>
         <Label>Small</Label>
         <ToggleGroup type='single' size='sm' defaultValue='list'>
           <ToggleGroupItem variant={'icon'} value='list'>
@@ -125,7 +125,7 @@ export const Sizes: Story = {
         </ToggleGroup>
       </div>
 
-      <div className='flex flex-col space-y-2 items-center'>
+      <div className='flex flex-col items-center space-y-2'>
         <Label>Default</Label>
         <ToggleGroup type='single' size='default' defaultValue='list'>
           <ToggleGroupItem variant={'icon'} value='list'>
@@ -140,7 +140,7 @@ export const Sizes: Story = {
         </ToggleGroup>
       </div>
 
-      <div className='flex flex-col space-y-2 items-center'>
+      <div className='flex flex-col items-center space-y-2'>
         <Label>Large</Label>
         <ToggleGroup type='single' size='lg' defaultValue='list'>
           <ToggleGroupItem variant={'icon'} value='list'>
@@ -163,7 +163,7 @@ export const WithState: Story = {
     const [value, setValue] = React.useState('medium')
 
     return (
-      <div className='flex flex-col space-y-4 items-center'>
+      <div className='flex flex-col items-center space-y-4'>
         <Label htmlFor='rating'>Rating</Label>
         <ToggleGroup
           type='single'
@@ -175,20 +175,20 @@ export const WithState: Story = {
           aria-label='Rating'
         >
           <ToggleGroupItem value='low' aria-label='Low rating'>
-            <IconStar className='size-4 mr-1' />
+            <IconStar className='mr-1 size-4' />
             Low
           </ToggleGroupItem>
           <ToggleGroupItem value='medium' aria-label='Medium rating'>
-            <IconStar className='size-4 mr-1' />
+            <IconStar className='mr-1 size-4' />
             Medium
           </ToggleGroupItem>
           <ToggleGroupItem value='high' aria-label='High rating'>
-            <IconStar className='size-4 mr-1' />
+            <IconStar className='mr-1 size-4' />
             High
           </ToggleGroupItem>
         </ToggleGroup>
-        <div className='text-sm text-fg/70 mt-2'>
-          Selected: <span className='font-medium text-fg'>{value}</span>
+        <div className='text-fg/70 mt-2 text-sm'>
+          Selected: <span className='text-fg font-medium'>{value}</span>
         </div>
       </div>
     )
@@ -203,7 +203,7 @@ export const Disabled: Story = {
     disabled: true,
   },
   render: args => (
-    <div className='flex flex-col space-y-4 items-center'>
+    <div className='flex flex-col items-center space-y-4'>
       <Label htmlFor='text-alignment-disabled'>Text Alignment (Disabled)</Label>
       <ToggleGroup {...args} id='text-alignment-disabled' aria-label='Text alignment'>
         <ToggleGroupItem variant={'icon'} value='left' aria-label='Left aligned'>

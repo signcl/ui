@@ -160,21 +160,21 @@ export const WithBadge: Story = {
           <AvatarImage src='https://placehold.co/100x100' alt='Avatar with online badge' />
           <AvatarFallback>JD</AvatarFallback>
         </Avatar>
-        <span className='absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-white' />
+        <span className='absolute right-0 bottom-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-white' />
       </div>
       <div className='relative'>
         <Avatar>
           <AvatarImage src='https://placehold.co/100x100' alt='Avatar with busy badge' />
           <AvatarFallback>AB</AvatarFallback>
         </Avatar>
-        <span className='absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-red-500 ring-2 ring-white' />
+        <span className='absolute right-0 bottom-0 block h-3 w-3 rounded-full bg-red-500 ring-2 ring-white' />
       </div>
       <div className='relative'>
         <Avatar>
           <AvatarImage src='https://placehold.co/100x100' alt='Avatar with away badge' />
           <AvatarFallback>CK</AvatarFallback>
         </Avatar>
-        <span className='absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-yellow-500 ring-2 ring-white' />
+        <span className='absolute right-0 bottom-0 block h-3 w-3 rounded-full bg-yellow-500 ring-2 ring-white' />
       </div>
     </div>
   ),

@@ -35,14 +35,14 @@ type Story = StoryObj<typeof Collapsible>
  */
 export const Basic: Story = {
   render: () => (
-    <Collapsible className='w-full max-w-md border rounded-md'>
+    <Collapsible className='w-full max-w-md rounded-md border'>
       <div className='flex items-center justify-between p-4'>
         <h4>Collapsible trigger</h4>
         <CollapsibleTrigger>
           <IconChevronDown className='h-4 w-4' />
         </CollapsibleTrigger>
       </div>
-      <CollapsibleContent className='p-4 border-t'>
+      <CollapsibleContent className='border-t p-4'>
         <p>This content can be collapsed and expanded when clicking the trigger.</p>
       </CollapsibleContent>
     </Collapsible>
@@ -64,14 +64,14 @@ export const Controlled: Story = {
             <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Close' : 'Open'}</button>
           </div>
 
-          <Collapsible open={isOpen} onOpenChange={setIsOpen} className='border rounded-md'>
+          <Collapsible open={isOpen} onOpenChange={setIsOpen} className='rounded-md border'>
             <div className='flex items-center justify-between p-4'>
               <span>State: {isOpen ? 'Open' : 'Closed'}</span>
               <CollapsibleTrigger>
                 <IconChevronDown className='h-4 w-4' />
               </CollapsibleTrigger>
             </div>
-            <CollapsibleContent className='p-4 border-t'>
+            <CollapsibleContent className='border-t p-4'>
               <p>This collapsible component is controlled with React state.</p>
             </CollapsibleContent>
           </Collapsible>
@@ -88,14 +88,14 @@ export const Controlled: Story = {
  */
 export const DefaultOpen: Story = {
   render: () => (
-    <Collapsible defaultOpen={true} className='w-full max-w-md border rounded-md'>
+    <Collapsible defaultOpen={true} className='w-full max-w-md rounded-md border'>
       <div className='flex items-center justify-between p-4'>
         <h4>Default Open Collapsible</h4>
         <CollapsibleTrigger>
           <IconChevronDown className='h-4 w-4' />
         </CollapsibleTrigger>
       </div>
-      <CollapsibleContent className='p-4 border-t'>
+      <CollapsibleContent className='border-t p-4'>
         <p>This content starts in the open state because of the defaultOpen prop.</p>
       </CollapsibleContent>
     </Collapsible>
@@ -107,24 +107,24 @@ export const DefaultOpen: Story = {
  */
 export const Nested: Story = {
   render: () => (
-    <Collapsible className='w-full max-w-md border rounded-md'>
+    <Collapsible className='w-full max-w-md rounded-md border'>
       <div className='flex items-center justify-between p-4'>
         <h4>Parent Collapsible</h4>
         <CollapsibleTrigger>
           <IconChevronDown className='h-4 w-4' />
         </CollapsibleTrigger>
       </div>
-      <CollapsibleContent className='p-4 border-t'>
+      <CollapsibleContent className='border-t p-4'>
         <p className='mb-4'>This is the parent collapsible content.</p>
 
-        <Collapsible className='border rounded-md'>
+        <Collapsible className='rounded-md border'>
           <div className='flex items-center justify-between p-4'>
             <h4>Nested Collapsible</h4>
             <CollapsibleTrigger>
               <IconChevronDown className='h-4 w-4' />
             </CollapsibleTrigger>
           </div>
-          <CollapsibleContent className='p-4 border-t'>
+          <CollapsibleContent className='border-t p-4'>
             <p>This is nested inside the parent collapsible.</p>
           </CollapsibleContent>
         </Collapsible>

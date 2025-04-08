@@ -58,10 +58,10 @@ export const Example: Story = {
     const [zoom, setZoom] = React.useState<string>('100%')
 
     return (
-      <div className='flex flex-col gap-10 w-[700px]'>
+      <div className='flex w-[700px] flex-col gap-10'>
         <div className='flex flex-col gap-2'>
-          <h2 className='text-lg font-semibold mb-2'>Complete Application Menubar</h2>
-          <Menubar className='border rounded-md'>
+          <h2 className='mb-2 text-lg font-semibold'>Complete Application Menubar</h2>
+          <Menubar className='rounded-md border'>
             <MenubarMenu>
               <MenubarTrigger>File</MenubarTrigger>
               <MenubarContent>
@@ -219,8 +219,8 @@ export const Example: Story = {
             </MenubarMenu>
           </Menubar>
 
-          <div className='mt-4 border rounded-md p-4 bg-bg/30'>
-            <h3 className='text-md font-medium mb-2'>Current UI State:</h3>
+          <div className='bg-bg/30 mt-4 rounded-md border p-4'>
+            <h3 className='text-md mb-2 font-medium'>Current UI State:</h3>
             <div className='grid grid-cols-2 gap-2 text-sm'>
               <div>Status Bar:</div>
               <div>{showStatusBar ? 'Visible' : 'Hidden'}</div>

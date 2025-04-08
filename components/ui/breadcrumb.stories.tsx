@@ -219,7 +219,7 @@ export const WithRichContent: Story = {
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink href='/components' className='flex items-center gap-2'>
-            <span className='h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs font-bold'>
+            <span className='flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-600'>
               C
             </span>
             <span>Components</span>
@@ -228,7 +228,7 @@ export const WithRichContent: Story = {
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbPage className='flex items-center gap-2'>
-            <span className='h-6 w-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs font-bold'>
+            <span className='flex h-6 w-6 items-center justify-center rounded-full bg-gray-100 text-xs font-bold text-gray-600'>
               B
             </span>
             <span>Breadcrumb</span>

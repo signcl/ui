@@ -18,11 +18,11 @@ type Story = StoryObj<typeof meta>
 // Helper component to display each shadow example
 const ShadowExample = ({ name, className }: { name: string; className: string }) => (
   <div className='flex flex-col items-center gap-2'>
-    <div className={`w-24 h-24 bg-bg rounded-lg flex items-center justify-center ${className}`}>
-      <span className='text-sm font-medium text-fg/60'></span>
+    <div className={`bg-bg flex h-24 w-24 items-center justify-center rounded-lg ${className}`}>
+      <span className='text-fg/60 text-sm font-medium'></span>
     </div>
-    <span className='text-sm font-medium text-center'>{name}</span>
-    <span className='text-xs text-fg/60'>{className}</span>
+    <span className='text-center text-sm font-medium'>{name}</span>
+    <span className='text-fg/60 text-xs'>{className}</span>
   </div>
 )
 
@@ -31,8 +31,8 @@ export const BoxShadows: Story = {
   render: () => (
     <div className='space-y-8 p-8'>
       <div>
-        <h2 className='text-xl font-semibold mb-4'>Box Shadows</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <h2 className='mb-4 text-xl font-semibold'>Box Shadows</h2>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
           <ShadowExample name='shadow-2xs' className='shadow-2xs' />
           <ShadowExample name='shadow-xs' className='shadow-xs' />
           <ShadowExample name='shadow-sm' className='shadow-sm' />
@@ -60,8 +60,8 @@ export const DropShadows: Story = {
   render: () => (
     <div className='space-y-8 p-8'>
       <div>
-        <h2 className='text-xl font-semibold mb-4'>Drop Shadows</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <h2 className='mb-4 text-xl font-semibold'>Drop Shadows</h2>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
           <ShadowExample name='drop-shadow-xs' className='drop-shadow-xs' />
           <ShadowExample name='drop-shadow-sm' className='drop-shadow-sm' />
           <ShadowExample name='drop-shadow-md' className='drop-shadow-md' />
@@ -80,8 +80,8 @@ export const ColoredBoxShadows: Story = {
   render: () => (
     <div className='space-y-8 p-8'>
       <div>
-        <h2 className='text-xl font-semibold mb-4'>Colored Box Shadows</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <h2 className='mb-4 text-xl font-semibold'>Colored Box Shadows</h2>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
           <ShadowExample name='Blue' className='shadow-lg shadow-blue-600/50' />
           <ShadowExample name='Red' className='shadow-lg shadow-red-600/50' />
           <ShadowExample name='Green' className='shadow-lg shadow-green-600/50' />
@@ -89,7 +89,7 @@ export const ColoredBoxShadows: Story = {
           <ShadowExample name='Purple' className='shadow-lg shadow-purple-600/50' />
           <ShadowExample name='Pink' className='shadow-lg shadow-pink-600/50' />
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
           <ShadowExample name='Blue' className='inset-shadow-2xs inset-shadow-blue-600/50' />
           <ShadowExample name='Red' className='inset-shadow-2xs inset-shadow-red-600/50' />
           <ShadowExample name='Green' className='inset-shadow-2xs inset-shadow-green-600/50' />
@@ -97,7 +97,7 @@ export const ColoredBoxShadows: Story = {
           <ShadowExample name='Purple' className='inset-shadow-2xs inset-shadow-purple-600/50' />
           <ShadowExample name='Pink' className='inset-shadow-2xs inset-shadow-pink-600/50' />
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
           <ShadowExample name='Blue' className='inset-shadow-xs inset-shadow-blue-600/50' />
           <ShadowExample name='Red' className='inset-shadow-xs inset-shadow-red-600/50' />
           <ShadowExample name='Green' className='inset-shadow-xs inset-shadow-green-600/50' />
@@ -105,7 +105,7 @@ export const ColoredBoxShadows: Story = {
           <ShadowExample name='Purple' className='inset-shadow-xs inset-shadow-purple-600/50' />
           <ShadowExample name='Pink' className='inset-shadow-xs inset-shadow-pink-600/50' />
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
           <ShadowExample name='Blue' className='inset-shadow-sm inset-shadow-blue-600/50' />
           <ShadowExample name='Red' className='inset-shadow-sm inset-shadow-red-600/50' />
           <ShadowExample name='Green' className='inset-shadow-sm inset-shadow-green-600/50' />
@@ -123,28 +123,28 @@ export const ShadowTransitions: Story = {
   render: () => (
     <div className='space-y-8 p-8'>
       <div>
-        <h2 className='text-xl font-semibold mb-4'>Shadow Transitions (Hover)</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <h2 className='mb-4 text-xl font-semibold'>Shadow Transitions (Hover)</h2>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
           <div className='flex flex-col items-center gap-2'>
-            <div className='w-24 h-24 bg-bg rounded-lg flex items-center justify-center transition-shadow duration-300 shadow-sm hover:shadow-xl'>
-              <span className='text-sm font-medium text-fg/60'>Hover me</span>
+            <div className='bg-bg flex h-24 w-24 items-center justify-center rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-xl'>
+              <span className='text-fg/60 text-sm font-medium'>Hover me</span>
             </div>
             <span className='text-sm font-medium'>sm → xl</span>
-            <span className='text-xs text-fg/60'>shadow-sm → shadow-xl</span>
+            <span className='text-fg/60 text-xs'>shadow-sm → shadow-xl</span>
           </div>
           <div className='flex flex-col items-center gap-2'>
-            <div className='w-24 h-24 bg-bg rounded-lg flex items-center justify-center transition-shadow duration-300 shadow-md hover:shadow-2xl'>
-              <span className='text-sm font-medium text-fg/60'>Hover me</span>
+            <div className='bg-bg flex h-24 w-24 items-center justify-center rounded-lg shadow-md transition-shadow duration-300 hover:shadow-2xl'>
+              <span className='text-fg/60 text-sm font-medium'>Hover me</span>
             </div>
             <span className='text-sm font-medium'>default → 2xl</span>
-            <span className='text-xs text-fg/60'>shadow-md → shadow-2xl</span>
+            <span className='text-fg/60 text-xs'>shadow-md → shadow-2xl</span>
           </div>
           <div className='flex flex-col items-center gap-2'>
-            <div className='w-24 h-24 bg-bg rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-blue-600/50'>
-              <span className='text-sm font-medium text-fg/60'>Hover me</span>
+            <div className='bg-bg flex h-24 w-24 items-center justify-center rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/50'>
+              <span className='text-fg/60 text-sm font-medium'>Hover me</span>
             </div>
             <span className='text-sm font-medium'>md → xl (colored)</span>
-            <span className='text-xs text-fg/60'>shadow-md → shadow-xl shadow-blue-500/50</span>
+            <span className='text-fg/60 text-xs'>shadow-md → shadow-xl shadow-blue-500/50</span>
           </div>
         </div>
       </div>
