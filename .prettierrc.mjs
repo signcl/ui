@@ -11,7 +11,7 @@ export default {
   jsxSingleQuote: true,
   arrowParens: "avoid",
   endOfLine: "lf",
-  plugins: ["prettier-plugin-tailwindcss", "@ianvs/prettier-plugin-sort-imports"],
+  plugins: ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
 
   // @ianvs/prettier-plugin-sort-imports
   // https://github.com/IanVS/prettier-plugin-sort-imports
