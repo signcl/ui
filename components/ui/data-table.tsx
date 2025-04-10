@@ -86,10 +86,12 @@ export function DataTable<TData, TValue>({
         )}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant='outline' tint='default'>
-              <IconFilter className='mr-2 h-4 w-4' />
-              Columns
-            </Button>
+            <div>
+              <Button variant='outline' tint='default'>
+                <IconFilter className='h-4 w-4' />
+                Columns
+              </Button>
+            </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent align='end'>
             {table
