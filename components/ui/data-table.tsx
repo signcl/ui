@@ -11,6 +11,7 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   SortingState,
+  TableOptions,
   useReactTable,
   VisibilityState,
 } from '@tanstack/react-table'
@@ -30,6 +31,7 @@ interface DataTableProps<TData, TValue> {
   data: TData[]
   filterColumn?: string
   filterPlaceholder?: string
+  options?: Partial<TableOptions<TData>>
 }
 
 export function DataTable<TData, TValue>({
@@ -37,6 +39,7 @@ export function DataTable<TData, TValue>({
   data,
   filterColumn,
   filterPlaceholder = 'Filter...',
+  options,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
@@ -60,6 +63,7 @@ export function DataTable<TData, TValue>({
       columnVisibility,
       rowSelection,
     },
+    ...options,
   })
 
   return (
@@ -159,9 +163,7 @@ export function DataTable<TData, TValue>({
 }
 
 // Helper function to create a sortable header component
-export function getSortableHeader<TData, TValue>(
-  header: string
-): React.FC<{
+export function getSortableHeader(header: string): React.FC<{
   column: {
     getCanSort: () => boolean
     getIsSorted: () => false | 'asc' | 'desc'
