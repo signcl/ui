@@ -1,7 +1,6 @@
 'use client'
 
 import * as ResizablePrimitive from 'react-resizable-panels'
-import { IconGripVertical } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
 
@@ -27,13 +26,13 @@ const ResizableHandle = ({
       'after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2',
 
       // Hover state
-      'data-[resize-handle-state=hover]:bg-fg/40 data-[resize-handle-state=hover]:[&>[data-slot=handle]]:text-fg/50 data-[resize-handle-state=hover]:[&>[data-slot=handle]]:border-fg/40',
+      'data-[resize-handle-state=hover]:bg-ac/60 data-[resize-handle-state=hover]:[&>[data-slot=handle]]:bg-ac/20 data-[resize-handle-state=hover]:[&>[data-slot=handle]]:border-ac/60 data-[resize-handle-state=hover]:[&>[data-slot=handle]]:backdrop-blur-sm',
 
       // Drag state
-      'data-[resize-handle-state=drag]:bg-fg data-[resize-handle-state=drag]:[&>[data-slot=handle]]:text-fg data-[resize-handle-state=drag]:[&>[data-slot=handle]]:border-fg',
+      'data-[resize-handle-state=drag]:bg-ac data-[resize-handle-state=drag]:[&>[data-slot=handle]]:text-fg data-[resize-handle-state=drag]:[&>[data-slot=handle]]:border-ac data-[resize-handle-state=drag]:[&>[data-slot=handle]]:bg-ac',
 
       // Focus state
-      'focus-visible:bg-ac focus-visible:[&>[data-slot=handle]]:text-ac focus-visible:[&>[data-slot=handle]]:border-ac focus-visible:outline-none',
+      'focus-visible:bg-ac focus-visible:[&>[data-slot=handle]]:text-ac focus-visible:[&>[data-slot=handle]]:border-ac focus-visible:[&>[data-slot=handle]]:bg-ac/20 focus-visible:outline-none focus-visible:[&>[data-slot=handle]]:backdrop-blur-sm',
 
       // Vertical handle
       'data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:translate-x-0 data-[panel-group-direction=vertical]:after:-translate-y-1/2 [&[data-panel-group-direction=vertical]>[data-slot=handle]]:rotate-90',
@@ -44,9 +43,9 @@ const ResizableHandle = ({
     {withHandle && (
       <div
         data-slot='handle'
-        className='bg-bg text-fg/30 z-10 flex h-4 w-3 items-center justify-center rounded-sm border'
+        className='bg-bg text-fg/30 z-10 flex h-6 w-2 items-center justify-center rounded-sm border'
       >
-        <IconGripVertical className='size-2.5' />
+        <div className='h-6 w-2' />
       </div>
     )}
   </ResizablePrimitive.PanelResizeHandle>
