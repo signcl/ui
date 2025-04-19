@@ -24,6 +24,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
           title: 'font-medium text-base',
           description: 'text-sm',
           closeButton: 'floating',
+          content: 'flex-auto',
           info: '**:data-icon:text-sky-600',
           success: '**:data-icon:text-green-600',
           warning: '**:data-icon:text-amber-600',
