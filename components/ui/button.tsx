@@ -16,7 +16,7 @@ const buttonVariantsConfig = {
     default: 'border focus-visible:border-current',
     solid: 'border focus-visible:border-current',
     outline: 'border bg-transparent focus-visible:border-current',
-    link: 'border focus-visible:border-current text-fg not-disabled:hover:text-ac bg-transparent',
+    link: 'border border-transparent focus-visible:border-transparent text-fg not-disabled:hover:text-ac bg-transparent',
   },
   tint: {
     default: 'text-fg focus-visible:ring-fg/30',
