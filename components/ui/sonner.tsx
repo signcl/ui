@@ -20,10 +20,11 @@ const Toaster = ({ ...props }: ToasterProps) => {
       toastOptions={{
         unstyled: true,
         classNames: {
-          toast: 'floating p-3 rounded-lg flex gap-2 items-start w-(--width)',
+          toast: 'group floating p-3 rounded-lg flex gap-2 items-start w-(--width)',
           title: 'font-medium text-base',
           description: 'text-sm',
-          closeButton: 'floating absolute -top-1.5 -left-2 rounded-full size-5 flex items-center justify-center',
+          closeButton:
+            'group-hover:opacity-100 opacity-0 bg-bg shadow-border absolute -top-1 -left-1.5 rounded-full size-5 flex items-center justify-center',
           content: 'flex-auto',
           info: '**:data-icon:text-sky-600',
           success: '**:data-icon:text-green-600',
