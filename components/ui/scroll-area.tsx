@@ -52,7 +52,7 @@ function ScrollArea({
       <RadixScrollArea.Viewport
         ref={viewportRef}
         className={cn(
-          'scroll-area size-full',
+          'scroll-area focus-visible:outline-ac/20 size-full',
           // https://github.com/radix-ui/primitives/issues/926
           '[&>div]:block!',
           offsetScrollbars && {
