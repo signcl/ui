@@ -18,7 +18,7 @@
   --lch-l-clamp-min: 15%;
   --lch-l-clamp-max: 99%;
   /* Used by colors except fg, bg, ac and hl which needs to be dynamic */
-  --lch-c: 0.28;
+  --lch-c: 0.2;
 
   /* Tailwind built-in color hue in OKLCH */
   /* https://tailwindcss.com/docs/colors */
