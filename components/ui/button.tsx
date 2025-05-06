@@ -7,10 +7,10 @@ import { Loading } from './loading'
 
 const buttonVariantsConfig = {
   size: {
-    sm: 'text-xs px-[0.5em] py-[0.25em] rounded-sm',
-    default: 'text-base px-[0.625em] py-[0.25em]',
-    lg: 'text-lg px-[0.8em] py-[0.325em]',
-    icon: 'text-base p-[0.25em]',
+    sm: 'text-xs px-2 py-[calc(0.25rem-1px)] rounded-sm',
+    default: 'text-base px-2.5 py-[calc(0.25rem-1px)]',
+    lg: 'text-lg px-3 py-[calc(0.25rem-1px)]',
+    icon: 'text-base p-[calc(0.25rem-1px)]',
   },
   variant: {
     default: 'border focus-visible:border-current',

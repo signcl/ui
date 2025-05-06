@@ -22,7 +22,8 @@ function SelectTrigger({ className, children, withoutIcon, icon, ...props }: Sel
     <SelectPrimitive.Trigger
       data-slot='trigger'
       className={cn(
-        'placeholder:text-fg/60 flex w-full items-center justify-between gap-x-1 rounded-md border bg-transparent px-[.625em] py-[.25em] text-start text-base font-medium disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
+        // Refer to Button.tsx for the button styles
+        'placeholder:text-fg/60 flex w-full items-center justify-between gap-x-1 rounded-md border bg-transparent px-2.5 py-[calc(0.25rem-1px)] text-start text-base font-medium disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
         'focus-ring',
         className
       )}
@@ -82,7 +83,8 @@ function SelectContent({
       <SelectPrimitive.Content
         data-slot='content'
         className={cn(
-          'floating text-fg data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative max-h-[350px] min-w-[8rem] overflow-hidden rounded-md',
+          'floating text-fg relative max-h-[350px] min-w-[8rem] overflow-hidden rounded-md text-base',
+          'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
           position === 'popper' &&
             'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
           className
@@ -112,7 +114,7 @@ function SelectLabel({ className, ...props }: React.ComponentProps<typeof Select
   return (
     <SelectPrimitive.Label
       data-slot='label'
-      className={cn('text-fg/60 py-1.5 pr-2 pl-7 text-xs leading-none uppercase', className)}
+      className={cn('text-fg/60 px-2 py-1.5 text-xs leading-none uppercase', className)}
       {...props}
     />
   )
@@ -128,15 +130,14 @@ function SelectItem({ className, children, plain, ...props }: SelectItemProps) {
     <SelectPrimitive.Item
       data-slot='item'
       className={cn(
-        'focus:bg-ac/10 focus:text-ac relative flex w-full cursor-default items-start py-1.5 pr-2 text-base outline-hidden select-none',
+        'focus:bg-ac/10 focus:text-ac relative flex w-full cursor-default items-start gap-1 px-2 py-1.5 outline-hidden select-none',
         'data-[state=checked]:text-ac data-disabled:pointer-events-none data-disabled:opacity-50 data-[state=checked]:font-medium',
-        plain ? 'pl-2' : 'pl-7',
         className
       )}
       {...props}
     >
       {!plain && (
-        <span className='absolute top-2.5 left-2 flex size-4 items-center justify-center'>
+        <span className='mt-1 flex size-4 items-center justify-center'>
           <SelectPrimitive.ItemIndicator>
             {/* <Check className='size-4' /> */}
             <div className='size-1.5 rounded-full bg-current' />

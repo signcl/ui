@@ -18,9 +18,9 @@ const inputVariants = cva(
   {
     variants: {
       inputSize: {
-        sm: 'px-[.5em] py-[.25em] text-xs',
-        md: 'px-[.625em] py-[.25em] text-base rounded-md',
-        lg: 'px-[.625em] py-[.325em] text-lg rounded-md',
+        sm: 'px-2 py-[calc(0.25rem-1px)] text-xs',
+        md: 'px-2.5 py-[calc(0.25rem-1px)] text-base rounded-md',
+        lg: 'px-3 py-[calc(0.25rem-1px)] text-lg rounded-md',
       },
     },
     defaultVariants: {

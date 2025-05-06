@@ -38,6 +38,15 @@ export const IconOnly: Story = {
     'aria-label': 'Toggle microphone',
     'children': <IconMicrophone />,
   },
+  render: args => {
+    return (
+      <div className='flex items-start gap-2'>
+        <Toggle size={'sm'} {...args} />
+        <Toggle size={'default'} {...args} />
+        <Toggle size={'lg'} {...args} />
+      </div>
+    )
+  },
 }
 
 export const Outlined: Story = {

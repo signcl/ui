@@ -16,26 +16,26 @@ const toggleVariants = cva(
         icon: 'border border-transparent',
       },
       size: {
-        sm: 'text-xs px-[0.5em] py-[0.25em] rounded-sm',
-        default: 'text-base px-[0.625em] py-[0.25em]',
-        lg: 'text-lg px-[0.8em] py-[0.325em]',
+        sm: 'text-xs px-2 py-[calc(0.25rem-1px)] rounded-sm',
+        default: 'text-base px-2.5 py-[calc(0.25rem-1px)]',
+        lg: 'text-lg px-3 py-[calc(0.25rem-1px)]',
       },
     },
     compoundVariants: [
       {
         variant: 'icon',
         size: 'sm',
-        className: 'text-xs p-[0.25em] rounded-sm',
+        className: 'text-xs p-[calc(0.25rem-1px)] rounded-sm [&_svg]:size-4',
       },
       {
         variant: 'icon',
         size: 'default',
-        className: 'text-base p-[0.25em]',
+        className: 'text-base p-[calc(0.25rem-1px)] [&_svg]:size-6',
       },
       {
         variant: 'icon',
         size: 'lg',
-        className: 'text-lg p-[0.325em]',
+        className: 'text-lg p-[calc(0.25rem-1px)] [&_svg]:size-7',
       },
     ],
     defaultVariants: {
