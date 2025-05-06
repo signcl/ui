@@ -29,7 +29,7 @@ function DropdownMenuSubContent({
         data-slot='dropdown-menu-sub-content'
         sideOffset={sideOffset}
         className={cn(
-          'floating text-fg min-w-[8rem] overflow-hidden rounded-md border px-0 py-1',
+          'floating text-fg min-w-[8rem] overflow-hidden rounded-md border px-0 py-1 text-base lg:text-sm',
           'max-h-[var(--radix-dropdown-menu-content-available-height)] max-w-[var(--radix-dropdown-menu-content-available-width)] overflow-y-auto',
           'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
           className
@@ -52,7 +52,7 @@ function DropdownMenuContent({
         data-slot='dropdown-menu-content'
         sideOffset={sideOffset}
         className={cn(
-          'floating text-fg min-w-[8rem] overflow-hidden rounded-md border px-0 py-1',
+          'floating text-fg min-w-[8rem] overflow-hidden rounded-md border px-0 py-1 text-base lg:text-sm',
           'max-h-[var(--radix-dropdown-menu-content-available-height)] max-w-[var(--radix-dropdown-menu-content-available-width)] overflow-y-auto',
           'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
           className
@@ -127,7 +127,7 @@ function DropdownMenuCheckboxItem({
     <DropdownMenuPrimitive.CheckboxItem
       data-slot='dropdown-menu-checkbox-item'
       className={cn(
-        'relative flex cursor-default items-start py-1.5 pr-3 pl-8 outline-hidden select-none',
+        'relative flex cursor-default items-start gap-1 px-3 py-1.5 outline-hidden select-none',
         'focus:bg-ac/10 focus:text-ac data-disabled:pointer-events-none data-disabled:opacity-50',
         hideIndicator && 'data-[state=checked]:text-ac pl-3',
         className
@@ -136,11 +136,11 @@ function DropdownMenuCheckboxItem({
       {...props}
     >
       {!hideIndicator && (
-        <span className='absolute top-2.5 left-3 flex size-4 items-center justify-center'>
+        <DropdownMenuIcon>
           <DropdownMenuPrimitive.ItemIndicator asChild>
             <IconCheck className='size-4' />
           </DropdownMenuPrimitive.ItemIndicator>
-        </span>
+        </DropdownMenuIcon>
       )}
       {children}
     </DropdownMenuPrimitive.CheckboxItem>
@@ -159,7 +159,7 @@ function DropdownMenuRadioItem({
     <DropdownMenuPrimitive.RadioItem
       data-slot='dropdown-menu-radio-item'
       className={cn(
-        'relative flex cursor-default items-start py-1.5 pr-3 pl-8 outline-hidden select-none',
+        'relative flex cursor-default items-start gap-1 px-3 py-1.5 outline-hidden select-none',
         'focus:bg-ac/10 focus:text-ac data-disabled:pointer-events-none data-disabled:opacity-50',
         hideIndicator && 'data-[state=checked]:text-ac pl-3',
         className
@@ -167,12 +167,12 @@ function DropdownMenuRadioItem({
       {...props}
     >
       {!hideIndicator && (
-        <span className='absolute top-2.5 left-3 flex size-4 items-center justify-center'>
+        <DropdownMenuIcon>
           <DropdownMenuPrimitive.ItemIndicator asChild>
             {/* <IconCircleDotFilled className='size-3' /> */}
             <div className='size-1.5 rounded-full bg-current' />
           </DropdownMenuPrimitive.ItemIndicator>
-        </span>
+        </DropdownMenuIcon>
       )}
       {children}
     </DropdownMenuPrimitive.RadioItem>
@@ -211,7 +211,7 @@ function DropdownMenuShortcut({ className, ...props }: React.HTMLAttributes<HTML
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut'
 
 function DropdownMenuIcon({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) {
-  return <span className={cn('mt-1 flex size-4 items-center justify-center', className)} {...props} />
+  return <span className={cn('mt-1 flex size-4 items-center justify-center lg:mt-0.5', className)} {...props} />
 }
 DropdownMenuIcon.displayName = 'DropdownMenuIcon'
 
