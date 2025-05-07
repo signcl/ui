@@ -46,7 +46,7 @@ export const Simple: Story = {
   render: () => (
     <Card className='w-[350px]'>
       <CardHeader>
-        <CardTitle>Create project</CardTitle>
+        <CardTitle>Create project with a very very very long title</CardTitle>
         <CardDescription>Deploy your new project in one-click.</CardDescription>
       </CardHeader>
       <CardContent>
