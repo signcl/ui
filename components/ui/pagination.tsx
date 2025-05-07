@@ -1,6 +1,6 @@
 'use client'
 
-import { ComponentProps, Fragment } from 'react'
+import { Fragment, type ComponentProps } from 'react'
 import { IconChevronLeft, IconChevronRight, IconDots } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'

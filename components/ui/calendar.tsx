@@ -2,7 +2,7 @@
 
 'use client'
 
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 // We can remove date-fns if no custom locale is needed:
 // https://daypicker.dev/upgrading
 import { zhCN } from 'date-fns/locale'

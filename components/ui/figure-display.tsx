@@ -1,6 +1,6 @@
 'use client'
 
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { IconHelpHexagonFilled } from '@tabler/icons-react'
 

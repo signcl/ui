@@ -3,17 +3,17 @@
 import * as React from 'react'
 import { IconArrowDown, IconArrowUp, IconFilter, IconX } from '@tabler/icons-react'
 import {
-  ColumnDef,
-  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  SortingState,
-  TableOptions,
   useReactTable,
-  VisibilityState,
+  type ColumnDef,
+  type ColumnFiltersState,
+  type SortingState,
+  type TableOptions,
+  type VisibilityState,
 } from '@tanstack/react-table'
 
 import { Button } from '@/components/ui/button'

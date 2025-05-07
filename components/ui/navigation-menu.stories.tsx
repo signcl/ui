@@ -146,7 +146,7 @@ export const HorizontalLinks: Story = {
                 <NavigationMenuLink asChild>
                   <a
                     className='from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none select-none focus:shadow-md'
-                    href='/'
+                    href='https://github.com'
                   >
                     <div className='mt-4 mb-2 text-lg font-medium'>shadcn/ui</div>
                     <p className='text-muted-foreground text-sm leading-tight'>
