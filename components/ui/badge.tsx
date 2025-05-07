@@ -38,6 +38,8 @@ const badgeVariantsConfig = {
     pink: 'bg-pink-500/10 text-pink-600',
     rose: 'bg-rose-500/10 text-rose-600',
     dark: 'bg-fg/10 text-fg',
+    white: 'bg-white/10 text-white',
+    black: 'bg-black/10 text-black',
   },
   radius: {
     default: 'rounded-full',
@@ -80,6 +82,8 @@ const dotVariants = cva('absolute top-1/2 -translate-y-1/2 rounded-full', {
       pink: 'bg-pink-600',
       rose: 'bg-rose-600',
       dark: 'bg-fg',
+      white: 'bg-white',
+      black: 'bg-black',
     },
   },
   defaultVariants: {
@@ -113,6 +117,8 @@ const badgeVariants = cva(
       { variant: 'solid', tint: 'pink', className: 'bg-pink-600 border-pink-600 text-bg' },
       { variant: 'solid', tint: 'rose', className: 'bg-rose-600 border-rose-600 text-bg' },
       { variant: 'solid', tint: 'dark', className: 'bg-fg border-fg text-bg' },
+      { variant: 'solid', tint: 'white', className: 'bg-white border-white text-black' },
+      { variant: 'solid', tint: 'black', className: 'bg-black border-black text-white' },
 
       // Dot variant padding adjustments
       { variant: 'dot', size: 'default', className: 'pl-[1.125rem]' },

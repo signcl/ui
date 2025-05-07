@@ -41,6 +41,8 @@ const buttonVariantsConfig = {
     fuchsia: 'text-fuchsia-600 focus-visible:ring-fuchsia-500/30',
     pink: 'text-pink-600 focus-visible:ring-pink-500/30',
     rose: 'text-rose-600 focus-visible:ring-rose-500/30',
+    white: 'text-white focus-visible:ring-white/30',
+    black: 'text-black focus-visible:ring-black/30',
   },
 }
 
@@ -70,6 +72,8 @@ const buttonVariants = cva(
       { variant: 'default', tint: 'fuchsia', className: 'border-fuchsia-500/10 bg-fuchsia-500/10 not-disabled:hover:bg-fuchsia-500/20' },
       { variant: 'default', tint: 'pink', className: 'border-pink-500/10 bg-pink-500/10 not-disabled:hover:bg-pink-500/20' },
       { variant: 'default', tint: 'rose', className: 'border-rose-500/10 bg-rose-500/10 not-disabled:hover:bg-rose-500/20' },
+      { variant: 'default', tint: 'white', className: 'border-white/10 bg-white/10 not-disabled:hover:bg-white/20' },
+      { variant: 'default', tint: 'black', className: 'border-black/10 bg-black/10 not-disabled:hover:bg-black/20' },
 
       // Solid
       { variant: 'solid', tint: 'default', className: 'bg-fg border-fg text-bg not-disabled:hover:bg-fg/80' },
@@ -92,6 +96,8 @@ const buttonVariants = cva(
       { variant: 'solid', tint: 'fuchsia', className: 'bg-fuchsia-600 border-fuchsia-600 text-bg not-disabled:hover:bg-fuchsia-700', },
       { variant: 'solid', tint: 'pink', className: 'bg-pink-600 border-pink-600 text-bg not-disabled:hover:bg-pink-700' },
       { variant: 'solid', tint: 'rose', className: 'bg-rose-600 border-rose-600 text-bg not-disabled:hover:bg-rose-700' },
+      { variant: 'solid', tint: 'white', className: 'bg-white border-white text-black not-disabled:hover:bg-white/80' },
+      { variant: 'solid', tint: 'black', className: 'bg-black border-black text-white not-disabled:hover:bg-black/80' },
 
       // Outline
       { variant: 'outline', tint: 'default', className: 'border-fg/30 not-disabled:hover:text-fg/80 not-disabled:hover:border-fg/80 data-[state=open]:border-ac data-[state=open]:text-ac' },
@@ -114,6 +120,8 @@ const buttonVariants = cva(
       { variant: 'outline', tint: 'fuchsia', className: 'border-fuchsia-600 not-disabled:hover:text-fuchsia-700 not-disabled:hover:border-fuchsia-700' },
       { variant: 'outline', tint: 'pink', className: 'border-pink-600 not-disabled:hover:text-pink-700 not-disabled:hover:border-pink-700' },
       { variant: 'outline', tint: 'rose', className: 'border-rose-600 not-disabled:hover:text-rose-700 not-disabled:hover:border-rose-700' },
+      { variant: 'outline', tint: 'white', className: 'border-white not-disabled:hover:text-white/80 not-disabled:hover:border-white/80' },
+      { variant: 'outline', tint: 'black', className: 'border-black not-disabled:hover:text-black/80 not-disabled:hover:border-black/80' },
 
       // Link
       { variant: 'link', tint: 'default', className: 'not-disabled:hover:text-ac data-[state=open]:text-ac' },
@@ -136,6 +144,8 @@ const buttonVariants = cva(
       { variant: 'link', tint: 'fuchsia', className: 'not-disabled:hover:text-fuchsia-500' },
       { variant: 'link', tint: 'pink', className: 'not-disabled:hover:text-pink-500' },
       { variant: 'link', tint: 'rose', className: 'not-disabled:hover:text-rose-500' },
+      { variant: 'link', tint: 'white', className: 'not-disabled:hover:text-white/80' },
+      { variant: 'link', tint: 'black', className: 'not-disabled:hover:text-black/80' },
 
       // Dot variant padding adjustments
       // { variant: 'dot', size: 'default', className: 'pl-[1.125rem]' },
