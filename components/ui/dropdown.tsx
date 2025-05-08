@@ -211,7 +211,7 @@ function DropdownMenuShortcut({ className, ...props }: React.HTMLAttributes<HTML
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut'
 
 function DropdownMenuIcon({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) {
-  return <span className={cn('mt-1 flex size-4 items-center justify-center', className)} {...props} />
+  return <span className={cn('mt-1 flex size-4 shrink-0 items-center justify-center', className)} {...props} />
 }
 DropdownMenuIcon.displayName = 'DropdownMenuIcon'
 

@@ -206,6 +206,86 @@ export const WithCheckboxes: Story = {
   },
 }
 
+export const WithRadioGroup: Story = {
+  render: () => {
+    const [position, setPosition] = useState('bottom')
+
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button>Position</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+            <DropdownMenuRadioItem value='top'>Top</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='bottom'>Bottom</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='right'>Right</DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    )
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const trigger = canvas.getByText('Position')
+    await userEvent.click(trigger)
+  },
+}
+
+export const WithMixedContent: Story = {
+  render: () => {
+    const [position, setPosition] = useState('bottom')
+    const [showStatusBar, setShowStatusBar] = useState(true)
+    const [showActivityBar, setShowActivityBar] = useState(false)
+
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button>Position</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+            <DropdownMenuRadioItem value='top'>Top</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='bottom'>
+              Bottom
+              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='right'>
+              <div>
+                <div>Right</div>
+                <div className='text-fg/50 text-xs'>Double-click an event to mark it as read</div>
+              </div>
+              <DropdownMenuShortcut>⌘R</DropdownMenuShortcut>
+            </DropdownMenuRadioItem>
+            <DropdownMenuCheckboxItem checked={showStatusBar} onCheckedChange={setShowStatusBar}>
+              Status Bar
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem checked={showActivityBar} onCheckedChange={setShowActivityBar}>
+              Activity Bar
+              <DropdownMenuShortcut>⌘A</DropdownMenuShortcut>
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuItem>
+              <DropdownMenuIcon>
+                <IconArrowBackUpDouble />
+              </DropdownMenuIcon>
+              <div>
+                <div>Right</div>
+                <div className='text-fg/50 text-xs'>Double-click an event to mark it as read</div>
+              </div>
+              <DropdownMenuShortcut>⌘T</DropdownMenuShortcut>
+            </DropdownMenuItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    )
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const trigger = canvas.getByText('Position')
+    await userEvent.click(trigger)
+  },
+}
+
 export const WithHiddenIndicators: Story = {
   render: () => {
     const [showStatusBar, setShowStatusBar] = useState(true)
@@ -241,32 +321,6 @@ export const WithHiddenIndicators: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const trigger = canvas.getByText('Hidden Indicators')
-    await userEvent.click(trigger)
-  },
-}
-
-export const WithRadioGroup: Story = {
-  render: () => {
-    const [position, setPosition] = useState('bottom')
-
-    return (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button>Position</Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-            <DropdownMenuRadioItem value='top'>Top</DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value='bottom'>Bottom</DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value='right'>Right</DropdownMenuRadioItem>
-          </DropdownMenuRadioGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    )
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const trigger = canvas.getByText('Position')
     await userEvent.click(trigger)
   },
 }
