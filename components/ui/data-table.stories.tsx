@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { IconDots } from '@tabler/icons-react'
-import { ColumnDef } from '@tanstack/react-table'
+import type { ColumnDef } from '@tanstack/react-table'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
