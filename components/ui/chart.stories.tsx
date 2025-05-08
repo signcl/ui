@@ -19,12 +19,12 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { IconChartBar, IconChartLine } from '@tabler/icons-react'
 
 import {
-  ChartConfig,
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
+  type ChartConfig,
 } from './chart'
 
 const meta = {
