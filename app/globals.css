@@ -1,7 +1,4 @@
 @import 'tailwindcss';
-
-/* Need migration */
-/* @plugin 'tailwindcss-animate'; */
 @import 'tw-animate-css';
 
 @import './kladewind.css';
