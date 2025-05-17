@@ -72,7 +72,7 @@ export function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot='accordion-trigger'
         className={cn(
-          'flex w-full items-center justify-between gap-x-3 p-3 text-left',
+          'flex w-full items-center justify-between gap-x-3 p-3 text-left rounded',
           'data-[state=open]:from-fg/5 data-[state=open]:to-fg/0 data-[state=open]:bg-linear-to-b [&[data-state=open]>svg]:rotate-180',
           'focus-ring',
           className
