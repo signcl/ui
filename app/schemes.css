@@ -25,6 +25,7 @@
 
     /* Tailwind built-in color hue in OKLCH */
     /* https://tailwindcss.com/docs/colors */
+    /* Deprecated May 21, 2025: Now switched to Tailwind builtin OKLCH colors  */
     --hue-gray: 262;
     --hue-red: 20;
     --hue-orange: 50;
