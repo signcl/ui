@@ -40,7 +40,7 @@ const SegmentedControlContext = React.createContext<{
   tint?: VariantProps<typeof segmentedControlItemVariants>['tint']
 }>({})
 
-const SegmentedControl = React.forwardRef<React.ElementRef<typeof ToggleGroup>, SegmentedControlProps>(
+const SegmentedControl = React.forwardRef<React.ComponentRef<typeof ToggleGroup>, SegmentedControlProps>(
   ({ className, size, variant = 'default', tint = 'default', children, ...props }, ref) => (
     <SegmentedControlContext.Provider value={{ tint }}>
       <ToggleGroup
@@ -62,7 +62,7 @@ type SegmentedControlItemProps = React.ComponentPropsWithoutRef<typeof ToggleGro
   tint?: VariantProps<typeof segmentedControlItemVariants>['tint']
 }
 
-const SegmentedControlItem = React.forwardRef<React.ElementRef<typeof ToggleGroupItem>, SegmentedControlItemProps>(
+const SegmentedControlItem = React.forwardRef<React.ComponentRef<typeof ToggleGroupItem>, SegmentedControlItemProps>(
   ({ className, children, tint, ...props }, ref) => {
     const context = React.useContext(SegmentedControlContext)
     const itemTint = tint || context.tint
