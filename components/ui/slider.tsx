@@ -43,11 +43,11 @@ function Slider({
 
   // Check if a mark is within the selected range
   const isMarkInRange = (mark: number) => {
-    if (Array.isArray(value) && value.length === 2) {
+    if (Array.isArray(value) && value.length === 2 && typeof value[0] === 'number' && typeof value[1] === 'number') {
       const [start, end] = value
       return mark >= start && mark <= end
     }
-    if (Array.isArray(value) && value.length === 1) {
+    if (Array.isArray(value) && value.length === 1 && typeof value[0] === 'number') {
       return mark <= value[0]
     }
     return false
@@ -58,7 +58,7 @@ function Slider({
     if (!onValueChange) return
 
     // Handle range slider (array of 2 values)
-    if (Array.isArray(value) && value.length === 2) {
+    if (Array.isArray(value) && value.length === 2 && typeof value[0] === 'number' && typeof value[1] === 'number') {
       const [start, end] = value
       // Determine which thumb to move based on which is closer to the clicked value
       const distanceToStart = Math.abs(clickedValue - start)

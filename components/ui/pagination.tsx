@@ -151,9 +151,10 @@ function Pagination({
 
         {visiblePages.map((page, index, arr) => {
           // Check if there's a gap that needs an ellipsis
-          if (index > 0 && page !== arr[index - 1] + 1) {
+          if (index > 0 && page !== arr[index - 1]! + 1) {
+            const prevPage = arr[index - 1]!
             // Get the list of hidden pages in this gap
-            const hiddenPages = allPages.filter(p => p > arr[index - 1] && p < page)
+            const hiddenPages = allPages.filter(p => p > prevPage && p < page)
 
             return (
               <Fragment key={`ellipsis-${index}`}>
