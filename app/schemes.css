@@ -47,6 +47,7 @@
   }
 
   /* Global dark theme overrides */
+  :root.dark,
   [data-theme='dark'] {
     /* --primary-c: 0.02; */
     --primary-c: 0.01;
