@@ -222,7 +222,7 @@ export const VariantLink: Story = {
 }
 
 export const VariantCombinations: Story = {
-  render: args => {
+  render: () => {
     return (
       <div className='space-y-4'>
         <div className='flex items-start gap-2'>

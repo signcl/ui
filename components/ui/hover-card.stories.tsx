@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { IconCalendar, IconUser } from '@tabler/icons-react'
+import { IconCalendar } from '@tabler/icons-react'
 
 import { Avatar, AvatarFallback, AvatarImage } from './avatar' // Adjust import path as needed
 import { Button } from './button' // Adjust import path as needed

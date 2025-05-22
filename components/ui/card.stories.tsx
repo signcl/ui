@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { IconCheck, IconCircleCheck, IconCircleCheckFilled } from '@tabler/icons-react'
+import { IconCircleCheckFilled } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
 

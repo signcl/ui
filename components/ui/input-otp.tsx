@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { OTPInput, OTPInputContext } from 'input-otp'
-import { IconPoint, IconPointFilled } from '@tabler/icons-react'
+import { IconPointFilled } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
 

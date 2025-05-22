@@ -12,7 +12,7 @@ export interface CommandProps extends React.ComponentProps<'div'> {
 }
 
 export function Command({ command }: CommandProps) {
-  const [copied, setCopied] = useState(false)
+  const [, setCopied] = useState(false)
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command).then(() => {

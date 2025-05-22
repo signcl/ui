@@ -8,7 +8,7 @@ import { registryItemSchema } from 'shadcn/registry'
 type Params = Promise<{ name: string }>
 
 // This route shows an example for serving a component using a route handler.
-export async function GET(request: Request, { params }: { params: Params }) {
+export async function GET(_: Request, { params }: { params: Params }) {
   try {
     const { name } = await params
     // Cache the registry import

@@ -1,11 +1,8 @@
 import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { IconCircle } from '@tabler/icons-react'
-
-import { Button } from './button' // Adjust the import path as needed
 
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from './input-otp'
-import { Label } from './label' // Adjust the import path as needed
+import { Label } from './label'
 
 const meta = {
   title: 'UI/InputOTP',

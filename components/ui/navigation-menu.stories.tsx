@@ -5,7 +5,6 @@ import { IconCircle, IconRocket, IconSettings } from '@tabler/icons-react'
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
