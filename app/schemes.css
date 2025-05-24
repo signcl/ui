@@ -55,7 +55,7 @@
     --secondary-c: 0.212;
     --secondary-h: 257.2136;
     --mix-base: #fff;
-    --mix-factor: 60%;
+    --mix-factor: 75%;
 
     /* OKLCH lightness helpers */
     --fg-l: 78%;

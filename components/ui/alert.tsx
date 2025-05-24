@@ -7,10 +7,10 @@ const alertVariantsConfig = {
   tint: {
     default: 'bg-bg/10 text-fg border',
     accent: 'bg-ac/5 border-ac',
-    danger: 'border-red-600/50 text-red-600 bg-red-600/5',
-    success: 'border-green-600/50 text-green-600 bg-green-600/5',
-    warning: 'border-amber-600/50 text-amber-600 bg-amber-600/5',
-    info: 'border-blue-600/50 text-blue-600 bg-blue-600/5',
+    danger: 'border-red-500/50 text-red-500 bg-red-500/5',
+    success: 'border-green-500/50 text-green-500 bg-green-500/5',
+    warning: 'border-amber-500/50 text-amber-500 bg-amber-500/5',
+    info: 'border-blue-500/50 text-blue-500 bg-blue-500/5',
   },
 }
 
