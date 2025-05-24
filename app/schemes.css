@@ -1,7 +1,7 @@
 @layer base {
   :root {
     /* Colors */
-    /* 目前 canary 等浏览器处理 OKLCH 的 colors.bg 100% 亮度时有 bug，建议值为 0.04 */
+    /* Currently, browsers like Canary have a bug when processing OKLCH colors.bg at 100% brightness, the recommended value is 0.04 */
     /* --primary-c: 0.01; */
     --primary-c: 0;
     --primary-h: 257.2136;
