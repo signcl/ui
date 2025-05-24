@@ -49,6 +49,6 @@ export const CustomWeight: Story = {
 
 export const CustomColor: Story = {
   args: {
-    className: 'text-emerald-600',
+    className: 'text-emerald-500',
   },
 }

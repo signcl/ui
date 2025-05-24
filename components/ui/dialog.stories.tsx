@@ -186,7 +186,7 @@ export const Destructive: Story = {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className='text-red-600'>Delete Account</DialogTitle>
+          <DialogTitle className='text-rose-500'>Delete Account</DialogTitle>
           <DialogDescription>
             This action cannot be undone. This will permanently delete your account and remove your data from our
             servers.

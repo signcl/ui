@@ -44,7 +44,7 @@ export const Required: Story = {
   render: () => (
     <div className='grid w-full max-w-sm gap-y-2'>
       <Label htmlFor='username'>
-        Username <span className='text-red-500'>*</span>
+        Username <span className='text-rose-500'>*</span>
       </Label>
       <Input type='text' id='username' required />
     </div>
@@ -101,7 +101,7 @@ export const WithHelpText: Story = {
 // Label with custom styling
 export const CustomStyling: Story = {
   render: () => (
-    <Label className='text-lg font-bold text-blue-600' htmlFor='custom'>
+    <Label className='text-lg font-bold text-blue-500' htmlFor='custom'>
       Custom Styled Label
     </Label>
   ),
@@ -123,11 +123,11 @@ export const WithNestedContent: Story = {
 export const WithError: Story = {
   render: () => (
     <div className='grid w-full max-w-sm gap-y-2'>
-      <Label htmlFor='error-input' className='text-red-600'>
+      <Label htmlFor='error-input' className='text-rose-500'>
         Invalid Input
       </Label>
-      <Input type='text' id='error-input' className='border-red-600' />
-      <div className='text-xs text-red-600'>This field is required</div>
+      <Input type='text' id='error-input' className='border-rose-500' />
+      <div className='text-xs text-rose-500'>This field is required</div>
     </div>
   ),
 }

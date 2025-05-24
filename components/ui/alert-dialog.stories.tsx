@@ -100,7 +100,7 @@ export const CustomStyling: Story = {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle className='text-red-600'>Delete Account</AlertDialogTitle>
+          <AlertDialogTitle className='text-rose-500'>Delete Account</AlertDialogTitle>
           <AlertDialogDescription>
             Are you absolutely sure? This action is permanent and cannot be undone.
           </AlertDialogDescription>

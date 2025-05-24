@@ -82,36 +82,36 @@ export const ColoredBoxShadows: Story = {
       <div>
         <h2 className='mb-4 text-xl font-semibold'>Colored Box Shadows</h2>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          <ShadowExample name='Blue' className='shadow-lg shadow-blue-600/50' />
-          <ShadowExample name='Red' className='shadow-lg shadow-red-600/50' />
-          <ShadowExample name='Green' className='shadow-lg shadow-green-600/50' />
-          <ShadowExample name='Yellow' className='shadow-lg shadow-yellow-600/50' />
-          <ShadowExample name='Purple' className='shadow-lg shadow-purple-600/50' />
-          <ShadowExample name='Pink' className='shadow-lg shadow-pink-600/50' />
+          <ShadowExample name='Blue' className='shadow-lg shadow-blue-500/50' />
+          <ShadowExample name='Red' className='shadow-lg shadow-red-500/50' />
+          <ShadowExample name='Green' className='shadow-lg shadow-green-500/50' />
+          <ShadowExample name='Yellow' className='shadow-lg shadow-yellow-500/50' />
+          <ShadowExample name='Purple' className='shadow-lg shadow-purple-500/50' />
+          <ShadowExample name='Pink' className='shadow-lg shadow-pink-500/50' />
         </div>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          <ShadowExample name='Blue' className='inset-shadow-2xs inset-shadow-blue-600/50' />
-          <ShadowExample name='Red' className='inset-shadow-2xs inset-shadow-red-600/50' />
-          <ShadowExample name='Green' className='inset-shadow-2xs inset-shadow-green-600/50' />
-          <ShadowExample name='Yellow' className='inset-shadow-2xs inset-shadow-yellow-600/50' />
-          <ShadowExample name='Purple' className='inset-shadow-2xs inset-shadow-purple-600/50' />
-          <ShadowExample name='Pink' className='inset-shadow-2xs inset-shadow-pink-600/50' />
+          <ShadowExample name='Blue' className='inset-shadow-2xs inset-shadow-blue-500/50' />
+          <ShadowExample name='Red' className='inset-shadow-2xs inset-shadow-red-500/50' />
+          <ShadowExample name='Green' className='inset-shadow-2xs inset-shadow-green-500/50' />
+          <ShadowExample name='Yellow' className='inset-shadow-2xs inset-shadow-yellow-500/50' />
+          <ShadowExample name='Purple' className='inset-shadow-2xs inset-shadow-purple-500/50' />
+          <ShadowExample name='Pink' className='inset-shadow-2xs inset-shadow-pink-500/50' />
         </div>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          <ShadowExample name='Blue' className='inset-shadow-xs inset-shadow-blue-600/50' />
-          <ShadowExample name='Red' className='inset-shadow-xs inset-shadow-red-600/50' />
-          <ShadowExample name='Green' className='inset-shadow-xs inset-shadow-green-600/50' />
-          <ShadowExample name='Yellow' className='inset-shadow-xs inset-shadow-yellow-600/50' />
-          <ShadowExample name='Purple' className='inset-shadow-xs inset-shadow-purple-600/50' />
-          <ShadowExample name='Pink' className='inset-shadow-xs inset-shadow-pink-600/50' />
+          <ShadowExample name='Blue' className='inset-shadow-xs inset-shadow-blue-500/50' />
+          <ShadowExample name='Red' className='inset-shadow-xs inset-shadow-red-500/50' />
+          <ShadowExample name='Green' className='inset-shadow-xs inset-shadow-green-500/50' />
+          <ShadowExample name='Yellow' className='inset-shadow-xs inset-shadow-yellow-500/50' />
+          <ShadowExample name='Purple' className='inset-shadow-xs inset-shadow-purple-500/50' />
+          <ShadowExample name='Pink' className='inset-shadow-xs inset-shadow-pink-500/50' />
         </div>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          <ShadowExample name='Blue' className='inset-shadow-sm inset-shadow-blue-600/50' />
-          <ShadowExample name='Red' className='inset-shadow-sm inset-shadow-red-600/50' />
-          <ShadowExample name='Green' className='inset-shadow-sm inset-shadow-green-600/50' />
-          <ShadowExample name='Yellow' className='inset-shadow-sm inset-shadow-yellow-600/50' />
-          <ShadowExample name='Purple' className='inset-shadow-sm inset-shadow-purple-600/50' />
-          <ShadowExample name='Pink' className='inset-shadow-sm inset-shadow-pink-600/50' />
+          <ShadowExample name='Blue' className='inset-shadow-sm inset-shadow-blue-500/50' />
+          <ShadowExample name='Red' className='inset-shadow-sm inset-shadow-red-500/50' />
+          <ShadowExample name='Green' className='inset-shadow-sm inset-shadow-green-500/50' />
+          <ShadowExample name='Yellow' className='inset-shadow-sm inset-shadow-yellow-500/50' />
+          <ShadowExample name='Purple' className='inset-shadow-sm inset-shadow-purple-500/50' />
+          <ShadowExample name='Pink' className='inset-shadow-sm inset-shadow-pink-500/50' />
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@ export const ShadowTransitions: Story = {
             <span className='text-fg/60 text-xs'>shadow-md → shadow-2xl</span>
           </div>
           <div className='flex flex-col items-center gap-2'>
-            <div className='bg-bg flex h-24 w-24 items-center justify-center rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/50'>
+            <div className='bg-bg flex h-24 w-24 items-center justify-center rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/50'>
               <span className='text-fg/60 text-sm font-medium'>Hover me</span>
             </div>
             <span className='text-sm font-medium'>md → xl (colored)</span>

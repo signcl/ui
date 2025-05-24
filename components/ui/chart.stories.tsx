@@ -98,22 +98,22 @@ export const CompleteChartExample: Story = {
       revenue: {
         label: 'Revenue',
         theme: {
-          light: 'var(--color-blue-600)',
-          dark: 'var(--color-blue-600)',
+          light: 'var(--color-blue-500)',
+          dark: 'var(--color-blue-500)',
         },
       },
       expenses: {
         label: 'Expenses',
         theme: {
-          light: 'var(--color-red-600)',
-          dark: 'var(--color-red-600)',
+          light: 'var(--color-red-500)',
+          dark: 'var(--color-red-500)',
         },
       },
       profit: {
         label: 'Profit',
         theme: {
-          light: 'var(--color-emerald-600)',
-          dark: 'var(--color-emerald-600)',
+          light: 'var(--color-emerald-500)',
+          dark: 'var(--color-emerald-500)',
         },
       },
     } satisfies ChartConfig
@@ -123,16 +123,16 @@ export const CompleteChartExample: Story = {
         label: 'Sales',
         icon: IconChartBar,
         theme: {
-          light: 'var(--color-violet-600)',
-          dark: 'var(--color-violet-600)',
+          light: 'var(--color-violet-500)',
+          dark: 'var(--color-violet-500)',
         },
       },
       returns: {
         label: 'Returns',
         icon: IconChartBar,
         theme: {
-          light: 'var(--color-amber-600)',
-          dark: 'var(--color-amber-600)',
+          light: 'var(--color-amber-500)',
+          dark: 'var(--color-amber-500)',
         },
       },
     } satisfies ChartConfig
@@ -141,36 +141,36 @@ export const CompleteChartExample: Story = {
       'Social Media': {
         label: 'Social Media',
         theme: {
-          light: 'var(--color-blue-600)',
-          dark: 'var(--color-blue-600)',
+          light: 'var(--color-blue-500)',
+          dark: 'var(--color-blue-500)',
         },
       },
       'Direct': {
         label: 'Direct',
         theme: {
-          light: 'var(--color-emerald-600)',
-          dark: 'var(--color-emerald-600)',
+          light: 'var(--color-emerald-500)',
+          dark: 'var(--color-emerald-500)',
         },
       },
       'Email': {
         label: 'Email',
         theme: {
-          light: 'var(--color-amber-600)',
-          dark: 'var(--color-amber-600)',
+          light: 'var(--color-amber-500)',
+          dark: 'var(--color-amber-500)',
         },
       },
       'Referral': {
         label: 'Referral',
         theme: {
-          light: 'var(--color-violet-600)',
-          dark: 'var(--color-violet-600)',
+          light: 'var(--color-violet-500)',
+          dark: 'var(--color-violet-500)',
         },
       },
       'Organic Search': {
         label: 'Organic Search',
         theme: {
-          light: 'var(--color-pink-600)',
-          dark: 'var(--color-pink-600)',
+          light: 'var(--color-pink-500)',
+          dark: 'var(--color-pink-500)',
         },
       },
     } satisfies ChartConfig
@@ -180,24 +180,24 @@ export const CompleteChartExample: Story = {
         label: 'Mobile',
         icon: IconChartLine,
         theme: {
-          light: 'var(--color-indigo-600)',
-          dark: 'var(--color-indigo-600)',
+          light: 'var(--color-indigo-500)',
+          dark: 'var(--color-indigo-500)',
         },
       },
       desktop: {
         label: 'Desktop',
         icon: IconChartLine,
         theme: {
-          light: 'var(--color-teal-600)',
-          dark: 'var(--color-teal-600)',
+          light: 'var(--color-teal-500)',
+          dark: 'var(--color-teal-500)',
         },
       },
       tablet: {
         label: 'Tablet',
         icon: IconChartLine,
         theme: {
-          light: 'var(--color-orange-600)',
-          dark: 'var(--color-orange-600)',
+          light: 'var(--color-orange-500)',
+          dark: 'var(--color-orange-500)',
         },
       },
     } satisfies ChartConfig
@@ -206,29 +206,29 @@ export const CompleteChartExample: Story = {
       'Goal 1': {
         label: 'Goal 1',
         theme: {
-          light: 'var(--color-purple-600)',
-          dark: 'var(--color-purple-600)',
+          light: 'var(--color-purple-500)',
+          dark: 'var(--color-purple-500)',
         },
       },
       'Goal 2': {
         label: 'Goal 2',
         theme: {
-          light: 'var(--color-blue-600)',
-          dark: 'var(--color-blue-600)',
+          light: 'var(--color-blue-500)',
+          dark: 'var(--color-blue-500)',
         },
       },
       'Goal 3': {
         label: 'Goal 3',
         theme: {
-          light: 'var(--color-cyan-600)',
-          dark: 'var(--color-cyan-600)',
+          light: 'var(--color-cyan-500)',
+          dark: 'var(--color-cyan-500)',
         },
       },
       'Goal 4': {
         label: 'Goal 4',
         theme: {
-          light: 'var(--color-green-600)',
-          dark: 'var(--color-green-600)',
+          light: 'var(--color-green-500)',
+          dark: 'var(--color-green-500)',
         },
       },
     } satisfies ChartConfig

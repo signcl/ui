@@ -85,19 +85,19 @@ export const CustomColors: Story = {
   render: () => (
     <div className='flex items-center gap-4'>
       <Avatar>
-        <AvatarFallback className='bg-red-50 text-red-600'>JD</AvatarFallback>
+        <AvatarFallback className='bg-red-50 text-red-500'>JD</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarFallback className='bg-blue-50 text-blue-600'>AB</AvatarFallback>
+        <AvatarFallback className='bg-blue-50 text-blue-500'>AB</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarFallback className='bg-green-50 text-green-600'>CK</AvatarFallback>
+        <AvatarFallback className='bg-green-50 text-green-500'>CK</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarFallback className='bg-yellow-50 text-yellow-600'>TJ</AvatarFallback>
+        <AvatarFallback className='bg-yellow-50 text-yellow-500'>TJ</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarFallback className='bg-purple-50 text-purple-600'>RW</AvatarFallback>
+        <AvatarFallback className='bg-purple-50 text-purple-500'>RW</AvatarFallback>
       </Avatar>
     </div>
   ),

@@ -182,7 +182,7 @@ function Input({
           data-slot='input'
           className={cn(
             inputVariants({ inputSize }),
-            error && 'border-red-600! text-red-600 focus-visible:ring-red-500/30',
+            error && 'border-rose-500! text-rose-500 focus-visible:ring-rose-500/30',
             leftSection && 'pl-[2em]',
             (rightSection || type === 'number') && 'pr-[2em]',
             className
@@ -211,7 +211,7 @@ function Input({
                     disabled={disabled}
                   >
                     {isValueDifferentFromDefault ? (
-                      <IconAdjustmentsCog size={resolvedProps(inputSize).iconSize} className='text-blue-600' />
+                      <IconAdjustmentsCog size={resolvedProps(inputSize).iconSize} className='text-blue-500' />
                     ) : (
                       <IconAdjustments size={resolvedProps(inputSize).iconSize} />
                     )}
@@ -225,7 +225,7 @@ function Input({
           </div>
         ) : null}
       </div>
-      {error && typeof error !== 'boolean' ? <div className='text-sm text-red-600'>{error}</div> : null}
+      {error && typeof error !== 'boolean' ? <div className='text-sm text-rose-500'>{error}</div> : null}
     </div>
   )
 }
