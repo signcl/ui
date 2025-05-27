@@ -161,11 +161,11 @@ function Input({
   const resolvedProps = (inputSize: InputProps['inputSize']) => {
     switch (inputSize) {
       case 'sm':
-        return { buttonMargin: 'mr-0', iconSize: '0.8rem' }
+        return { buttonMargin: 'p-0 mr-1.25', iconSize: '0.75rem' }
       case 'lg':
-        return { buttonMargin: 'mr-2', iconSize: '1.25rem' }
+        return { buttonMargin: 'p-0.25 mr-1.5', iconSize: '1.25rem' }
       default:
-        return { buttonMargin: 'mr-1.5', iconSize: '1rem' }
+        return { buttonMargin: 'p-0.25 mr-1.5', iconSize: '1rem' }
     }
   }
 
@@ -207,7 +207,7 @@ function Input({
                   <Button
                     size='sm'
                     variant={'link'}
-                    className={cn('p-1', resolvedProps(inputSize).buttonMargin)}
+                    className={cn(resolvedProps(inputSize).buttonMargin)}
                     disabled={disabled}
                   >
                     {isValueDifferentFromDefault ? (
