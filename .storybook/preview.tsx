@@ -35,6 +35,7 @@ const preview: Preview = {
       </TooltipProvider>
     ),
   ],
+  tags: ['autodocs'],
 }
 
 export default preview
