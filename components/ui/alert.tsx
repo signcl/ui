@@ -9,7 +9,7 @@ const alertVariantsConfig = {
     accent: 'bg-ac/5 border-ac',
     danger: 'border-rose-500/50 text-rose-500 bg-rose-500/5',
     success: 'border-emerald-500/50 text-emerald-500 bg-emerald-500/5',
-    warning: 'border-amber-500/50 text-amber-500 bg-amber-500/5',
+    warning: 'border-orange-500/50 text-orange-500 bg-orange-500/5',
     info: 'border-blue-500/50 text-blue-500 bg-blue-500/5',
   },
 }
