@@ -2,7 +2,7 @@
 // https://github.com/storybookjs/storybook/blob/next/code/addons/themes/docs/getting-started/tailwind.md
 import React from 'react'
 import { withThemeByDataAttribute } from '@storybook/addon-themes'
-import type { Preview, ReactRenderer } from '@storybook/react'
+import type { Preview, ReactRenderer } from '@storybook/nextjs'
 
 import { TooltipProvider } from '../components/ui/tooltip'
 

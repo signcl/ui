@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import type { Meta, StoryObj } from '@storybook/nextjs'
+import { userEvent, within } from 'storybook/test'
 import { IconArrowBackUpDouble } from '@tabler/icons-react'
 
 import { Button } from './button'

@@ -1,5 +1,5 @@
 import { toast } from 'sonner'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { Toaster } from '@/components/ui/sonner'
 

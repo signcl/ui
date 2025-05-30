@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { IconChevronRight, IconHome, IconSlash } from '@tabler/icons-react'
 
 import {
