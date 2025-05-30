@@ -51,7 +51,7 @@
         "@storybook/addon-a11y": "^8.6.14",
         "@storybook/addon-essentials": "^8.6.14",
         "@storybook/addon-interactions": "^8.6.14",
-        "@storybook/addon-links": "^8.6.14",
+        "@storybook/addon-links": "^9.0.1",
         "@storybook/addon-onboarding": "^8.6.14",
         "@storybook/addon-themes": "^8.6.14",
         "@storybook/blocks": "^8.6.14",
@@ -846,7 +846,7 @@
 
     "@storybook/addon-interactions": ["@storybook/addon-interactions@8.6.14", "", { "dependencies": { "@storybook/global": "^5.0.0", "@storybook/instrumenter": "8.6.14", "@storybook/test": "8.6.14", "polished": "^4.2.2", "ts-dedent": "^2.2.0" }, "peerDependencies": { "storybook": "^8.6.14" } }, "sha512-8VmElhm2XOjh22l/dO4UmXxNOolGhNiSpBcls2pqWSraVh4a670EyYBZsHpkXqfNHo2YgKyZN3C91+9zfH79qQ=="],
 
-    "@storybook/addon-links": ["@storybook/addon-links@8.6.14", "", { "dependencies": { "@storybook/global": "^5.0.0", "ts-dedent": "^2.0.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta", "storybook": "^8.6.14" }, "optionalPeers": ["react"] }, "sha512-DRlXHIyZzOruAZkxmXfVgTF+4d6K27pFcH4cUsm3KT1AXuZbr23lb5iZHpUZoG6lmU85Sru4xCEgewSTXBIe1w=="],
+    "@storybook/addon-links": ["@storybook/addon-links@9.0.1", "", { "dependencies": { "@storybook/global": "^5.0.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta", "storybook": "^9.0.1" }, "optionalPeers": ["react"] }, "sha512-jXSjbmlq5nF0rGgi4rmm4L/JQcCIx74O6yturFitJOUXtj1JSwWFZGoyuNqmXkJs5g6cMiYAyBbs0FYcPcZSbw=="],
 
     "@storybook/addon-measure": ["@storybook/addon-measure@8.6.14", "", { "dependencies": { "@storybook/global": "^5.0.0", "tiny-invariant": "^1.3.1" }, "peerDependencies": { "storybook": "^8.6.14" } }, "sha512-1Tlyb72NX8aAqm6I6OICsUuGOP6hgnXcuFlXucyhKomPa6j3Eu2vKu561t/f0oGtAK2nO93Z70kVaEh5X+vaGw=="],
 
