@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconMicrophone } from '@tabler/icons-react'
 
 import { Toggle } from './toggle'

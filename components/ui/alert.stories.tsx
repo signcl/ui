@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconAlertCircle } from '@tabler/icons-react'
 
 import { Alert, alertVariantsConfig } from '@/components/ui/alert'

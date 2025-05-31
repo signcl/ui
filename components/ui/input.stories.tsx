@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconRefresh, IconSearch } from '@tabler/icons-react'
 
 import { Button } from '@/components/ui/button'

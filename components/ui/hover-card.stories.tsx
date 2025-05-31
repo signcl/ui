@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconCalendar } from '@tabler/icons-react'
 
 import { Avatar, AvatarFallback, AvatarImage } from './avatar' // Adjust import path as needed

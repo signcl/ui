@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { userEvent, within } from 'storybook/test'
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'

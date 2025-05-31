@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconChevronDown } from '@tabler/icons-react'
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './collapsible'

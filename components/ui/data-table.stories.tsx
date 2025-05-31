@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconDots } from '@tabler/icons-react'
 import type { ColumnDef } from '@tanstack/react-table'
 

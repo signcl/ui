@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconCode, IconHeartFilled, IconInfoCircle, IconPhoto } from '@tabler/icons-react'
 
 import { Button } from '@/components/ui/button'

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconCircleCheckFilled } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
