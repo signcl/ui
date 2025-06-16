@@ -13,4 +13,4 @@ Accessible and customizable components that you can copy and paste into new proj
 
 ## Documentation
 
-https://storybook.openbayes.net
+https://ui.signcl.com
