@@ -14,7 +14,7 @@ const content = Array(10)
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'UI/Scroll Area',
+  title: 'UI/Scroll Area V1',
   component: ScrollArea,
   argTypes: {
     children: {
