@@ -46,7 +46,7 @@
     "react-aria-components": "^1.10.1",
     "react-day-picker": "^9.7.0",
     "react-dom": "^19.1.0",
-    "react-resizable-panels": "^3.0.2",
+    "react-resizable-panels": "^3.0.3",
     "recharts": "^2.15.3",
     "shadcn": "^2.6.3",
     "sonner": "^2.0.5",
