@@ -58,7 +58,7 @@
     "@eslint/eslintrc": "^3.3.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
     "@storybook/addon-a11y": "^9.0.12",
-    "@storybook/addon-docs": "^9.0.12",
+    "@storybook/addon-docs": "^9.0.13",
     "@storybook/addon-links": "^9.0.12",
     "@storybook/addon-onboarding": "^9.0.12",
     "@storybook/addon-themes": "^9.0.12",
