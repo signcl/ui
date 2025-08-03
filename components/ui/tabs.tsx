@@ -16,7 +16,7 @@ function TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimi
       data-slot='tabs-list'
       className={cn(
         'max-w-full overflow-x-auto overflow-y-hidden',
-        'bg-fg/5 text-fg/60 flex items-center rounded-lg p-[4px]',
+        'bg-fg/5 text-fg/60 flex items-center rounded-lg p-[3px]',
         'snap-x snap-mandatory scroll-p-1 scroll-smooth',
         // Hide scrollbar but keep functionality
         '[&::-webkit-scrollbar]:h-[0px]',
@@ -36,10 +36,10 @@ function TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPr
     <TabsPrimitive.Trigger
       data-slot='tabs-trigger'
       className={cn(
-        'focus-ring text-fg inline-flex items-center justify-center gap-1 rounded-md border border-transparent px-3 py-1 font-medium whitespace-nowrap',
+        'focus-ring text-fg inline-flex items-center justify-center gap-1 rounded-md border border-transparent px-3 py-0.5 font-medium whitespace-nowrap',
         'disabled:pointer-events-none disabled:opacity-50',
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-        'data-[state=active]:border-ac data-[state=active]:text-ac data-[state=active]:bg-bg',
+        'data-[state=active]:text-ac data-[state=active]:bg-bg',
         'snap-end',
         className
       )}
