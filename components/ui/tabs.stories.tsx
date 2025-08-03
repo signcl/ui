@@ -62,3 +62,90 @@ export const WithDisabledTab: Story = {
     </Tabs>
   ),
 }
+
+// Example with many tabs that overflow
+export const ManyTabsOverflow: Story = {
+  render: () => (
+    <div className='max-w-[600px]'>
+      <Tabs defaultValue='tab1'>
+        <TabsList>
+          <TabsTrigger value='tab1'>Dashboard</TabsTrigger>
+          <TabsTrigger value='tab2'>Analytics</TabsTrigger>
+          <TabsTrigger value='tab3'>Reports</TabsTrigger>
+          <TabsTrigger value='tab4'>Settings</TabsTrigger>
+          <TabsTrigger value='tab5'>Users</TabsTrigger>
+          <TabsTrigger value='tab6'>Products</TabsTrigger>
+          <TabsTrigger value='tab7'>Orders</TabsTrigger>
+          <TabsTrigger value='tab8'>Inventory</TabsTrigger>
+          <TabsTrigger value='tab9'>Customers</TabsTrigger>
+          <TabsTrigger value='tab10'>Payments</TabsTrigger>
+          <TabsTrigger value='tab11'>Notifications</TabsTrigger>
+          <TabsTrigger value='tab12'>Security</TabsTrigger>
+          <TabsTrigger value='tab13'>Integrations</TabsTrigger>
+          <TabsTrigger value='tab14'>API Keys</TabsTrigger>
+          <TabsTrigger value='tab15'>Documentation</TabsTrigger>
+        </TabsList>
+        <TabsContent value='tab1' className='p-4'>
+          <h3 className='text-lg font-medium'>Dashboard</h3>
+          <p className='text-fg/60 mt-2'>Welcome to your dashboard. Here you can see an overview of your data.</p>
+        </TabsContent>
+        <TabsContent value='tab2' className='p-4'>
+          <h3 className='text-lg font-medium'>Analytics</h3>
+          <p className='text-fg/60 mt-2'>View detailed analytics and insights about your performance.</p>
+        </TabsContent>
+        <TabsContent value='tab3' className='p-4'>
+          <h3 className='text-lg font-medium'>Reports</h3>
+          <p className='text-fg/60 mt-2'>Generate and view various reports for your business.</p>
+        </TabsContent>
+        <TabsContent value='tab4' className='p-4'>
+          <h3 className='text-lg font-medium'>Settings</h3>
+          <p className='text-fg/60 mt-2'>Configure your application settings and preferences.</p>
+        </TabsContent>
+        <TabsContent value='tab5' className='p-4'>
+          <h3 className='text-lg font-medium'>Users</h3>
+          <p className='text-fg/60 mt-2'>Manage users and their permissions.</p>
+        </TabsContent>
+        <TabsContent value='tab6' className='p-4'>
+          <h3 className='text-lg font-medium'>Products</h3>
+          <p className='text-fg/60 mt-2'>Browse and manage your product catalog.</p>
+        </TabsContent>
+        <TabsContent value='tab7' className='p-4'>
+          <h3 className='text-lg font-medium'>Orders</h3>
+          <p className='text-fg/60 mt-2'>View and process customer orders.</p>
+        </TabsContent>
+        <TabsContent value='tab8' className='p-4'>
+          <h3 className='text-lg font-medium'>Inventory</h3>
+          <p className='text-fg/60 mt-2'>Track and manage your inventory levels.</p>
+        </TabsContent>
+        <TabsContent value='tab9' className='p-4'>
+          <h3 className='text-lg font-medium'>Customers</h3>
+          <p className='text-fg/60 mt-2'>View and manage customer information.</p>
+        </TabsContent>
+        <TabsContent value='tab10' className='p-4'>
+          <h3 className='text-lg font-medium'>Payments</h3>
+          <p className='text-fg/60 mt-2'>Process and track payment transactions.</p>
+        </TabsContent>
+        <TabsContent value='tab11' className='p-4'>
+          <h3 className='text-lg font-medium'>Notifications</h3>
+          <p className='text-fg/60 mt-2'>Configure notification settings and view notification history.</p>
+        </TabsContent>
+        <TabsContent value='tab12' className='p-4'>
+          <h3 className='text-lg font-medium'>Security</h3>
+          <p className='text-fg/60 mt-2'>Manage security settings and access controls.</p>
+        </TabsContent>
+        <TabsContent value='tab13' className='p-4'>
+          <h3 className='text-lg font-medium'>Integrations</h3>
+          <p className='text-fg/60 mt-2'>Connect with third-party services and applications.</p>
+        </TabsContent>
+        <TabsContent value='tab14' className='p-4'>
+          <h3 className='text-lg font-medium'>API Keys</h3>
+          <p className='text-fg/60 mt-2'>Manage API keys for external integrations.</p>
+        </TabsContent>
+        <TabsContent value='tab15' className='p-4'>
+          <h3 className='text-lg font-medium'>Documentation</h3>
+          <p className='text-fg/60 mt-2'>Access detailed documentation and guides.</p>
+        </TabsContent>
+      </Tabs>
+    </div>
+  ),
+}

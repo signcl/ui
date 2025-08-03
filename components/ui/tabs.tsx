@@ -6,13 +6,26 @@ import * as TabsPrimitive from '@radix-ui/react-tabs'
 
 import { cn } from '@/lib/cn'
 
-const Tabs = TabsPrimitive.Root
+function Tabs({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Root>) {
+  return <TabsPrimitive.Root data-slot='tabs' className={cn(className)} {...props} />
+}
 
 function TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.List>) {
   return (
     <TabsPrimitive.List
       data-slot='tabs-list'
-      className={cn('text-fg inline-flex h-10 items-center justify-center', className)}
+      className={cn(
+        'max-w-full overflow-x-auto overflow-y-hidden',
+        'bg-fg/5 text-fg/60 flex items-center rounded-lg p-[4px]',
+        'snap-x snap-mandatory scroll-p-1 scroll-smooth',
+        // Hide scrollbar but keep functionality
+        '[&::-webkit-scrollbar]:h-[0px]',
+        '[&::-webkit-scrollbar-track]:bg-transparent',
+        '[&::-webkit-scrollbar-thumb]:bg-transparent',
+        '[&::-webkit-scrollbar-thumb]:rounded-full',
+        'hover:[&::-webkit-scrollbar-thumb]:bg-transparent',
+        className
+      )}
       {...props}
     />
   )
@@ -23,11 +36,11 @@ function TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPr
     <TabsPrimitive.Trigger
       data-slot='tabs-trigger'
       className={cn(
-        'shadow-fg/30 inline-flex items-center justify-center rounded-t px-4 pt-3 pb-2.5 leading-none font-medium whitespace-nowrap shadow-[0_2px_0_0]',
-        'focus-ring',
+        'focus-ring text-fg inline-flex items-center justify-center gap-1 rounded-md border border-transparent px-3 py-1 font-medium whitespace-nowrap',
         'disabled:pointer-events-none disabled:opacity-50',
-        'hover:shadow-fg/40',
-        'data-[state=active]:bg-bg data-[state=active]:text-fg data-[state=active]:shadow-ac',
+        "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        'data-[state=active]:border-ac data-[state=active]:text-ac data-[state=active]:bg-bg',
+        'snap-end',
         className
       )}
       {...props}
