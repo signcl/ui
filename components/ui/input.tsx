@@ -8,7 +8,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 
 const inputVariants = cva(
   [
-    'border-input flex w-full appearance-none rounded-sm border bg-transparent',
+    'flex w-full appearance-none rounded-sm border bg-transparent',
     'text-fg inset-shadow-input outline-hidden file:border-0 file:bg-transparent file:font-medium file:text-fg placeholder:text-fg/40',
     'focus-ring hover:focus-visible:border-ac',
     'disabled:cursor-not-allowed disabled:border-fg/30 disabled:opacity-50 disabled:bg-fg/5',
