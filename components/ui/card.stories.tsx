@@ -237,8 +237,8 @@ export const WithTabs: Story = {
         <CardDescription>Manage your account preferences.</CardDescription>
       </CardHeader>
       <Tabs defaultValue='general'>
-        <div className={cn('relative w-full', 'shadow-fg/30 shadow-[0_2px_0_0]')}>
-          <TabsList className='-mb-[1px]'>
+        <div className={cn('relative w-full')}>
+          <TabsList className='rounded-none'>
             <TabsTrigger value='general'>General</TabsTrigger>
             <TabsTrigger value='security'>Security</TabsTrigger>
             <TabsTrigger value='notifications'>Notifications</TabsTrigger>
