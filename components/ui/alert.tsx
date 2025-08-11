@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn'
 
 const alertVariantsConfig = {
   tint: {
-    default: 'bg-bg/10 text-fg border-fg',
+    default: 'bg-fg/5 text-fg border-fg',
     accent: 'bg-ac/10 text-[color-mix(in_oklch,var(--color-ac),var(--color-fg)_60%)] border-ac',
     danger: 'border-rose-500 text-rose-500 bg-rose-500/10',
     success: 'border-emerald-500 text-emerald-500 bg-emerald-500/10',
