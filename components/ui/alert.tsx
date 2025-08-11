@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn'
 
 const alertVariantsConfig = {
   tint: {
-    default: 'bg-bg/10 text-fg border',
+    default: 'bg-bg/10 text-fg border-fg',
     accent: 'bg-ac/10 text-[color-mix(in_srgb,var(--color-ac),var(--color-fg)_60%)] border-ac',
     danger: 'border-rose-500 text-rose-500 bg-rose-500/10',
     success: 'border-emerald-500 text-emerald-500 bg-emerald-500/10',
@@ -35,7 +35,7 @@ function Alert({ className, tint, children, label, icon, ...props }: React.Compo
       <div className='flex'>
         {icon && <div className='shrink-0'>{icon}</div>}
         <div className={cn('w-full', icon && 'ml-2')}>
-          {label && <h5 className='mb-1 leading-tight font-medium tracking-tight'>{label}</h5>}
+          {label && <h5 className='leading-tight font-medium tracking-tight'>{label}</h5>}
           {content}
         </div>
       </div>
