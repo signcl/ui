@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconCircleCheckFilled } from '@tabler/icons-react'
 
-import { cn } from '@/lib/cn'
-
 import { Button } from './button' // Adjust import path as needed
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './card'
 import { Input } from './input'
@@ -236,14 +234,12 @@ export const WithTabs: Story = {
         <CardTitle>Account Settings</CardTitle>
         <CardDescription>Manage your account preferences.</CardDescription>
       </CardHeader>
-      <Tabs defaultValue='general'>
-        <div className={cn('relative w-full')}>
-          <TabsList className='rounded-none'>
-            <TabsTrigger value='general'>General</TabsTrigger>
-            <TabsTrigger value='security'>Security</TabsTrigger>
-            <TabsTrigger value='notifications'>Notifications</TabsTrigger>
-          </TabsList>
-        </div>
+      <Tabs defaultValue='general' variant='underline'>
+        <TabsList>
+          <TabsTrigger value='general'>General</TabsTrigger>
+          <TabsTrigger value='security'>Security</TabsTrigger>
+          <TabsTrigger value='notifications'>Notifications</TabsTrigger>
+        </TabsList>
         <CardContent className='p-4'>
           <TabsContent value='general'>
             <div className='space-y-4'>

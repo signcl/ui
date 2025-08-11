@@ -39,6 +39,56 @@ export const Basic: Story = {
   ),
 }
 
+// Underline variant
+export const UnderlineVariant: Story = {
+  render: () => (
+    <Tabs defaultValue='account' variant='underline' className='w-[400px]'>
+      <TabsList>
+        <TabsTrigger value='account'>Account</TabsTrigger>
+        <TabsTrigger value='password'>Password</TabsTrigger>
+        <TabsTrigger value='settings'>Settings</TabsTrigger>
+      </TabsList>
+      <TabsContent value='account' className='p-4'>
+        <h3 className='text-lg font-medium'>Account Settings</h3>
+        <p className='text-fg/60 mt-2'>Update your account settings. Set your preferred language and timezone.</p>
+      </TabsContent>
+      <TabsContent value='password' className='p-4'>
+        <h3 className='text-lg font-medium'>Password Settings</h3>
+        <p className='text-fg/60 mt-2'>Change your password here. After saving, you'll be logged out.</p>
+      </TabsContent>
+      <TabsContent value='settings' className='p-4'>
+        <h3 className='text-lg font-medium'>General Settings</h3>
+        <p className='text-fg/60 mt-2'>Configure your general application preferences here.</p>
+      </TabsContent>
+    </Tabs>
+  ),
+}
+
+// Segmented variant (default)
+export const SegmentedVariant: Story = {
+  render: () => (
+    <Tabs defaultValue='account' variant='segmented' className='w-[400px]'>
+      <TabsList>
+        <TabsTrigger value='account'>Account</TabsTrigger>
+        <TabsTrigger value='password'>Password</TabsTrigger>
+        <TabsTrigger value='settings'>Settings</TabsTrigger>
+      </TabsList>
+      <TabsContent value='account' className='mt-4'>
+        <h3 className='text-lg font-medium'>Account Settings</h3>
+        <p className='text-fg/60 mt-2'>Update your account settings. Set your preferred language and timezone.</p>
+      </TabsContent>
+      <TabsContent value='password' className='mt-4'>
+        <h3 className='text-lg font-medium'>Password Settings</h3>
+        <p className='text-fg/60 mt-2'>Change your password here. After saving, you'll be logged out.</p>
+      </TabsContent>
+      <TabsContent value='settings' className='mt-4'>
+        <h3 className='text-lg font-medium'>General Settings</h3>
+        <p className='text-fg/60 mt-2'>Configure your general application preferences here.</p>
+      </TabsContent>
+    </Tabs>
+  ),
+}
+
 // Example with disabled tab
 export const WithDisabledTab: Story = {
   render: () => (
