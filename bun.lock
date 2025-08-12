@@ -50,7 +50,7 @@
         "@ianvs/prettier-plugin-sort-imports": "^4.6.1",
         "@storybook/addon-a11y": "^9.1.1",
         "@storybook/addon-docs": "^9.1.1",
-        "@storybook/addon-links": "^9.1.1",
+        "@storybook/addon-links": "^9.1.2",
         "@storybook/addon-onboarding": "^9.1.1",
         "@storybook/addon-themes": "^9.1.1",
         "@storybook/addon-vitest": "^9.1.1",
@@ -745,7 +745,7 @@
 
     "@storybook/addon-docs": ["@storybook/addon-docs@9.1.1", "", { "dependencies": { "@mdx-js/react": "^3.0.0", "@storybook/csf-plugin": "9.1.1", "@storybook/icons": "^1.4.0", "@storybook/react-dom-shim": "9.1.1", "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "ts-dedent": "^2.0.0" }, "peerDependencies": { "storybook": "^9.1.1" } }, "sha512-CzgvTy3V5X4fe+VPkiZVwPKARlpEBDAKte8ajLAlHJQLFpADdYrBRQ0se6I+kcxva7rZQzdhuH7qjXMDRVcfnw=="],
 
-    "@storybook/addon-links": ["@storybook/addon-links@9.1.1", "", { "dependencies": { "@storybook/global": "^5.0.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta", "storybook": "^9.1.1" }, "optionalPeers": ["react"] }, "sha512-fYv0cmUzZluEKFP8iuhqu8Wqlf3demRgES7un1C6T7GilzhnMwLFcFjX40qvTC9WsIJ2Uw1G/SPjwTNXJOO5Ng=="],
+    "@storybook/addon-links": ["@storybook/addon-links@9.1.2", "", { "dependencies": { "@storybook/global": "^5.0.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta", "storybook": "^9.1.2" }, "optionalPeers": ["react"] }, "sha512-drAWdhn5cRo5WcaORoCYfJ6tgTAw1m+ZJb1ICyNtTU6i/0nErV8jJjt7AziUcUIyzaGVJAkAMNC3+R4uDPSFDA=="],
 
     "@storybook/addon-onboarding": ["@storybook/addon-onboarding@9.1.1", "", { "peerDependencies": { "storybook": "^9.1.1" } }, "sha512-QHkirYjgHqhJMmD2riVJ4qvkwNif79phEJuMd+Zna2niT5MMkmFSd+lfLgbEYr6ufbL2OWnsoUmxRY5s3RgKQw=="],
 
