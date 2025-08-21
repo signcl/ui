@@ -50,12 +50,12 @@ export const File: Story = {
   },
 }
 
-export const Number: Story = {
+export const Numbers: Story = {
   args: {},
   render: () => {
     return (
       <div className='grid w-full max-w-sm items-center gap-1.5'>
-        <Input type='number' placeholder='Number' />
+        <Input type='number' placeholder='Numbers' />
       </div>
     )
   },
