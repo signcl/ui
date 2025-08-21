@@ -8,15 +8,7 @@ import { cn } from '@/lib/cn'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select'
 
 function PaginationPrimitive({ className, ...props }: ComponentProps<'nav'>) {
-  return (
-    <nav
-      role='navigation'
-      aria-label='pagination'
-      data-slot='pagination'
-      className={cn('flex', className)}
-      {...props}
-    />
-  )
+  return <nav aria-label='pagination' data-slot='pagination' className={cn('flex', className)} {...props} />
 }
 
 function PaginationContent({ className, ...props }: ComponentProps<'div'>) {
@@ -151,28 +143,32 @@ function Pagination({
 
         {visiblePages.map((page, index, arr) => {
           // Check if there's a gap that needs an ellipsis
-          if (index > 0 && page !== arr[index - 1]! + 1) {
-            const prevPage = arr[index - 1]!
-            // Get the list of hidden pages in this gap
-            const hiddenPages = allPages.filter(p => p > prevPage && p < page)
+          if (index > 0) {
+            const prevPage = arr[index - 1]
+            if (prevPage !== undefined && page !== prevPage + 1) {
+              // Get the list of hidden pages in this gap
+              const hiddenPages = allPages.filter(p => p > prevPage && p < page)
 
-            return (
-              <Fragment key={`ellipsis-${index}`}>
-                <PaginationItem>
-                  <PaginationEllipsis pages={hiddenPages} onPageChange={onPageChange} disabled={disabled} />
-                </PaginationItem>
-                <PaginationItem key={`page-${page}`}>
-                  <PaginationLink
-                    isActive={page === value}
-                    onClick={() => onPageChange(page)}
-                    className={cn('px-2 py-1', { 'bg-ac/60 text-bg': page === value })}
-                    disabled={disabled}
-                  >
-                    {page}
-                  </PaginationLink>
-                </PaginationItem>
-              </Fragment>
-            )
+              return (
+                <Fragment key={`ellipsis-${index}-${page}`}>
+                  <PaginationItem>
+                    <PaginationEllipsis pages={hiddenPages} onPageChange={onPageChange} disabled={disabled} />
+                  </PaginationItem>
+                  <PaginationItem key={`page-${page}`}>
+                    <PaginationLink
+                      isActive={page === value}
+                      onClick={() => onPageChange(page)}
+                      className={cn('px-2 py-1', {
+                        'bg-ac/60 text-bg': page === value,
+                      })}
+                      disabled={disabled}
+                    >
+                      {page}
+                    </PaginationLink>
+                  </PaginationItem>
+                </Fragment>
+              )
+            }
           }
 
           return (
@@ -180,7 +176,9 @@ function Pagination({
               <PaginationLink
                 isActive={page === value}
                 onClick={() => onPageChange(page)}
-                className={cn('px-2 py-1', { 'bg-ac/60 text-bg': page === value })}
+                className={cn('px-2 py-1', {
+                  'bg-ac/60 text-bg': page === value,
+                })}
                 disabled={disabled}
               >
                 {page}
