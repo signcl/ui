@@ -1,8 +1,8 @@
 'use client'
 
-import * as React from 'react'
-import { OTPInput, OTPInputContext } from 'input-otp'
 import { IconPointFilled } from '@tabler/icons-react'
+import { OTPInput, OTPInputContext } from 'input-otp'
+import * as React from 'react'
 
 import { cn } from '@/lib/cn'
 
@@ -56,7 +56,7 @@ InputOTPSlot.displayName = 'InputOTPSlot'
 
 const InputOTPSeparator = React.forwardRef<React.ComponentRef<'div'>, React.ComponentPropsWithoutRef<'div'>>(
   ({ ...props }, ref) => (
-    <div ref={ref} role='separator' {...props}>
+    <div ref={ref} aria-hidden='true' {...props}>
       <IconPointFilled className='size-[1em]' />
     </div>
   )

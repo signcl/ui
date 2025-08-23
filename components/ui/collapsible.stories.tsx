@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconChevronDown } from '@tabler/icons-react'
+import { useState } from 'react'
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './collapsible'
 
@@ -61,7 +61,9 @@ export const Controlled: Story = {
       return (
         <div className='w-full max-w-md'>
           <div className='mb-2'>
-            <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Close' : 'Open'}</button>
+            <button type='button' onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? 'Close' : 'Open'}
+            </button>
           </div>
 
           <Collapsible open={isOpen} onOpenChange={setIsOpen} className='rounded-md border'>

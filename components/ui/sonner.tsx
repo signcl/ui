@@ -1,13 +1,13 @@
 'use client'
 
-// https://ui.shadcn.com/docs/components/sonner
-import { Toaster as Sonner } from 'sonner'
 import {
   IconAlertCircleFilled,
   IconAlertTriangleFilled,
   IconCircleCheckFilled,
   IconInfoCircleFilled,
 } from '@tabler/icons-react'
+// https://ui.shadcn.com/docs/components/sonner
+import { Toaster as Sonner } from 'sonner'
 
 import { Loading } from './loading'
 

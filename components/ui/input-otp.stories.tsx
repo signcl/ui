@@ -1,11 +1,11 @@
-import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { useState } from 'react'
 
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from './input-otp'
 import { Label } from './label'
 
 const meta = {
-  title: 'UI/InputOTP',
+  title: 'UI/Input OTP',
   component: InputOTP,
   parameters: {
     layout: 'centered',

@@ -23,7 +23,7 @@ export const Default: Story = {}
 export const WithIcon: Story = {
   args: {
     'aria-label': 'Toggle microphone',
-    'children': (
+    children: (
       <>
         <IconMicrophone className='size-4' />
         <span>Microphone</span>
@@ -34,9 +34,9 @@ export const WithIcon: Story = {
 
 export const IconOnly: Story = {
   args: {
-    'variant': 'icon',
+    variant: 'icon',
     'aria-label': 'Toggle microphone',
-    'children': <IconMicrophone />,
+    children: <IconMicrophone />,
   },
   render: args => {
     return (

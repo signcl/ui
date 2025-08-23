@@ -1,5 +1,5 @@
-import { toast } from 'sonner'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { toast } from 'sonner'
 
 import { Toaster } from '@/components/ui/sonner'
 
@@ -44,6 +44,7 @@ export const Default: Story = {
         <h3>Types</h3>
         <div className='flex flex-wrap gap-2'>
           <button
+            type='button'
             onClick={() =>
               toast.message('Event has been created', {
                 description: 'Monday, January 3rd at 6:00pm',
@@ -52,9 +53,14 @@ export const Default: Story = {
           >
             Description
           </button>
-          <button onClick={() => toast.success('Event has been created')}>Success</button>
-          <button onClick={() => toast.info('Be at the area 10 minutes before the event time')}>Info</button>
+          <button type='button' onClick={() => toast.success('Event has been created')}>
+            Success
+          </button>
+          <button type='button' onClick={() => toast.info('Be at the area 10 minutes before the event time')}>
+            Info
+          </button>
           <button
+            type='button'
             onClick={() =>
               toast.warning('Event start time cannot be earlier than 8am', {
                 duration: 3000,
@@ -63,8 +69,11 @@ export const Default: Story = {
           >
             Warning
           </button>
-          <button onClick={() => toast.error('Event has not been created')}>Error</button>
+          <button type='button' onClick={() => toast.error('Event has not been created')}>
+            Error
+          </button>
           <button
+            type='button'
             onClick={() =>
               toast('Event has been created', {
                 action: {
@@ -77,6 +86,7 @@ export const Default: Story = {
             Action
           </button>
           <button
+            type='button'
             onClick={() =>
               toast.promise(promise, {
                 loading: 'Loading...',
@@ -93,12 +103,24 @@ export const Default: Story = {
 
         <h3>Position</h3>
         <div className='flex flex-wrap gap-2'>
-          <button onClick={() => toast('top-left', { position: 'top-left' })}>top-left</button>
-          <button onClick={() => toast('top-center', { position: 'top-center' })}>top-center</button>
-          <button onClick={() => toast('top-right', { position: 'top-right' })}>top-right</button>
-          <button onClick={() => toast('bottom-left', { position: 'bottom-left' })}>bottom-left</button>
-          <button onClick={() => toast('bottom-center', { position: 'bottom-center' })}>bottom-center</button>
-          <button onClick={() => toast('bottom-right', { position: 'bottom-right' })}>bottom-right</button>
+          <button type='button' onClick={() => toast('top-left', { position: 'top-left' })}>
+            top-left
+          </button>
+          <button type='button' onClick={() => toast('top-center', { position: 'top-center' })}>
+            top-center
+          </button>
+          <button type='button' onClick={() => toast('top-right', { position: 'top-right' })}>
+            top-right
+          </button>
+          <button type='button' onClick={() => toast('bottom-left', { position: 'bottom-left' })}>
+            bottom-left
+          </button>
+          <button type='button' onClick={() => toast('bottom-center', { position: 'bottom-center' })}>
+            bottom-center
+          </button>
+          <button type='button' onClick={() => toast('bottom-right', { position: 'bottom-right' })}>
+            bottom-right
+          </button>
         </div>
       </div>
     )

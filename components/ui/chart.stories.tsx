@@ -1,3 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { IconChartBar, IconChartLine } from '@tabler/icons-react'
 import React from 'react'
 import {
   Area,
@@ -15,16 +17,14 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { IconChartBar, IconChartLine } from '@tabler/icons-react'
 
 import {
+  type ChartConfig,
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-  type ChartConfig,
 } from './chart'
 
 const meta = {
@@ -145,21 +145,21 @@ export const CompleteChartExample: Story = {
           dark: 'var(--color-blue-500)',
         },
       },
-      'Direct': {
+      Direct: {
         label: 'Direct',
         theme: {
           light: 'var(--color-emerald-500)',
           dark: 'var(--color-emerald-500)',
         },
       },
-      'Email': {
+      Email: {
         label: 'Email',
         theme: {
           light: 'var(--color-amber-500)',
           dark: 'var(--color-amber-500)',
         },
       },
-      'Referral': {
+      Referral: {
         label: 'Referral',
         theme: {
           light: 'var(--color-violet-500)',

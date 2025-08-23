@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
 import { IconCheck, IconCopy } from '@tabler/icons-react'
+import type React from 'react'
+import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { CopyButton } from '@/components/ui/copy-button'

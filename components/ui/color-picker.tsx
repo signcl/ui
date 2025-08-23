@@ -1,14 +1,13 @@
-import React from 'react'
+import { Popover } from '@radix-ui/react-popover'
+import type React from 'react'
 import {
   ColorPicker as AriaColorPicker,
-  Button,
   type ColorPickerProps as AriaColorPickerProps,
+  Button,
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
-import { Popover } from '@radix-ui/react-popover'
 
 import { focusRing } from '@/utils'
-
 import { ColorArea } from './color-area'
 import { ColorField } from './color-field'
 import { ColorSlider } from './color-slider'

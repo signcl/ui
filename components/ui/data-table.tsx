@@ -1,20 +1,20 @@
 'use client'
 
-import * as React from 'react'
 import { IconArrowDown, IconArrowUp, IconFilter, IconX } from '@tabler/icons-react'
 import {
+  type ColumnDef,
+  type ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  useReactTable,
-  type ColumnDef,
-  type ColumnFiltersState,
   type SortingState,
   type TableOptions,
+  useReactTable,
   type VisibilityState,
 } from '@tanstack/react-table'
+import * as React from 'react'
 
 import { Button } from '@/components/ui/button'
 import {

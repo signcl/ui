@@ -1,4 +1,3 @@
-import React from 'react'
 import { ColorThumb as AriaColorThumb, type ColorThumbProps } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 

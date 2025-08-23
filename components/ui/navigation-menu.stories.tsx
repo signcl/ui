@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconCircle, IconRocket, IconSettings } from '@tabler/icons-react'
+import Link from 'next/link'
 
 import {
   NavigationMenu,
@@ -72,7 +72,7 @@ export const Basic: Story = {
                 <IconRocket className='h-5 w-5' />
                 <div>
                   <NavigationMenuLink asChild>
-                    <a href='#' className='font-medium'>
+                    <a href='https://www.google.com' className='font-medium'>
                       Introduction
                     </a>
                   </NavigationMenuLink>
@@ -83,7 +83,7 @@ export const Basic: Story = {
                 <IconSettings className='h-5 w-5' />
                 <div>
                   <NavigationMenuLink asChild>
-                    <a href='#' className='font-medium'>
+                    <a href='https://www.google.com' className='font-medium'>
                       Configuration
                     </a>
                   </NavigationMenuLink>
@@ -101,7 +101,7 @@ export const Basic: Story = {
                 <IconCircle className='h-5 w-5' />
                 <div>
                   <NavigationMenuLink asChild>
-                    <a href='#' className='font-medium'>
+                    <a href='https://www.google.com' className='font-medium'>
                       Feature 1
                     </a>
                   </NavigationMenuLink>
@@ -112,7 +112,7 @@ export const Basic: Story = {
                 <IconCircle className='h-5 w-5' />
                 <div>
                   <NavigationMenuLink asChild>
-                    <a href='#' className='font-medium'>
+                    <a href='https://www.google.com' className='font-medium'>
                       Feature 2
                     </a>
                   </NavigationMenuLink>

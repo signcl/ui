@@ -1,8 +1,6 @@
-import React from 'react'
 import { ColorArea as AriaColorArea, type ColorAreaProps as AriaColorAreaProps } from 'react-aria-components'
 
 import { composeTailwindRenderProps } from '@/utils'
-
 import { ColorThumb } from './color-thumb'
 
 export function ColorArea(props: AriaColorAreaProps) {

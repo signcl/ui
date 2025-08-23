@@ -1,8 +1,8 @@
 'use client'
 
-import * as React from 'react'
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import { IconRestore } from '@tabler/icons-react'
+import * as React from 'react'
 
 import { cn } from '@/lib/cn'
 
@@ -161,8 +161,9 @@ function Slider({
           )}
         >
           {marks.map(({ value: mark, label }, idx) => (
-            <div
+            <button
               key={idx}
+              type='button'
               className={cn(
                 'hover:text-fg absolute flex cursor-pointer text-xs text-nowrap select-none',
                 isMarkInRange(mark) ? 'text-fg' : 'text-fg/40'
@@ -174,7 +175,7 @@ function Slider({
               onClick={() => handleLabelClick(mark)}
             >
               {label}
-            </div>
+            </button>
           ))}
         </div>
       )}
@@ -188,8 +189,9 @@ function Slider({
           )}
         >
           {defaultValues.map(({ value: mark }, idx) => (
-            <div
+            <button
               key={idx}
+              type='button'
               className={cn(
                 'hover:text-fg absolute flex cursor-pointer text-xs text-nowrap select-none',
                 value && mark !== value[0] ? 'text-fg' : 'text-fg/40'
@@ -201,7 +203,7 @@ function Slider({
               onClick={() => handleLabelClick(mark)}
             >
               {value && mark !== value[0] ? <IconRestore className='size-4' /> : value}
-            </div>
+            </button>
           ))}
         </div>
       )}

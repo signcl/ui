@@ -1,10 +1,11 @@
 'use client'
 
+import * as RadixScrollArea from '@radix-ui/react-scroll-area'
 // Migrated and modifed from Mantine v6 and shadcn ScrollArea component
 // https://github.com/mantinedev/mantine/tree/v6/src/mantine-core/src/ScrollArea
 // https://ui.shadcn.com/docs/components/scroll-area
-import React, { forwardRef } from 'react'
-import * as RadixScrollArea from '@radix-ui/react-scroll-area'
+import type React from 'react'
+import { forwardRef } from 'react'
 
 import { cn } from '@/lib/cn'
 

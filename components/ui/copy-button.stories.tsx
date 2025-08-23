@@ -98,11 +98,7 @@ export const Disabled: Story = {
     value: '',
     timeout: 2000,
     children: ({ copied, copy }) => (
-      <Button
-        onClick={copy}
-        disabled={!Boolean('') /* Simulates being disabled when value is empty */}
-        className='cursor-not-allowed opacity-50'
-      >
+      <Button onClick={copy} disabled={false} className='cursor-not-allowed opacity-50'>
         {copied ? 'Copied!' : 'Nothing to copy'}
       </Button>
     ),

@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   ColorField as AriaColorField,
   type ColorFieldProps as AriaColorFieldProps,
@@ -7,8 +6,7 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { composeTailwindRenderProps, focusRing } from '@/utils'
-
-import { Description, fieldBorderStyles, FieldError, Input, Label } from './field'
+import { Description, FieldError, fieldBorderStyles, Input, Label } from './field'
 
 const inputStyles = tv({
   extend: focusRing,

@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import {
   IconAlignCenter,
@@ -18,6 +17,7 @@ import {
   IconSettings,
   IconUnderline,
 } from '@tabler/icons-react'
+import React from 'react'
 
 import {
   Menubar,

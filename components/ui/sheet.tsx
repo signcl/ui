@@ -1,8 +1,8 @@
 'use client'
 
-import * as React from 'react'
-import { cva, type VariantProps } from 'class-variance-authority'
 import * as SheetPrimitive from '@radix-ui/react-dialog'
+import { cva, type VariantProps } from 'class-variance-authority'
+import type * as React from 'react'
 
 // import { IconX } from '@tabler/icons-react'
 

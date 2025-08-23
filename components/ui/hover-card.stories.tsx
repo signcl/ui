@@ -53,7 +53,7 @@ export const UserProfile: Story = {
     <HoverCard>
       <HoverCardTrigger asChild>
         <a
-          href='#'
+          href='https://www.google.com'
           className='hover:text-primary inline-flex items-center justify-center text-sm font-medium underline underline-offset-4'
         >
           @johndoe

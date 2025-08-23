@@ -1,8 +1,8 @@
 'use client'
 
-import * as React from 'react'
-import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react'
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
+import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react'
+import * as React from 'react'
 
 import { cn } from '@/lib/cn'
 
@@ -118,6 +118,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
           canScrollNext,
         }}
       >
+        {/** biome-ignore lint/a11y/useSemanticElements: false positive */}
         <div
           ref={ref}
           onKeyDownCapture={handleKeyDown}
@@ -156,6 +157,7 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
     const { orientation } = useCarousel()
 
     return (
+      // biome-ignore lint/a11y/useSemanticElements: false positive
       <div
         ref={ref}
         role='group'

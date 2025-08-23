@@ -1,7 +1,7 @@
 'use client'
 
-import * as React from 'react'
 import { IconCircle } from '@tabler/icons-react'
+import type * as React from 'react'
 
 import { cn } from '@/lib/cn'
 

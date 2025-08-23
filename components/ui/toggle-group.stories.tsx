@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import {
   IconAlignCenter,
@@ -14,6 +13,7 @@ import {
   IconStrikethrough,
   IconUnderline,
 } from '@tabler/icons-react'
+import React from 'react'
 
 import { Label } from '@/components/ui/label'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'

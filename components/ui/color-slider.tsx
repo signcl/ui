@@ -1,14 +1,12 @@
-import React from 'react'
 import {
   ColorSlider as AriaColorSlider,
+  type ColorSliderProps as AriaColorSliderProps,
   SliderOutput,
   SliderTrack,
-  type ColorSliderProps as AriaColorSliderProps,
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 import { composeTailwindRenderProps } from '@/utils'
-
 import { ColorThumb } from './color-thumb'
 import { Label } from './field'
 

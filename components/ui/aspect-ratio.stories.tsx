@@ -26,7 +26,7 @@ const PlaceholderImage = ({ ratio, label }: { ratio: number; label: string }) =>
     <picture>
       <img
         src={`https://placehold.co/600x${Math.round(600 / ratio)}`}
-        alt='Placeholder image'
+        alt='Placeholder'
         className='size-full object-cover'
       />
     </picture>
@@ -123,8 +123,8 @@ export const GalleryGrid: Story = {
         { ratio: 16 / 9, label: '16:9' },
         { ratio: 1, label: '1:1' },
         { ratio: 9 / 16, label: '9:16' },
-      ].map((item, i) => (
-        <div key={i}>
+      ].map(item => (
+        <div key={item.label}>
           <AspectRatio ratio={item.ratio}>
             <PlaceholderImage ratio={item.ratio} label={item.label} />
           </AspectRatio>
