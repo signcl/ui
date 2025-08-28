@@ -14,7 +14,7 @@ const alertVariantsConfig = {
   },
 }
 
-const alertVariants = cva('relative w-full rounded px-2 py-1 border-l-6', {
+const alertVariants = cva('relative w-full rounded px-2 py-2 border-l-6', {
   variants: alertVariantsConfig,
   defaultVariants: {
     tint: 'default',
