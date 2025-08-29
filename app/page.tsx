@@ -41,7 +41,7 @@ const Home = async () => {
                 </TableCell>
                 <TableCell>
                   <Button tint={'accent'} size={'sm'} asChild>
-                    <a href={`${getBaseUrl()}/registry/${item.name}`} target='_blank'>
+                    <a href={`${getBaseUrl()}/r/${item.name}.json`} target='_blank'>
                       Link
                     </a>
                   </Button>

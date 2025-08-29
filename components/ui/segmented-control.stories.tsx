@@ -150,7 +150,6 @@ export const Controlled: Story = {
   args: {
     type: 'single',
     value: 'option1',
-    onValueChange: value => console.log(`Selected: ${value}`),
     children: (
       <>
         <SegmentedControlItem value='option1'>Option 1</SegmentedControlItem>
