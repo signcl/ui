@@ -47,8 +47,6 @@ export interface InputProps extends React.ComponentProps<'input'>, VariantProps<
   min?: number
   /** Max value for number inputs */
   max?: number
-  /** Default value for reset functionality */
-  defaultValue?: number
 }
 
 function Input({
@@ -105,7 +103,7 @@ function Input({
 
   const handleReset = () => {
     if (disabled || defaultValue === undefined) return
-    triggerChange(defaultValue)
+    triggerChange(Number(defaultValue))
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
