@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "figure-display",
+  "type": "registry:component",
+  "title": "Figure Display",
+  "description": "Figure display component",
+  "files": [
+    {
+      "path": "components/ui/figure-display.tsx",
+      "content": "'use client'\n\nimport { IconHelpHexagonFilled } from '@tabler/icons-react'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport type { ComponentProps } from 'react'\n\nimport { cn } from '@/lib/cn'\n\nimport { Tooltip } from '@/components/ui/tooltip'\n\n// Label variants\nconst labelVariants = cva('text-fg/50 flex items-center gap-1 text-xs', {\n  variants: {\n    position: {\n      start: 'justify-start',\n      center: 'justify-center',\n      end: 'justify-end',\n    },\n    active: {\n      true: 'text-fg',\n    },\n  },\n  defaultVariants: {\n    position: 'start',\n  },\n})\n\n// Content variants\nconst contentVariants = cva('font-figures flex text-3xl leading-none font-medium', {\n  variants: {\n    position: {\n      start: 'justify-start',\n      center: 'justify-center',\n      end: 'justify-end',\n    },\n    size: {\n      default: '',\n      sm: 'text-xl',\n    },\n    active: {\n      true: 'text-ac',\n    },\n  },\n  defaultVariants: {\n    position: 'start',\n    size: 'default',\n  },\n})\n\n// Figure variants\nconst figureVariants = cva('grid min-w-[60px]', {\n  variants: {\n    altOrderOnMobile: {\n      true: '',\n    },\n  },\n})\n\ninterface FigureProps\n  extends ComponentProps<'div'>,\n    Omit<VariantProps<typeof figureVariants>, 'position' | 'active' | 'size'> {\n  /**\n   * 要展示的数字\n   */\n  figure: React.ReactNode\n  /**\n   * 标题\n   */\n  label: React.ReactNode\n  tooltip?: React.ReactNode\n  position?: 'start' | 'center' | 'end'\n  active?: boolean\n  size?: 'default' | 'sm'\n}\n\nfunction Figure({\n  className,\n  figure,\n  label,\n  tooltip,\n  position = 'start',\n  active,\n  size = 'default',\n  altOrderOnMobile,\n  ...props\n}: FigureProps) {\n  // Calculate whether we need to override position on mobile\n  const mobileOverrides = altOrderOnMobile && (position === 'center' || position === 'end')\n\n  return (\n    <div data-slot='figure' className={cn(figureVariants({ altOrderOnMobile }), className)} {...props}>\n      <div\n        data-slot='figure-label'\n        className={cn(\n          labelVariants({\n            position,\n            active,\n          }),\n          mobileOverrides && 'max-md:justify-start'\n        )}\n      >\n        {label}\n\n        {tooltip ? (\n          <Tooltip label={tooltip}>\n            <span className='size-3 cursor-help'>\n              <IconHelpHexagonFilled />\n            </span>\n          </Tooltip>\n        ) : null}\n      </div>\n      <div\n        data-slot='figure-content'\n        className={cn(\n          contentVariants({\n            position,\n            size,\n            active,\n          }),\n          mobileOverrides && 'max-md:-order-1 max-md:justify-start'\n        )}\n      >\n        {figure}\n      </div>\n    </div>\n  )\n}\n\nexport { Figure }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

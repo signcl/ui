@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner",
+  "type": "registry:component",
+  "title": "Sonner",
+  "description": "Sonner toast component",
+  "files": [
+    {
+      "path": "components/ui/sonner.tsx",
+      "content": "'use client'\n\nimport {\n  IconAlertCircleFilled,\n  IconAlertTriangleFilled,\n  IconCircleCheckFilled,\n  IconInfoCircleFilled,\n} from '@tabler/icons-react'\n// https://ui.shadcn.com/docs/components/sonner\nimport { Toaster as Sonner } from 'sonner'\n\nimport { Loading } from './loading'\n\ntype ToasterProps = React.ComponentProps<typeof Sonner>\n\nconst Toaster = ({ ...props }: ToasterProps) => {\n  return (\n    <Sonner\n      className='unstyled'\n      toastOptions={{\n        unstyled: true,\n        classNames: {\n          toast: 'group floating p-3 rounded-lg flex gap-2 items-start w-(--width)',\n          title: 'font-medium text-base',\n          description: 'text-sm',\n          closeButton:\n            'group-hover:opacity-100 opacity-0 bg-bg shadow-border absolute -top-1 -left-1.5 rounded-full size-5 flex items-center justify-center',\n          content: 'flex-auto',\n          info: '**:data-icon:text-sky-500',\n          success: '**:data-icon:text-emerald-500',\n          warning: '**:data-icon:text-amber-500',\n          error: '**:data-icon:text-rose-500',\n          actionButton: 'shrink-0 px-2 py-0.5 text-sm rounded-sm border focus-ring',\n          cancelButton: 'shrink-0 px-2 py-0.5 text-sm rounded-sm focus-ring',\n          loader: 'flex items-center',\n          icon: 'relative flex flex-shrink-0 items-center size-6 [&>svg]:flex [&>svg]:flex-auto',\n        },\n      }}\n      // https://sonner.emilkowal.ski/styling#changing-icons\n      icons={{\n        success: <IconCircleCheckFilled size={'1.5rem'} />,\n        info: <IconInfoCircleFilled size={'1.5rem'} />,\n        warning: <IconAlertTriangleFilled size={'1.5rem'} />,\n        error: <IconAlertCircleFilled size={'1.5rem'} />,\n        loading: <Loading size={'1.5rem'} />,\n      }}\n      gap={10}\n      {...props}\n    />\n  )\n}\n\nexport { Toaster }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

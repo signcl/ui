@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar",
+  "type": "registry:component",
+  "title": "Calendar",
+  "description": "Calendar component",
+  "files": [
+    {
+      "path": "components/ui/calendar.tsx",
+      "content": "// https://ui.shadcn.com/docs/components/calendar\n\n'use client'\n\nimport { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'\n// We can remove date-fns if no custom locale is needed:\n// https://daypicker.dev/upgrading\nimport { zhCN } from 'date-fns/locale'\nimport type { ComponentProps } from 'react'\nimport { DayPicker } from 'react-day-picker'\n\nimport { cn } from '@/lib/cn'\n\nexport type CalendarProps = ComponentProps<typeof DayPicker>\n\nfunction Calendar({ className, classNames, showOutsideDays = true, ...props }: CalendarProps) {\n  return (\n    <DayPicker\n      locale={zhCN}\n      // captionLayout='dropdown-buttons'\n      showOutsideDays={showOutsideDays}\n      className={cn(className)}\n      classNames={{\n        months: 'relative flex flex-col sm:flex-row gap-2',\n        month: 'space-y-2',\n        month_caption: '',\n        caption_label: 'ml-1 text-sm font-medium',\n        dropdowns: 'flex place-items-center',\n        nav: 'flex gap-2 absolute top-0.5 right-0.5 leading-none',\n        button_next: 'aria-disabled:opacity-50 aria-disabled:cursor-not-allowed outline-hidden focus-ring rounded-sm',\n        button_previous:\n          'aria-disabled:opacity-50 aria-disabled:cursor-not-allowed outline-hidden focus-ring rounded-sm',\n        month_grid: 'w-full border-collapse space-y-1',\n        weekdays: 'flex',\n        weekday: 'w-8 font-normal text-[0.8rem]',\n        week: 'flex w-full mt-0.5',\n        day: cn(\n          'relative rounded-sm hover:bg-ac/10 p-0 text-center text-sm focus-within:relative focus-within:z-20 overflow-hidden',\n          '[&:has([aria-selected])]:bg-ac [&:has([aria-selected].day-outside)]:bg-ac/50 [&:has([aria-selected].day-range-end)]:rounded-r',\n          'data-[focused=true]:ring-2 data-[focused=true]:ring-ac/40'\n          // props.mode === 'range'\n          //   ? '[&:has(>.day-range-end)]:rounded-r [&:has(>.day-range-start)]:rounded-l first:[&:has([aria-selected])]:rounded-l last:[&:has([aria-selected])]:rounded-r'\n          //   : '[&:has([aria-selected])]:rounded-sm'\n        ),\n        day_button: 'h-8 w-8 p-0 aria-selected:opacity-100 outline-hidden',\n        range_start: 'day-range-start rounded-l-sm rounded-r-none',\n        range_end: 'day-range-end rounded-r-sm rounded-l-none',\n        range_middle: 'aria-selected:bg-ac aria-selected:text-bg rounded-none!',\n        selected: cn(\n          'bg-ac! text-bg hover:bg-ac/60 hover:text-bg',\n          props.mode === 'range' ? 'rounded-none' : 'rounded-sm'\n        ),\n        today: 'font-bold',\n        outside: 'day-outside text-fg/10 aria-selected:text-bg aria-selected:opacity-60',\n        disabled: 'text-fg/40 cursor-not-allowed hover:bg-transparent',\n        hidden: 'invisible',\n        ...classNames,\n      }}\n      components={{\n        Chevron: ({ ...props }) => {\n          if (props.orientation === 'left') {\n            return <IconChevronLeft className='size-4' />\n          } else {\n            return <IconChevronRight className='size-4' />\n          }\n        },\n      }}\n      {...props}\n    />\n  )\n}\n\nexport { Calendar }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

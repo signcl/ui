@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "color-picker",
+  "type": "registry:component",
+  "title": "Color Picker",
+  "description": "Color picker component",
+  "registryDependencies": [
+    "color-area",
+    "color-field",
+    "color-slider",
+    "color-swatch",
+    "color-thumb"
+  ],
+  "files": [
+    {
+      "path": "components/ui/color-picker.tsx",
+      "content": "import { Popover } from '@radix-ui/react-popover'\nimport type React from 'react'\nimport {\n  ColorPicker as AriaColorPicker,\n  type ColorPickerProps as AriaColorPickerProps,\n  Button,\n} from 'react-aria-components'\nimport { tv } from 'tailwind-variants'\n\nimport { focusRing } from '@/utils'\nimport { ColorArea } from './color-area'\nimport { ColorField } from './color-field'\nimport { ColorSlider } from './color-slider'\nimport { ColorSwatch } from './color-swatch'\nimport { PopoverContent, PopoverTrigger } from './popover'\n\nconst buttonStyles = tv({\n  extend: focusRing,\n  base: 'flex gap-2 items-center cursor-default rounded-xs text-sm text-gray-800 dark:text-gray-200',\n})\n\nexport interface ColorPickerProps extends AriaColorPickerProps {\n  label?: string\n  children?: React.ReactNode\n}\n\nexport function ColorPicker({ label, children, ...props }: ColorPickerProps) {\n  return (\n    <AriaColorPicker {...props}>\n      <Popover>\n        <PopoverTrigger asChild>\n          <Button className={buttonStyles}>\n            <ColorSwatch />\n            <span>{label}</span>\n          </Button>\n        </PopoverTrigger>\n        <PopoverContent>\n          {children || (\n            <>\n              <ColorArea colorSpace='hsb' xChannel='saturation' yChannel='brightness' />\n              <ColorSlider colorSpace='hsb' channel='hue' />\n              <ColorField label='Hex' />\n            </>\n          )}\n        </PopoverContent>\n      </Popover>\n    </AriaColorPicker>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

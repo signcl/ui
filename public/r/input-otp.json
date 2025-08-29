@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp",
+  "type": "registry:component",
+  "title": "Input OTP",
+  "description": "Input OTP component",
+  "files": [
+    {
+      "path": "components/ui/input-otp.tsx",
+      "content": "'use client'\n\nimport { IconPointFilled } from '@tabler/icons-react'\nimport { OTPInput, OTPInputContext } from 'input-otp'\nimport * as React from 'react'\n\nimport { cn } from '@/lib/cn'\n\nconst InputOTP = React.forwardRef<React.ComponentRef<typeof OTPInput>, React.ComponentPropsWithoutRef<typeof OTPInput>>(\n  ({ className, containerClassName, ...props }, ref) => (\n    <OTPInput\n      ref={ref}\n      containerClassName={cn('flex items-center gap-2 has-[:disabled]:opacity-50', containerClassName)}\n      className={cn('disabled:cursor-not-allowed', className)}\n      {...props}\n    />\n  )\n)\nInputOTP.displayName = 'InputOTP'\n\nconst InputOTPGroup = React.forwardRef<React.ComponentRef<'div'>, React.ComponentPropsWithoutRef<'div'>>(\n  ({ className, ...props }, ref) => <div ref={ref} className={cn('flex items-center', className)} {...props} />\n)\nInputOTPGroup.displayName = 'InputOTPGroup'\n\nconst InputOTPSlot = React.forwardRef<\n  React.ComponentRef<'div'>,\n  React.ComponentPropsWithoutRef<'div'> & { index: number }\n>(({ index, className, ...props }, ref) => {\n  const inputOTPContext = React.useContext(OTPInputContext)\n  const slot = inputOTPContext.slots[index]\n  const char = slot?.char\n  const hasFakeCaret = slot?.hasFakeCaret\n  const isActive = slot?.isActive\n\n  return (\n    <div\n      ref={ref}\n      className={cn(\n        'relative flex h-10 w-10 items-center justify-center border-y border-r text-sm first:rounded-l-md first:border-l last:rounded-r-md',\n        isActive && 'ring-ac ring-offset-ac/30 z-10 ring-2',\n        className\n      )}\n      {...props}\n    >\n      {char}\n      {hasFakeCaret && (\n        <div className='pointer-events-none absolute inset-0 flex items-center justify-center'>\n          <div className='animate-caret-blink bg-fg h-4 w-px duration-1000' />\n        </div>\n      )}\n    </div>\n  )\n})\nInputOTPSlot.displayName = 'InputOTPSlot'\n\nconst InputOTPSeparator = React.forwardRef<React.ComponentRef<'div'>, React.ComponentPropsWithoutRef<'div'>>(\n  ({ ...props }, ref) => (\n    <div ref={ref} aria-hidden='true' {...props}>\n      <IconPointFilled className='size-[1em]' />\n    </div>\n  )\n)\nInputOTPSeparator.displayName = 'InputOTPSeparator'\n\nexport { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

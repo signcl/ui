@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field",
+  "type": "registry:component",
+  "title": "Field",
+  "description": "Field component",
+  "files": [
+    {
+      "path": "components/ui/field.tsx",
+      "content": "import {\n  composeRenderProps,\n  type FieldErrorProps,\n  Group,\n  type GroupProps,\n  type InputProps,\n  type LabelProps,\n  FieldError as RACFieldError,\n  Input as RACInput,\n  Label as RACLabel,\n  Text,\n  type TextProps,\n} from 'react-aria-components'\nimport { twMerge } from 'tailwind-merge'\nimport { tv } from 'tailwind-variants'\n\nimport { composeTailwindRenderProps, focusRing } from '@/utils'\n\nexport function Label(props: LabelProps) {\n  return (\n    <RACLabel\n      {...props}\n      className={twMerge('w-fit cursor-default text-sm font-medium text-gray-500 dark:text-zinc-400', props.className)}\n    />\n  )\n}\n\nexport function Description(props: TextProps) {\n  return <Text {...props} slot='description' className={twMerge('text-sm text-gray-600', props.className)} />\n}\n\nexport function FieldError(props: FieldErrorProps) {\n  return (\n    <RACFieldError\n      {...props}\n      className={composeTailwindRenderProps(props.className, 'text-sm text-red-600 forced-colors:text-[Mark]')}\n    />\n  )\n}\n\nexport const fieldBorderStyles = tv({\n  variants: {\n    isFocusWithin: {\n      false: 'border-gray-300 dark:border-zinc-500 forced-colors:border-[ButtonBorder]',\n      true: 'border-gray-600 dark:border-zinc-300 forced-colors:border-[Highlight]',\n    },\n    isInvalid: {\n      true: 'border-red-600 dark:border-red-600 forced-colors:border-[Mark]',\n    },\n    isDisabled: {\n      true: 'border-gray-200 dark:border-zinc-700 forced-colors:border-[GrayText]',\n    },\n  },\n})\n\nexport const fieldGroupStyles = tv({\n  extend: focusRing,\n  base: 'group flex items-center h-9 bg-white dark:bg-zinc-900 forced-colors:bg-[Field] border-2 rounded-lg overflow-hidden',\n  variants: fieldBorderStyles.variants,\n})\n\nexport function FieldGroup(props: GroupProps) {\n  return (\n    <Group\n      {...props}\n      className={composeRenderProps(props.className, (className, renderProps) =>\n        fieldGroupStyles({ ...renderProps, className })\n      )}\n    />\n  )\n}\n\nexport function Input(props: InputProps) {\n  return (\n    <RACInput\n      {...props}\n      className={composeTailwindRenderProps(\n        props.className,\n        'min-w-0 flex-1 bg-white px-2 py-1.5 text-sm text-gray-800 outline-0 disabled:text-gray-200 dark:bg-zinc-900 dark:text-zinc-200 dark:disabled:text-zinc-600'\n      )}\n    />\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

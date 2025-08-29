@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "type": "registry:component",
+  "title": "Tooltip",
+  "description": "Tooltip component",
+  "files": [
+    {
+      "path": "components/ui/tooltip.tsx",
+      "content": "'use client'\n\nimport * as TooltipPrimitive from '@radix-ui/react-tooltip'\n\nimport { cn } from '@/lib/cn'\n\nconst TooltipProvider = TooltipPrimitive.Provider\n\ninterface TooltipProps {\n  children: React.ReactNode\n  label: React.ReactNode\n  triggerOptions?: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Trigger>\n  contentOptions?: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>\n}\n\nfunction Tooltip({ children, label, triggerOptions, contentOptions }: TooltipProps) {\n  const { className: triggerClassName, ...triggerOps } = triggerOptions || {}\n  const { className: contentClassName, ...contentOps } = contentOptions || {}\n\n  return (\n    <TooltipPrimitive.Root disableHoverableContent>\n      <TooltipPrimitive.Trigger\n        data-slot='tooltip-trigger'\n        // asChild by default\n        asChild\n        className={cn('focus-ring flex items-center', triggerClassName)}\n        {...triggerOps}\n      >\n        {children}\n      </TooltipPrimitive.Trigger>\n      <TooltipPrimitive.Portal>\n        <TooltipPrimitive.Content\n          hideWhenDetached\n          collisionPadding={5}\n          sideOffset={4}\n          data-slot='tooltip-content'\n          className={cn(\n            'floating text-fg max-w-[400px] overflow-hidden rounded-md border px-3 py-1.5 text-base font-normal',\n            'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',\n            contentClassName\n          )}\n          {...contentOps}\n        >\n          {label}\n        </TooltipPrimitive.Content>\n      </TooltipPrimitive.Portal>\n    </TooltipPrimitive.Root>\n  )\n}\n\nexport { Tooltip, TooltipProvider }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

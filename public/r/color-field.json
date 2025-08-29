@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "color-field",
+  "type": "registry:component",
+  "title": "Color Field",
+  "description": "Color field component",
+  "files": [
+    {
+      "path": "components/ui/color-field.tsx",
+      "content": "import {\n  ColorField as AriaColorField,\n  type ColorFieldProps as AriaColorFieldProps,\n  type ValidationResult,\n} from 'react-aria-components'\nimport { tv } from 'tailwind-variants'\n\nimport { composeTailwindRenderProps, focusRing } from '@/utils'\nimport { Description, FieldError, fieldBorderStyles, Input, Label } from './field'\n\nconst inputStyles = tv({\n  extend: focusRing,\n  base: 'border rounded-md',\n  variants: {\n    isFocused: fieldBorderStyles.variants.isFocusWithin,\n    ...fieldBorderStyles.variants,\n  },\n})\n\nexport interface ColorFieldProps extends AriaColorFieldProps {\n  label?: string\n  description?: string\n  errorMessage?: string | ((validation: ValidationResult) => string)\n}\n\nexport function ColorField({ label, description, errorMessage, ...props }: ColorFieldProps) {\n  return (\n    <AriaColorField {...props} className={composeTailwindRenderProps(props.className, 'flex flex-col gap-1')}>\n      {label && <Label>{label}</Label>}\n      <Input className={inputStyles} />\n      {description && <Description>{description}</Description>}\n      <FieldError>{errorMessage}</FieldError>\n    </AriaColorField>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

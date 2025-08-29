@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:component",
+  "title": "Tabs",
+  "description": "Tabs component",
+  "files": [
+    {
+      "path": "components/ui/tabs.tsx",
+      "content": "// https://ui.shadcn.com/docs/components/tabs\n'use client'\n\nimport * as TabsPrimitive from '@radix-ui/react-tabs'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport * as React from 'react'\n\nimport { cn } from '@/lib/cn'\n\nconst tabsListVariants = cva(\n  cn(\n    'max-w-full overflow-x-auto overflow-y-hidden',\n    'flex items-center text-fg/60',\n    'snap-x snap-mandatory scroll-p-1 scroll-smooth',\n    // Hide scrollbar but keep functionality\n    '[&::-webkit-scrollbar]:h-[0px]',\n    '[&::-webkit-scrollbar-track]:bg-transparent',\n    '[&::-webkit-scrollbar-thumb]:bg-transparent',\n    '[&::-webkit-scrollbar-thumb]:rounded-full',\n    'hover:[&::-webkit-scrollbar-thumb]:bg-transparent'\n  ),\n  {\n    variants: {\n      variant: {\n        underline: 'rounded-none bg-transparent pb-0 shadow-fg/20 shadow-[inset_0_-2px_0_0]',\n        segmented: 'bg-fg/5 rounded-full p-[3px]',\n      },\n    },\n    defaultVariants: {\n      variant: 'underline',\n    },\n  }\n)\n\nconst tabsTriggerVariants = cva(\n  cn(\n    'focus-ring text-fg inline-flex items-center justify-center gap-1',\n    'px-4 py-1 font-medium whitespace-nowrap',\n    'disabled:pointer-events-none disabled:opacity-50',\n    \"[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n    'snap-end'\n  ),\n  {\n    variants: {\n      variant: {\n        underline:\n          'rounded-b-none border-b-[2px] border-transparent data-[state=active]:border-b-ac data-[state=active]:text-ac',\n        segmented: 'rounded-full data-[state=active]:text-ac data-[state=active]:bg-bg',\n      },\n    },\n    defaultVariants: {\n      variant: 'underline',\n    },\n  }\n)\n\nconst TabsContext = React.createContext<{ variant?: 'segmented' | 'underline' }>({})\n\nexport interface TabsProps\n  extends React.ComponentProps<typeof TabsPrimitive.Root>,\n    VariantProps<typeof tabsListVariants> {}\n\nfunction Tabs({ className, variant = 'underline', ...props }: TabsProps) {\n  return (\n    <TabsContext.Provider value={{ variant: variant || 'underline' }}>\n      <TabsPrimitive.Root data-slot='tabs' className={cn(className)} {...props} />\n    </TabsContext.Provider>\n  )\n}\n\nfunction TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.List>) {\n  const { variant } = React.useContext(TabsContext)\n\n  return (\n    <TabsPrimitive.List data-slot='tabs-list' className={cn(tabsListVariants({ variant }), className)} {...props} />\n  )\n}\n\nfunction TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {\n  const { variant } = React.useContext(TabsContext)\n\n  return (\n    <TabsPrimitive.Trigger\n      data-slot='tabs-trigger'\n      className={cn(tabsTriggerVariants({ variant }), className)}\n      {...props}\n    />\n  )\n}\n\nfunction TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Content>) {\n  return (\n    <TabsPrimitive.Content data-slot='tabs-content' className={cn('focus-ring rounded-md', className)} {...props} />\n  )\n}\n\nexport { Tabs, TabsList, TabsTrigger, TabsContent }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

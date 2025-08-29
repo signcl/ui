@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "type": "registry:component",
+  "title": "Checkbox",
+  "description": "Checkbox component",
+  "files": [
+    {
+      "path": "components/ui/checkbox.tsx",
+      "content": "'use client'\n\nimport { IconCheck } from '@tabler/icons-react'\nimport type * as React from 'react'\n\nimport { cn } from '@/lib/cn'\n\nfunction Checkbox({ className, ...props }: React.ComponentProps<'input'>) {\n  return (\n    <div className='relative inline-flex [&+label]:pb-0'>\n      <input\n        type='checkbox'\n        data-slot='checkbox'\n        className={cn(\n          'peer bg-bg/10 size-4 cursor-pointer appearance-none rounded-sm border',\n          'disabled:cursor-not-allowed disabled:opacity-50',\n          'checked:border-ac checked:bg-ac',\n          'focus-ring',\n          className\n        )}\n        {...props}\n      />\n      <div className='text-bg pointer-events-none absolute flex size-4 items-center justify-center opacity-0 peer-checked:opacity-100'>\n        <IconCheck className='size-3.5' />\n      </div>\n    </div>\n  )\n}\n\nexport { Checkbox }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

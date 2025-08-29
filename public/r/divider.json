@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "divider",
+  "type": "registry:component",
+  "title": "Divider",
+  "description": "Divider component",
+  "files": [
+    {
+      "path": "components/ui/divider.tsx",
+      "content": "import type { ComponentProps } from 'react'\n\nimport { cn } from '@/lib/cn'\n\ninterface DividerProps extends ComponentProps<'div'> {\n  label?: React.ReactNode\n  extended?: boolean\n}\n\nfunction Divider({ label, extended, className, ...props }: DividerProps) {\n  return (\n    <div\n      className={cn(\n        'flex items-center gap-1.5 text-xs',\n        'after:border-t-fg/20 after:flex-1 after:border-t after:content-[\"\"]',\n        extended && 'before:border-t-fg/20 before:w-2.5 before:border-t before:content-[\"\"]',\n        className\n      )}\n      {...props}\n    >\n      {label}\n    </div>\n  )\n}\n\nexport { Divider }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

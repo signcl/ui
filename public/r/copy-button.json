@@ -15,7 +15,7 @@
     },
     {
       "path": "hooks/use-copy-to-clipboard.ts",
-      "content": "'use client'\n\nimport { useState } from 'react'\n\nexport interface useCopyToClipboardProps {\n  timeout?: number\n}\n\nexport function useCopyToClipboard(props?: useCopyToClipboardProps) {\n  const timeout = props?.timeout ?? 2000\n  const [isCopied, setIsCopied] = useState<Boolean>(false)\n\n  const copyToClipboard = (value: string) => {\n    if (typeof window === 'undefined' || !navigator.clipboard?.writeText) {\n      return\n    }\n\n    if (!value) {\n      return\n    }\n\n    navigator.clipboard.writeText(value).then(() => {\n      setIsCopied(true)\n\n      setTimeout(() => {\n        setIsCopied(false)\n      }, timeout)\n    })\n  }\n\n  return { isCopied, copyToClipboard }\n}\n",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nexport interface useCopyToClipboardProps {\n  timeout?: number\n}\n\nexport function useCopyToClipboard(props?: useCopyToClipboardProps) {\n  const timeout = props?.timeout ?? 2000\n  const [isCopied, setIsCopied] = useState<boolean>(false)\n\n  const copyToClipboard = (value: string) => {\n    if (typeof window === 'undefined' || !navigator.clipboard?.writeText) {\n      return\n    }\n\n    if (!value) {\n      return\n    }\n\n    navigator.clipboard.writeText(value).then(() => {\n      setIsCopied(true)\n\n      setTimeout(() => {\n        setIsCopied(false)\n      }, timeout)\n    })\n  }\n\n  return { isCopied, copyToClipboard }\n}\n",
       "type": "registry:hook"
     }
   ]

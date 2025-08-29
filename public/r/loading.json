@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loading",
+  "type": "registry:component",
+  "title": "Loading",
+  "description": "Loading component",
+  "files": [
+    {
+      "path": "components/ui/loading.tsx",
+      "content": "import type { ComponentProps } from 'react'\n\nimport { cn } from '@/lib/cn'\n\nexport type LoadingProps = {\n  size?: string\n  width?: string\n} & ComponentProps<'span'>\n\nexport function Loading({ size, width, className, ...props }: LoadingProps) {\n  return (\n    <span\n      data-slot='loading'\n      className={cn(\n        'inline-block animate-spin rounded-full border-solid border-[color-mix(in_oklch,currentColor_50%,transparent)] border-r-current align-[-0.125em] supports-[not(color:color-mix(in_oklch,currentColor_50%,transparent))]:border-current supports-[not(color:color-mix(in_oklch,currentColor_50%,transparent))]:border-r-transparent',\n        className\n      )}\n      style={{\n        width: `${size || `1.125em`}`,\n        height: `${size || `1.125em`}`,\n        borderWidth: `${width || `.15em`}`,\n      }}\n      {...props}\n    />\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "type": "registry:component",
+  "title": "Alert",
+  "description": "Alert component",
+  "files": [
+    {
+      "path": "components/ui/alert.tsx",
+      "content": "import { cva, type VariantProps } from 'class-variance-authority'\nimport type * as React from 'react'\n\nimport { cn } from '@/lib/cn'\n\nconst alertVariantsConfig = {\n  tint: {\n    default: 'bg-fg/5 text-fg border-fg',\n    accent: 'bg-ac/10 text-[color-mix(in_oklch,var(--color-ac),var(--color-fg)_60%)] border-ac',\n    danger: 'border-rose-500 text-rose-500 bg-rose-500/10',\n    success: 'border-emerald-500 text-emerald-500 bg-emerald-500/10',\n    warning: 'border-orange-500 text-orange-500 bg-orange-500/10',\n    info: 'border-blue-500 text-blue-500 bg-blue-500/10',\n  },\n}\n\nconst alertVariants = cva('relative w-full rounded px-2 py-2 border-l-6', {\n  variants: alertVariantsConfig,\n  defaultVariants: {\n    tint: 'default',\n  },\n})\n\ninterface AlertProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof alertVariants> {\n  children?: React.ReactNode\n  label?: React.ReactNode\n  icon?: React.ReactNode\n}\n\nfunction Alert({ className, tint, children, label, icon, ...props }: React.ComponentProps<'div'> & AlertProps) {\n  const content = typeof children === 'string' ? <div>{children}</div> : children\n\n  return (\n    <div role='alert' data-slot='alert' className={cn(alertVariants({ tint }), icon && 'pl-3', className)} {...props}>\n      <div className='flex'>\n        {icon && <div className='shrink-0'>{icon}</div>}\n        <div className={cn('w-full', icon && 'ml-2')}>\n          {label && <h5 className='leading-tight font-medium tracking-tight'>{label}</h5>}\n          {content}\n        </div>\n      </div>\n    </div>\n  )\n}\n\nexport { Alert, alertVariantsConfig }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

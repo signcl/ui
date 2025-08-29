@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover",
+  "type": "registry:component",
+  "title": "Popover",
+  "description": "Popover component",
+  "files": [
+    {
+      "path": "components/ui/popover.tsx",
+      "content": "// https://ui.shadcn.com/docs/components/popover\n\n'use client'\n\nimport * as PopoverPrimitive from '@radix-ui/react-popover'\nimport type * as React from 'react'\n\nimport { cn } from '@/lib/cn'\n\nconst Popover = PopoverPrimitive.Root\n\nconst PopoverTrigger = PopoverPrimitive.Trigger\n\nconst PopoverPortal = PopoverPrimitive.Portal\n\nfunction PopoverContent({\n  children,\n  className,\n  align = 'center',\n  sideOffset = 4,\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Content>) {\n  return (\n    <PopoverPortal>\n      <PopoverPrimitive.Content\n        data-slot='popover-content'\n        align={align}\n        sideOffset={sideOffset}\n        collisionPadding={5}\n        className={cn(\n          'floating text-fg w-fit rounded-md p-3 text-base outline-hidden',\n          'max-h-[var(--radix-popover-content-available-height)] overflow-y-auto',\n          'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',\n          '[&>hr]:-mx-3 [&>hr]:my-2',\n          // pointer-events-auto is necessary to make the popover content clickable due to a Radix UI bug.\n          // See: https://github.com/radix-ui/primitives/issues/3142\n          'pointer-events-auto',\n          className\n        )}\n        // prevent auto focus on open\n        onOpenAutoFocus={e => {\n          e.preventDefault()\n        }}\n        {...props}\n      >\n        {children}\n        {/* <PopoverPrimitive.Close /> */}\n        {/* does not work with translucent background */}\n        {/* <PopoverPrimitive.Arrow className='fill-bg' /> */}\n      </PopoverPrimitive.Content>\n    </PopoverPortal>\n  )\n}\n\nexport { Popover, PopoverTrigger, PopoverContent }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

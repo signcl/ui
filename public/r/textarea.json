@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "type": "registry:component",
+  "title": "Textarea",
+  "description": "Textarea component",
+  "files": [
+    {
+      "path": "components/ui/textarea.tsx",
+      "content": "import * as React from 'react'\n\nimport { cn } from '@/lib/cn'\n\nconst Textarea = React.forwardRef<HTMLTextAreaElement, React.ComponentProps<'textarea'>>(\n  ({ className, ...props }, ref) => {\n    return (\n      <textarea\n        className={cn(\n          'placeholder:text-fg/60 focus-ring flex min-h-12 w-full rounded-sm border bg-transparent px-2 py-1 text-base disabled:cursor-not-allowed disabled:opacity-50',\n          className\n        )}\n        ref={ref}\n        {...props}\n      />\n    )\n  }\n)\nTextarea.displayName = 'Textarea'\n\nexport { Textarea }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

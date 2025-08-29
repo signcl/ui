@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "segmented-control",
+  "type": "registry:component",
+  "title": "Segmented Control",
+  "description": "Segmented control component",
+  "files": [
+    {
+      "path": "components/ui/segmented-control.tsx",
+      "content": "'use client'\n\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport * as React from 'react'\n\nimport { cn } from '@/lib/cn'\n\nimport { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'\n\nconst segmentedControlVariants = cva('bg-fg/5 gap-0', {\n  variants: {\n    size: {\n      sm: 'rounded-sm',\n      default: 'rounded-md',\n      lg: 'rounded-md',\n    },\n  },\n  defaultVariants: {\n    size: 'default',\n  },\n})\n\nconst segmentedControlItemVariants = cva('data-[state=on]:bg-bg text-fg/60 hover:text-fg border', {\n  variants: {\n    tint: {\n      default: 'data-[state=on]:text-fg data-[state=on]:border-fg/20',\n      accent: 'data-[state=on]:bg-ac data-[state=on]:text-bg',\n    },\n  },\n  defaultVariants: {\n    tint: 'default',\n  },\n})\n\ntype SegmentedControlProps = React.ComponentPropsWithoutRef<typeof ToggleGroup> & {\n  tint?: VariantProps<typeof segmentedControlItemVariants>['tint']\n}\n\nconst SegmentedControlContext = React.createContext<{\n  tint?: VariantProps<typeof segmentedControlItemVariants>['tint']\n}>({})\n\nconst SegmentedControl = React.forwardRef<React.ComponentRef<typeof ToggleGroup>, SegmentedControlProps>(\n  ({ className, size, variant = 'default', tint = 'default', children, ...props }, ref) => (\n    <SegmentedControlContext.Provider value={{ tint }}>\n      <ToggleGroup\n        ref={ref}\n        className={cn(segmentedControlVariants({ size }), className)}\n        size={size}\n        variant={variant}\n        {...props}\n      >\n        {children}\n      </ToggleGroup>\n    </SegmentedControlContext.Provider>\n  )\n)\n\nSegmentedControl.displayName = 'SegmentedControl'\n\ntype SegmentedControlItemProps = React.ComponentPropsWithoutRef<typeof ToggleGroupItem> & {\n  tint?: VariantProps<typeof segmentedControlItemVariants>['tint']\n}\n\nconst SegmentedControlItem = React.forwardRef<React.ComponentRef<typeof ToggleGroupItem>, SegmentedControlItemProps>(\n  ({ className, children, tint, ...props }, ref) => {\n    const context = React.useContext(SegmentedControlContext)\n    const itemTint = tint || context.tint\n\n    return (\n      <ToggleGroupItem\n        ref={ref}\n        className={cn(\n          segmentedControlItemVariants({\n            tint: itemTint,\n          }),\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </ToggleGroupItem>\n    )\n  }\n)\n\nSegmentedControlItem.displayName = 'SegmentedControlItem'\n\nexport { SegmentedControl, SegmentedControlItem }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

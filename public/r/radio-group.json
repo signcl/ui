@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "type": "registry:component",
+  "title": "Radio Group",
+  "description": "Radio group component",
+  "files": [
+    {
+      "path": "components/ui/radio-group.tsx",
+      "content": "'use client'\n\nimport * as RadioGroupPrimitive from '@radix-ui/react-radio-group'\nimport { IconCircle } from '@tabler/icons-react'\nimport * as React from 'react'\n\nimport { cn } from '@/lib/cn'\n\nconst RadioGroup = React.forwardRef<\n  React.ComponentRef<typeof RadioGroupPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>\n>(({ className, ...props }, ref) => {\n  return <RadioGroupPrimitive.Root className={cn('grid gap-2', className)} {...props} ref={ref} />\n})\nRadioGroup.displayName = RadioGroupPrimitive.Root.displayName\n\nconst RadioGroupItem = React.forwardRef<\n  React.ComponentRef<typeof RadioGroupPrimitive.Item>,\n  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>\n>(({ className, ...props }, ref) => {\n  return (\n    <RadioGroupPrimitive.Item\n      ref={ref}\n      className={cn(\n        'peer bg-bg/10 size-4 cursor-pointer appearance-none rounded-full border',\n        'disabled:cursor-not-allowed disabled:opacity-50',\n        'data-[state=checked]:border-ac data-[state=checked]:bg-ac',\n        'focus-ring',\n        className\n      )}\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator className='text-bg flex items-center justify-center'>\n        <IconCircle className='size-2 fill-current' />\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  )\n})\nRadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName\n\nexport { RadioGroup, RadioGroupItem }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

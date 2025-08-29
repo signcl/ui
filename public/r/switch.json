@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "type": "registry:component",
+  "title": "Switch",
+  "description": "Switch component",
+  "files": [
+    {
+      "path": "components/ui/switch.tsx",
+      "content": "'use client'\n\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport type * as React from 'react'\n\nimport { cn } from '@/lib/cn'\n\nconst switchVariants = cva(\n  [\n    'peer cursor-pointer appearance-none rounded-full border bg-bg/10',\n    'disabled:cursor-not-allowed disabled:opacity-50',\n    'checked:bg-ac',\n    'focus-ring',\n    'transition-colors',\n  ],\n  {\n    variants: {\n      size: {\n        sm: 'h-3 w-6',\n        md: 'h-4 w-8',\n        lg: 'h-5 w-10',\n      },\n    },\n    defaultVariants: {\n      size: 'md',\n    },\n  }\n)\n\nconst thumbVariants = cva(\n  [\n    'pointer-events-none absolute rounded-full bg-fg/60',\n    'supports-[not(color:oklch(0_0_0))]:bg-current',\n    'transition-[background-color,translate]',\n    'peer-checked:bg-bg peer-disabled:opacity-50',\n    'supports-[not(color:oklch(0_0_0))]:peer-checked:bg-current',\n  ],\n  {\n    variants: {\n      size: {\n        sm: 'size-1.5 left-[0.2rem] top-[0.2rem] peer-checked:translate-x-3',\n        md: 'size-2 left-1 top-1 peer-checked:translate-x-4',\n        lg: 'size-2.5 left-[0.3rem] top-[0.3rem] peer-checked:translate-x-5',\n      },\n    },\n    defaultVariants: {\n      size: 'md',\n    },\n  }\n)\n\nconst labelVariants = cva(\n  [\n    'flex items-center absolute top-1/2 -translate-y-1/2',\n    'pointer-events-none select-none',\n    'text-fg/60 transition-[colors,opacity]',\n  ],\n  {\n    variants: {\n      size: {\n        sm: 'text-xs',\n        md: 'text-sm',\n        lg: 'text-base',\n      },\n    },\n    defaultVariants: {\n      size: 'md',\n    },\n  }\n)\n\nexport interface SwitchProps\n  extends Omit<React.ComponentProps<'input'>, 'type' | 'size'>,\n    VariantProps<typeof switchVariants> {\n  className?: string\n  onLabel?: React.ReactNode\n  offLabel?: React.ReactNode\n}\n\nfunction Switch({ className, size, onLabel, offLabel, ...props }: SwitchProps) {\n  return (\n    <div className='relative inline-flex'>\n      <input type='checkbox' data-slot='switch' className={cn(switchVariants({ size }), className)} {...props} />\n      <div className={thumbVariants({ size })} />\n      {onLabel && (\n        <div className={cn(labelVariants({ size }), 'left-[0.2em]', 'opacity-0 peer-checked:opacity-100')}>\n          {onLabel}\n        </div>\n      )}\n      {offLabel && (\n        <div className={cn(labelVariants({ size }), 'right-[0.2em]', 'opacity-100 peer-checked:opacity-0')}>\n          {offLabel}\n        </div>\n      )}\n    </div>\n  )\n}\n\nexport { Switch }\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "lib/cn.ts",
+      "content": "import { type ClassValue, clsx } from 'clsx'\nimport { twMerge } from 'tailwind-merge'\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}
