@@ -39,7 +39,7 @@ export function Command({ command }: CommandProps) {
               aria-label={'Copy command'}
               disabled={!command}
             >
-              {copied ? <IconCheck size='1.125rem' /> : <IconCopy size='1.125rem' />}
+              {copied ? <IconCheck size='1rem' /> : <IconCopy size='1rem' />}
             </Button>
           )}
         </CopyButton>
