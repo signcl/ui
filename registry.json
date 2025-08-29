@@ -4,6 +4,20 @@
   "homepage": "https://github.com/signcl/ui",
   "items": [
     {
+      "name": "example-form",
+      "type": "registry:component",
+      "title": "Example Form",
+      "description": "A contact form with Zod validation.",
+      "dependencies": ["zod"],
+      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "files": [
+        {
+          "path": "components/blocks/example-form/example-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "accordion",
       "type": "registry:component",
       "title": "Accordion",
