@@ -51,7 +51,7 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
           props.mode === 'range' ? 'rounded-none' : 'rounded-sm'
         ),
         today: 'font-bold',
-        outside: 'day-outside text-fg/10 aria-selected:text-bg aria-selected:opacity-60',
+        outside: 'w-8 day-outside text-fg/10 aria-selected:text-bg aria-selected:opacity-60',
         disabled: 'text-fg/40 cursor-not-allowed hover:bg-transparent',
         hidden: 'invisible',
         ...classNames,
