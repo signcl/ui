@@ -59,7 +59,7 @@
     "@chromatic-com/storybook": "^4.1.1",
     "@eslint/eslintrc": "^3.3.1",
     "@storybook/addon-a11y": "^9.1.4",
-    "@storybook/addon-docs": "^9.1.4",
+    "@storybook/addon-docs": "^9.1.5",
     "@storybook/addon-themes": "^9.1.4",
     "@storybook/addon-vitest": "^9.1.4",
     "@storybook/nextjs-vite": "^9.1.4",
