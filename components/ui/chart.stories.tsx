@@ -237,7 +237,7 @@ export const CompleteChartExample: Story = {
       <div className='w-full max-w-[900px] space-y-12 p-6'>
         <div>
           <h2 className='mb-4 text-xl font-semibold'>Line Chart</h2>
-          <p className='text-muted-foreground mb-4'>
+          <p className='text-fg/60 mb-4'>
             Line charts are perfect for showing trends over time, like revenue and expenses.
           </p>
           <ChartContainer config={lineChartConfig} className='h-[300px]'>
@@ -277,7 +277,7 @@ export const CompleteChartExample: Story = {
 
         <div>
           <h2 className='mb-4 text-xl font-semibold'>Bar Chart</h2>
-          <p className='text-muted-foreground mb-4'>
+          <p className='text-fg/60 mb-4'>
             Bar charts are excellent for comparing quantities across different categories.
           </p>
           <ChartContainer config={barChartConfig} className='h-[300px]'>
@@ -296,7 +296,7 @@ export const CompleteChartExample: Story = {
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
           <div>
             <h2 className='mb-4 text-xl font-semibold'>Pie Chart</h2>
-            <p className='text-muted-foreground mb-4'>Pie charts show the proportion of categories within a whole.</p>
+            <p className='text-fg/60 mb-4'>Pie charts show the proportion of categories within a whole.</p>
             <ChartContainer config={pieChartConfig} className='h-[300px]'>
               <PieChart>
                 <Pie data={pieChartData} dataKey='value' nameKey='name' cx='50%' cy='50%' outerRadius={80} label>
@@ -323,9 +323,7 @@ export const CompleteChartExample: Story = {
 
           <div>
             <h2 className='mb-4 text-xl font-semibold'>Radial Bar Chart</h2>
-            <p className='text-muted-foreground mb-4'>
-              Radial bar charts show progress toward goals in a circular layout.
-            </p>
+            <p className='text-fg/60 mb-4'>Radial bar charts show progress toward goals in a circular layout.</p>
             <ChartContainer config={radialBarConfig} className='h-[300px]'>
               <RadialBarChart
                 innerRadius='20%'
@@ -364,7 +362,7 @@ export const CompleteChartExample: Story = {
 
         <div>
           <h2 className='mb-4 text-xl font-semibold'>Area Chart</h2>
-          <p className='text-muted-foreground mb-4'>
+          <p className='text-fg/60 mb-4'>
             Area charts emphasize volume change over time, great for showing stacked metrics.
           </p>
           <ChartContainer config={areaChartConfig} className='h-[300px]'>
@@ -404,9 +402,7 @@ export const CompleteChartExample: Story = {
 
         <div>
           <h2 className='mb-4 text-xl font-semibold'>Custom Tooltip Features</h2>
-          <p className='text-muted-foreground mb-4'>
-            Demonstrating different tooltip configurations with line indicators.
-          </p>
+          <p className='text-fg/60 mb-4'>Demonstrating different tooltip configurations with line indicators.</p>
           <ChartContainer config={lineChartConfig} className='h-[300px]'>
             <LineChart data={lineChartData.slice(0, 6)}>
               <CartesianGrid strokeDasharray='3 3' />
@@ -444,7 +440,7 @@ export const CompleteChartExample: Story = {
 
         <div>
           <h2 className='mb-4 text-xl font-semibold'>Dashed Line Indicator</h2>
-          <p className='text-muted-foreground mb-4'>Tooltip with dashed line indicator style.</p>
+          <p className='text-fg/60 mb-4'>Tooltip with dashed line indicator style.</p>
           <ChartContainer config={barChartConfig} className='h-[300px]'>
             <BarChart data={barChartData}>
               <CartesianGrid strokeDasharray='3 3' />

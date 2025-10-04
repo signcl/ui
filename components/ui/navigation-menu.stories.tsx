@@ -144,11 +144,11 @@ export const HorizontalLinks: Story = {
               <li className='row-span-3'>
                 <NavigationMenuLink asChild>
                   <a
-                    className='from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none select-none focus:shadow-md'
+                    className='from-ac/20 to-fg/5 flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none select-none focus:shadow-md'
                     href='https://github.com'
                   >
                     <div className='mt-4 mb-2 text-lg font-medium'>shadcn/ui</div>
-                    <p className='text-muted-foreground text-sm leading-tight'>
+                    <p className='text-fg/60 text-sm leading-tight'>
                       Beautifully designed components that you can copy and paste into your apps. Accessible.
                       Customizable. Open Source.
                     </p>

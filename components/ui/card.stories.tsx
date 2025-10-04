@@ -100,7 +100,7 @@ export const WithImage: Story = {
         </p>
       </CardContent>
       <CardFooter className='flex justify-between'>
-        <div className='text-muted-foreground text-sm'>$199/night</div>
+        <div className='text-fg/60 text-sm'>$199/night</div>
         <Button size='sm'>Book now</Button>
       </CardFooter>
     </Card>
@@ -116,7 +116,7 @@ export const Pricing: Story = {
           <CardDescription>Perfect for individuals</CardDescription>
           <div className='mt-2 flex items-baseline'>
             <span className='text-4xl font-bold'>$9</span>
-            <span className='text-muted-foreground ml-1'>/month</span>
+            <span className='text-fg/60 ml-1'>/month</span>
           </div>
         </CardHeader>
         <CardContent>
@@ -139,14 +139,14 @@ export const Pricing: Story = {
           <Button className='w-full'>Get Started</Button>
         </CardFooter>
       </Card>
-      <Card className='border-primary w-[300px]'>
+      <Card className='border-ac w-[300px]'>
         <CardHeader>
-          <div className='text-primary mb-1 text-sm font-medium uppercase'>Popular</div>
+          <div className='text-ac mb-1 text-sm font-medium uppercase'>Popular</div>
           <CardTitle>Professional</CardTitle>
           <CardDescription>Perfect for small teams</CardDescription>
           <div className='mt-2 flex items-baseline'>
             <span className='text-4xl font-bold'>$29</span>
-            <span className='text-muted-foreground ml-1'>/month</span>
+            <span className='text-fg/60 ml-1'>/month</span>
           </div>
         </CardHeader>
         <CardContent>

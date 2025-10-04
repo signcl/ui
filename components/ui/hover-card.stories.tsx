@@ -39,7 +39,7 @@ export const Default: Story = {
             </p>
             <div className='flex items-center pt-2'>
               <IconCalendar className='mr-2 h-4 w-4 opacity-70' />
-              <span className='text-muted-foreground text-xs'>Added March 2024</span>
+              <span className='text-fg/60 text-xs'>Added March 2024</span>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ export const UserProfile: Story = {
       <HoverCardTrigger asChild>
         <a
           href='https://www.google.com'
-          className='hover:text-primary inline-flex items-center justify-center text-sm font-medium underline underline-offset-4'
+          className='hover:text-ac inline-flex items-center justify-center text-sm font-medium underline underline-offset-4'
         >
           @johndoe
         </a>
@@ -69,8 +69,8 @@ export const UserProfile: Story = {
             <h4 className='text-sm font-semibold'>John Doe</h4>
             <p className='text-sm'>Software developer and UI/UX enthusiast. Building awesome web experiences.</p>
             <div className='flex items-center pt-2'>
-              <IconCalendar className='mr-2 h-4 w-4 opacity-70' />
-              <span className='text-muted-foreground text-xs'>Joined December 2023</span>
+              <IconCalendar className='mr-1 h-4 w-4 opacity-70' />
+              <span className='text-fg/60 text-xs'>Joined December 2023</span>
             </div>
           </div>
         </div>
