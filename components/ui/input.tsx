@@ -193,6 +193,7 @@ function Input({
           max={max}
           step={step}
           ref={props.ref}
+          defaultValue={defaultValue}
           {...props}
         />
         {rightSection || (type === 'number' && !hideControls) ? (

@@ -61,6 +61,21 @@ export const Numbers: Story = {
   },
 }
 
+export const Time: Story = {
+  args: {},
+  render: () => {
+    return (
+      <div className='grid w-full max-w-sm items-center gap-1.5'>
+        <Input
+          type='time'
+          defaultValue='12:30:00'
+          className='appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none'
+        />
+      </div>
+    )
+  },
+}
+
 export const Disabled: Story = {
   args: {},
   render: () => {
