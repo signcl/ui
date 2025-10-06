@@ -43,9 +43,10 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
           //   : '[&:has([aria-selected])]:rounded-sm'
         ),
         day_button: 'h-8 w-8 p-0 aria-selected:opacity-100 outline-hidden',
-        range_start: 'day-range-start rounded-l-sm rounded-r-none',
-        range_end: 'day-range-end rounded-r-sm rounded-l-none',
-        range_middle: 'aria-selected:bg-ac aria-selected:text-bg rounded-none!',
+        range_start: 'day-range-start rounded-l-sm! rounded-r-none',
+        range_end: 'day-range-end rounded-r-sm! rounded-l-none',
+        range_middle:
+          'aria-selected:bg-ac aria-selected:text-bg rounded-none! data-[disabled=true]:aria-selected:bg-ac/50!',
         selected: cn(
           'bg-ac! text-bg hover:bg-ac/60 hover:text-bg',
           props.mode === 'range' ? 'rounded-none' : 'rounded-sm'
