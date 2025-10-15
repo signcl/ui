@@ -8,9 +8,10 @@ import { cn } from '@/lib/cn'
 import { Loading } from './loading'
 
 const buttonVariantsConfig = {
+  // Should match Input
   size: {
     sm: 'text-xs rounded-sm h-6 gap-1.5 px-2 has-[>svg]:px-1.5 [&>svg]:size-4',
-    default: 'text-base rounded-md h-8 px-3 py-2 has-[>svg]:px-2 [&>svg]:size-5',
+    default: 'text-base rounded-md h-8 px-3 has-[>svg]:px-2 [&>svg]:size-5',
     lg: 'text-lg rounded-md h-10 px-4 has-[>svg]:px-3 [&>svg]:size-6',
     'icon-sm': 'rounded-sm size-6 [&>svg]:size-4',
     icon: 'rounded-md size-8 [&>svg]:size-5',
