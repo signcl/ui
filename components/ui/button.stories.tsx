@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { IconExternalLink } from '@tabler/icons-react'
+import { IconArrowUpRight, IconExternalLink } from '@tabler/icons-react'
 
 import { Button, buttonVariantsConfig } from '@/components/ui/button'
 
@@ -43,6 +43,38 @@ export const Disabled: Story = {
 export const IsLoading: Story = {
   args: { loading: true },
   render: args => <Button {...args} />,
+}
+
+export const Sizes: Story = {
+  args: { size: 'sm' },
+  render: args => {
+    return (
+      <div className='flex flex-col items-start gap-8 sm:flex-row'>
+        <div className='flex items-start gap-2'>
+          <Button size='sm' variant='outline'>
+            Small
+          </Button>
+          <Button size='icon-sm' aria-label='Submit' variant='outline'>
+            <IconArrowUpRight />
+          </Button>
+        </div>
+        <div className='flex items-start gap-2'>
+          <Button variant='outline'>Default</Button>
+          <Button size='icon' aria-label='Submit' variant='outline'>
+            <IconArrowUpRight />
+          </Button>
+        </div>
+        <div className='flex items-start gap-2'>
+          <Button variant='outline' size='lg'>
+            Large
+          </Button>
+          <Button size='icon-lg' aria-label='Submit' variant='outline'>
+            <IconArrowUpRight />
+          </Button>
+        </div>
+      </div>
+    )
+  },
 }
 
 export const VariantDefault: Story = {
@@ -135,6 +167,50 @@ export const VariantSolid: Story = {
 
 export const VariantOutline: Story = {
   args: { variant: 'outline' },
+  render: args => {
+    const tints = Object.keys(buttonVariantsConfig.tint)
+
+    return (
+      <div className='flex items-start gap-2'>
+        <div className='grid items-start gap-2'>
+          {tints.map(tint => (
+            <Button key={tint} tint={tint as keyof typeof buttonVariantsConfig.tint} size={'sm'} {...args} />
+          ))}
+        </div>
+        <div className='grid items-start gap-2'>
+          {tints.map(tint => (
+            <Button key={tint} tint={tint as keyof typeof buttonVariantsConfig.tint} {...args} />
+          ))}
+        </div>
+        <div className='grid items-start gap-2'>
+          {tints.map(tint => (
+            <Button key={tint} tint={tint as keyof typeof buttonVariantsConfig.tint} size={'lg'} {...args} />
+          ))}
+        </div>
+        <div className='grid items-start gap-2'>
+          {tints.map(tint => (
+            <Button key={tint} tint={tint as keyof typeof buttonVariantsConfig.tint} size={'icon'} {...args}>
+              <IconExternalLink />
+            </Button>
+          ))}
+        </div>
+        <div className='grid items-start gap-2'>
+          {tints.map(tint => (
+            <Button key={tint} tint={tint as keyof typeof buttonVariantsConfig.tint} loading {...args} />
+          ))}
+        </div>
+        <div className='grid items-start gap-2'>
+          {tints.map(tint => (
+            <Button key={tint} tint={tint as keyof typeof buttonVariantsConfig.tint} disabled {...args} />
+          ))}
+        </div>
+      </div>
+    )
+  },
+}
+
+export const VariantGhost: Story = {
+  args: { variant: 'ghost' },
   render: args => {
     const tints = Object.keys(buttonVariantsConfig.tint)
 
