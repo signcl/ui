@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { IconArrowUpRight, IconExternalLink } from '@tabler/icons-react'
+import { IconArrowUp, IconArrowUpRight, IconExternalLink, IconGitBranch } from '@tabler/icons-react'
 
 import { Button, buttonVariantsConfig } from '@/components/ui/button'
 
@@ -47,7 +47,7 @@ export const IsLoading: Story = {
 
 export const Sizes: Story = {
   args: { size: 'sm' },
-  render: args => {
+  render: _args => {
     return (
       <div className='flex flex-col items-start gap-8 sm:flex-row'>
         <div className='flex items-start gap-2'>
@@ -72,6 +72,38 @@ export const Sizes: Story = {
             <IconArrowUpRight />
           </Button>
         </div>
+      </div>
+    )
+  },
+}
+
+export const WithIcon: Story = {
+  args: {},
+  render: _args => {
+    return (
+      <div className='flex items-start gap-2'>
+        <Button variant='outline' size='sm'>
+          <IconGitBranch /> New Branch
+        </Button>
+        <Button variant='outline'>
+          <IconGitBranch /> New Branch
+        </Button>
+        <Button variant='outline' size='lg'>
+          <IconGitBranch /> New Branch
+        </Button>
+      </div>
+    )
+  },
+}
+
+export const Rounded: Story = {
+  args: {},
+  render: args => {
+    return (
+      <div className='flex flex-col gap-8'>
+        <Button variant='outline' size='icon' className='rounded-full'>
+          <IconArrowUp />
+        </Button>
       </div>
     )
   },
