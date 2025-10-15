@@ -107,7 +107,7 @@ const buttonVariants = cva(
       { variant: 'solid', tint: 'black', className: 'bg-black border-black text-white not-disabled:hover:bg-black/80' },
 
       // Outline
-      { variant: 'outline', tint: 'default', className: 'border-fg/30 not-disabled:hover:bg-fg/5 data-[state=open]:border-ac data-[state=open]:text-ac', },
+      { variant: 'outline', tint: 'default', className: 'border-fg/30 not-disabled:hover:bg-fg/5 data-[state=open]:bg-fg/5', },
       { variant: 'outline', tint: 'accent', className: 'border-ac not-disabled:hover:bg-ac/10', },
       { variant: 'outline', tint: 'gray', className: 'border-gray-500 not-disabled:hover:bg-gray-400/10', },
       { variant: 'outline', tint: 'red', className: 'border-red-500 not-disabled:hover:bg-red-400/10', },
@@ -131,7 +131,7 @@ const buttonVariants = cva(
       { variant: 'outline', tint: 'black', className: 'border-black not-disabled:hover:bg-black/10', },
 
       // Ghost
-      { variant: 'ghost', tint: 'default', className: 'not-disabled:hover:text-ac not-disabled:hover:bg-ac/10 data-[state=open]:text-ac' },
+      { variant: 'ghost', tint: 'default', className: 'not-disabled:hover:text-ac not-disabled:hover:bg-ac/10 data-[state=open]:bg-ac/10 data-[state=open]:text-ac' },
       { variant: 'ghost', tint: 'accent', className: 'not-disabled:hover:text-ac/80 not-disabled:hover:bg-ac/10' },
       { variant: 'ghost', tint: 'gray', className: 'not-disabled:hover:text-gray-500 not-disabled:hover:bg-gray-500/10', },
       { variant: 'ghost', tint: 'red', className: 'not-disabled:hover:text-red-500 not-disabled:hover:bg-red-500/10' },
