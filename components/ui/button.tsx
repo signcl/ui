@@ -59,7 +59,7 @@ const buttonVariants = cva(
     // prettier-ignore
     // biome-ignore format: keep long lines for readability
     compoundVariants: [
-      { variant: 'default', tint: 'default', className: 'border-fg/10 bg-fg/10 not-disabled:hover:bg-fg/20' },
+      { variant: 'default', tint: 'default', className: 'border-fg/10 bg-fg/5 not-disabled:hover:bg-fg/10' },
       { variant: 'default', tint: 'accent', className: 'border-ac/10 bg-ac/10 not-disabled:hover:bg-ac/20' },
       { variant: 'default', tint: 'gray', className: 'border-gray-500/10 bg-gray-500/10 not-disabled:hover:bg-gray-500/20', },
       { variant: 'default', tint: 'red', className: 'border-red-500/10 bg-red-500/10 not-disabled:hover:bg-red-500/20', },
