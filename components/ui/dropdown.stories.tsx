@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { IconArrowBackUpDouble } from '@tabler/icons-react'
+import { IconArrowBackUpDouble, IconSettings, IconTools, IconTrash } from '@tabler/icons-react'
 import { useState } from 'react'
 import { userEvent, within } from 'storybook/test'
 
@@ -8,7 +8,6 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuIcon,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
@@ -44,6 +43,7 @@ export const Basic: Story = {
         <DropdownMenuItem>New Window</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Settings</DropdownMenuItem>
+        <DropdownMenuItem tint='rose'>Delete</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   ),
@@ -60,6 +60,18 @@ export const BasicOpen: Story = {
         <DropdownMenuItem>New Window</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Settings</DropdownMenuItem>
+        <DropdownMenuItem>
+          <IconSettings />
+          <div>
+            <div>Settings</div>
+            <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
+          </div>
+        </DropdownMenuItem>
+        <DropdownMenuItem tint='rose'>Delete</DropdownMenuItem>
+        <DropdownMenuItem tint='rose'>
+          <IconTrash />
+          Delete
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   ),
@@ -108,7 +120,13 @@ export const WithSubmenus: Story = {
         </DropdownMenuItem>
         <DropdownMenuItem>General Menu Item</DropdownMenuItem>
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger>More Tools</DropdownMenuSubTrigger>
+          <DropdownMenuSubTrigger>
+            <IconTools />
+            <div>
+              <div>More Tools</div>
+              <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
+            </div>
+          </DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <DropdownMenuItem>Save Page As...</DropdownMenuItem>
             <DropdownMenuItem>Create Shortcut...</DropdownMenuItem>
@@ -189,11 +207,22 @@ export const WithCheckboxes: Story = {
           <DropdownMenuCheckboxItem checked={showActivityBar} onCheckedChange={setShowActivityBar}>
             Activity Bar
           </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem checked={showActivityBar} onCheckedChange={setShowActivityBar}>
+            <div>
+              <div>Activity Bar</div>
+              <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
+            </div>
+          </DropdownMenuCheckboxItem>
           <DropdownMenuItem>
-            <DropdownMenuIcon>
-              <IconArrowBackUpDouble />
-            </DropdownMenuIcon>
-            <span>Mark All as Unread</span>
+            <IconArrowBackUpDouble />
+            <div>Mark All as Unread</div>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <IconArrowBackUpDouble />
+            <div>
+              <div>Mark All as Unread</div>
+              <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
+            </div>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -220,7 +249,24 @@ export const WithRadioGroup: Story = {
             <DropdownMenuRadioItem value='top'>Top</DropdownMenuRadioItem>
             <DropdownMenuRadioItem value='bottom'>Bottom</DropdownMenuRadioItem>
             <DropdownMenuRadioItem value='right'>Right</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='right'>
+              <div>
+                <div>Right</div>
+                <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
+              </div>
+            </DropdownMenuRadioItem>
           </DropdownMenuRadioGroup>
+          <DropdownMenuItem>
+            <IconArrowBackUpDouble />
+            <div>Mark All as Unread</div>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <IconArrowBackUpDouble />
+            <div>
+              <div>Mark All as Unread</div>
+              <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
+            </div>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     )
@@ -253,7 +299,7 @@ export const WithMixedContent: Story = {
             <DropdownMenuRadioItem value='right'>
               <div>
                 <div>Right</div>
-                <div className='text-fg/50 text-xs'>Double-click an event to mark it as read</div>
+                <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
               </div>
               <DropdownMenuShortcut>⌘R</DropdownMenuShortcut>
             </DropdownMenuRadioItem>
@@ -265,12 +311,10 @@ export const WithMixedContent: Story = {
               <DropdownMenuShortcut>⌘A</DropdownMenuShortcut>
             </DropdownMenuCheckboxItem>
             <DropdownMenuItem>
-              <DropdownMenuIcon>
-                <IconArrowBackUpDouble />
-              </DropdownMenuIcon>
+              <IconArrowBackUpDouble />
               <div>
                 <div>Right</div>
-                <div className='text-fg/50 text-xs'>Double-click an event to mark it as read</div>
+                <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
               </div>
               <DropdownMenuShortcut>⌘T</DropdownMenuShortcut>
             </DropdownMenuItem>
