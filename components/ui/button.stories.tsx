@@ -98,7 +98,7 @@ export const WithIcon: Story = {
 
 export const Rounded: Story = {
   args: {},
-  render: args => {
+  render: _args => {
     return (
       <div className='flex flex-col gap-8'>
         <Button variant='outline' size='icon' className='rounded-full'>
