@@ -10,12 +10,12 @@ import { Loading } from './loading'
 const buttonVariantsConfig = {
   // Should match Input
   size: {
-    sm: 'text-xs rounded-sm h-6 gap-1.5 px-2 has-[>svg]:px-1.5 [&>svg]:size-4',
-    default: 'text-base rounded-md h-8 px-3 has-[>svg]:px-2 [&>svg]:size-5',
-    lg: 'text-lg rounded-md h-10 px-4 has-[>svg]:px-3 [&>svg]:size-6',
-    'icon-sm': 'rounded-sm size-6 [&>svg]:size-4',
-    icon: 'rounded-md size-8 [&>svg]:size-5',
-    'icon-lg': 'rounded-md size-10 [&>svg]:size-6',
+    sm: 'text-xs rounded-sm h-6 px-2 has-[>svg]:px-1.5 [&>svg]:size-3',
+    default: 'text-sm rounded-md h-8 px-3 has-[>svg]:px-2 [&>svg]:size-4',
+    lg: 'text-base rounded-md gap-2 h-10 px-4 has-[>svg]:px-3 [&>svg]:size-5',
+    'icon-sm': 'rounded-sm size-6 [&>svg]:size-3',
+    icon: 'rounded-md size-8 [&>svg]:size-4',
+    'icon-lg': 'rounded-md size-10 [&>svg]:size-5',
   },
   variant: {
     // map to "secondary" in shadcn
