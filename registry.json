@@ -173,6 +173,23 @@
       ]
     },
     {
+      "name": "button-group",
+      "type": "registry:component",
+      "title": "Button Group",
+      "description": "Button group component",
+      "registryDependencies": ["separator"],
+      "files": [
+        {
+          "path": "components/ui/button-group.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
       "name": "calendar",
       "type": "registry:component",
       "title": "Calendar",
@@ -425,6 +442,36 @@
       ]
     },
     {
+      "name": "input-group",
+      "type": "registry:component",
+      "title": "Input Group",
+      "description": "Input group component with addons",
+      "registryDependencies": ["button", "input-next", "textarea"],
+      "files": [
+        {
+          "path": "components/ui/input-group.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "input-number",
+      "type": "registry:component",
+      "title": "Input Number",
+      "description": "Number input component with controls",
+      "registryDependencies": ["button", "input-group", "input-next", "popover"],
+      "files": [
+        {
+          "path": "components/ui/input-number.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "input-otp",
       "type": "registry:component",
       "title": "Input OTP",
@@ -432,6 +479,39 @@
       "files": [
         {
           "path": "components/ui/input-otp.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:component",
+      "title": "Item",
+      "description": "Item component for lists and groups",
+      "registryDependencies": ["separator"],
+      "files": [
+        {
+          "path": "components/ui/item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:component",
+      "title": "Keyboard",
+      "description": "Keyboard shortcut display component",
+      "files": [
+        {
+          "path": "components/ui/kbd.tsx",
           "type": "registry:component"
         },
         {
