@@ -140,10 +140,46 @@ export const CustomStyling: Story = {
 export const WithContent: Story = {
   render: () => (
     <div className='w-full max-w-md'>
-      <div className='relative flex items-center py-5'>
+      <div className='flex items-center py-5'>
         <Separator className='flex-grow' />
         <div className='bg-bg text-fg/60 relative z-10 px-3 text-xs'>OR</div>
         <Separator className='flex-grow' />
+      </div>
+
+      <div className='py-5'>
+        <Separator>
+          <div className='text-fg/60 text-xs'>Start Position</div>
+        </Separator>
+      </div>
+
+      <div className='py-5'>
+        <Separator position='center'>
+          <div className='text-fg/60 text-xs'>Center</div>
+        </Separator>
+      </div>
+
+      <div className='py-5'>
+        <Separator position='end'>
+          <div className='text-fg/60 text-xs'>End Position</div>
+        </Separator>
+      </div>
+
+      <div className='py-5'>
+        <Separator extended>
+          <div className='text-fg/60 text-xs'>Extended Start</div>
+        </Separator>
+      </div>
+
+      <div className='py-5'>
+        <Separator extended position='center'>
+          <div className='text-fg/60 text-xs'>Extended Center</div>
+        </Separator>
+      </div>
+
+      <div className='py-5'>
+        <Separator extended position='end'>
+          <div className='text-fg/60 text-xs'>Extended End</div>
+        </Separator>
       </div>
 
       <div className='relative flex items-center py-5'>
@@ -153,6 +189,21 @@ export const WithContent: Story = {
         <div className='bg-bg text-fg/60 relative z-10 px-3 text-xs uppercase'>Section divider</div>
         <div className='flex-grow'>
           <Separator />
+        </div>
+      </div>
+
+      <div className='py-5'>
+        <div className='space-y-1'>
+          <h4 className='text-sm leading-none font-medium'>Radix Primitives</h4>
+          <p className='text-muted-foreground text-sm'>An open-source UI component library.</p>
+        </div>
+        <Separator className='my-4' />
+        <div className='flex h-5 items-center space-x-4 text-sm'>
+          <div>Blog</div>
+          <Separator orientation='vertical' />
+          <div>Docs</div>
+          <Separator orientation='vertical' />
+          <div>Source</div>
         </div>
       </div>
     </div>

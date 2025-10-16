@@ -7,6 +7,11 @@ interface DividerProps extends ComponentProps<'div'> {
   extended?: boolean
 }
 
+/**
+ * Divider component
+ *
+ * @deprecated Use Separator component instead
+ */
 function Divider({ label, extended, className, ...props }: DividerProps) {
   return (
     <div
