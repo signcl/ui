@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { IconApple } from '@tabler/icons-react'
 import { useState } from 'react'
 
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from './select'
@@ -140,6 +141,7 @@ export const PlainItems: Story = {
         <SelectGroup>
           <SelectLabel>Plain Items</SelectLabel>
           <SelectItem value='option1' plain>
+            <IconApple />
             Option 1
           </SelectItem>
           <SelectItem value='option2' plain>
