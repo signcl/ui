@@ -20,7 +20,6 @@ import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@/components/ui/button-group'
-import { Divider } from '@/components/ui/divider'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -34,6 +33,7 @@ import { Input } from '@/components/ui/input-next'
 import { Label } from '@/components/ui/label'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Separator } from '@/components/ui/separator'
 import { Textarea } from '@/components/ui/textarea'
 import { TooltipContent, TooltipRoot, TooltipTrigger } from '@/components/ui/tooltip'
 
@@ -402,7 +402,7 @@ export const WithPopover: Story = {
           <div className='px-4 py-3'>
             <div className='text-sm font-medium'>Agent Tasks</div>
           </div>
-          <Divider />
+          <Separator />
           <div className='p-4 space-y-2'>
             <Textarea placeholder='Describe your task in natural language.' className='mb-4 resize-none' />
             <p className='font-medium'>Start a new task with Copilot</p>
