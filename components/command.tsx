@@ -21,7 +21,8 @@ export function Command({ command }: CommandProps) {
         className='font-mono'
         readOnly
         aria-label='Copy command'
-        onClick={() => copyToClipboard(command)}
+        onClick={e => e.currentTarget.select()}
+        onFocus={e => e.currentTarget.select()}
       />
       <InputGroupAddon align='inline-end'>
         <InputGroupButton
