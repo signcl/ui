@@ -2,49 +2,38 @@
 
 import { IconCheck, IconCopy } from '@tabler/icons-react'
 import type React from 'react'
-import { useState } from 'react'
 
-import { Button } from '@/components/ui/button'
-import { CopyButton } from '@/components/ui/copy-button'
-import { Input } from '@/components/ui/input'
+import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard'
+
+import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from '@/components/ui/input-group'
 
 export interface CommandProps extends React.ComponentProps<'div'> {
   command: string
 }
 
 export function Command({ command }: CommandProps) {
-  const [, setCopied] = useState(false)
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(command).then(() => {
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1000)
-    })
-  }
+  const { copyToClipboard, isCopied } = useCopyToClipboard()
 
   return (
-    <Input
-      value={command}
-      onClick={handleCopy}
-      aria-label='Copy command'
-      readOnly
-      rightSection={
-        <CopyButton value={command} timeout={2000} className='flex items-center'>
-          {({ copied, copy }) => (
-            <Button
-              variant={copied ? 'solid' : 'default'}
-              tint={'accent'}
-              size={'icon'}
-              onClick={copy}
-              aria-label={'Copy command'}
-              disabled={!command}
-            >
-              {copied ? <IconCheck size='1rem' /> : <IconCopy size='1rem' />}
-            </Button>
-          )}
-        </CopyButton>
-      }
-      rightSectionClassName='pr-1'
-    />
+    <InputGroup>
+      <InputGroupInput
+        value={command}
+        className='font-mono'
+        readOnly
+        aria-label='Copy command'
+        onClick={() => copyToClipboard(command)}
+      />
+      <InputGroupAddon align='inline-end'>
+        <InputGroupButton
+          aria-label='Copy command'
+          title='Copy'
+          size='icon-xs'
+          onClick={() => copyToClipboard(command)}
+          disabled={!command}
+        >
+          {isCopied ? <IconCheck /> : <IconCopy />}
+        </InputGroupButton>
+      </InputGroupAddon>
+    </InputGroup>
   )
 }
