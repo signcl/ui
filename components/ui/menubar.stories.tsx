@@ -8,6 +8,7 @@ import {
   IconCopy,
   IconCut,
   IconDeviceFloppy,
+  IconDeviceIpadHorizontalExclamation,
   IconFileText,
   IconItalic,
   IconLink,
@@ -15,6 +16,7 @@ import {
   IconPhoto,
   IconScreenShare,
   IconSettings,
+  IconTrash,
   IconUnderline,
 } from '@tabler/icons-react'
 import React from 'react'
@@ -74,26 +76,31 @@ export const Example: Story = {
                 <MenubarSeparator />
                 <MenubarSub>
                   <MenubarSubTrigger>
-                    <IconFileText className='mr-1 size-4' />
+                    <IconFileText className='size-4' />
                     Share
                   </MenubarSubTrigger>
                   <MenubarSubContent>
                     <MenubarItem>
-                      <IconMail className='mr-1 size-4' />
+                      <IconMail className='size-4' />
                       Email
                     </MenubarItem>
                     <MenubarItem>
-                      <IconScreenShare className='mr-1 size-4' />
+                      <IconScreenShare className='size-4' />
                       Screen Share
                     </MenubarItem>
                   </MenubarSubContent>
                 </MenubarSub>
                 <MenubarSeparator />
                 <MenubarItem>
-                  <IconDeviceFloppy className='mr-1 size-4' />
+                  <IconDeviceFloppy className='size-4' />
                   Save <MenubarShortcut>⌘S</MenubarShortcut>
                 </MenubarItem>
                 <MenubarItem disabled>Save As</MenubarItem>
+                <MenubarItem tint='rose'>Discard</MenubarItem>
+                <MenubarItem tint='rose'>
+                  <IconTrash />
+                  Discard
+                </MenubarItem>
               </MenubarContent>
             </MenubarMenu>
 
@@ -101,20 +108,31 @@ export const Example: Story = {
               <MenubarTrigger>Edit</MenubarTrigger>
               <MenubarContent>
                 <MenubarItem>
-                  <IconCut className='mr-1 size-4' />
+                  <IconCut className='size-4' />
                   Cut <MenubarShortcut>⌘X</MenubarShortcut>
                 </MenubarItem>
                 <MenubarItem>
-                  <IconCopy className='mr-1 size-4' />
+                  <IconCopy className='size-4' />
                   Copy <MenubarShortcut>⌘C</MenubarShortcut>
                 </MenubarItem>
                 <MenubarItem>
-                  <IconClipboard className='mr-1 size-4' />
+                  <IconClipboard className='size-4' />
                   Paste <MenubarShortcut>⌘V</MenubarShortcut>
                 </MenubarItem>
                 <MenubarSeparator />
                 <MenubarSub>
                   <MenubarSubTrigger>Find</MenubarSubTrigger>
+                  <MenubarSubContent>
+                    <MenubarItem>Find in File...</MenubarItem>
+                    <MenubarItem>Find in Project...</MenubarItem>
+                    <MenubarItem>Find and Replace...</MenubarItem>
+                  </MenubarSubContent>
+                </MenubarSub>
+                <MenubarSub>
+                  <MenubarSubTrigger>
+                    <IconFileText className='size-4' />
+                    Find
+                  </MenubarSubTrigger>
                   <MenubarSubContent>
                     <MenubarItem>Find in File...</MenubarItem>
                     <MenubarItem>Find in Project...</MenubarItem>
@@ -136,6 +154,25 @@ export const Example: Story = {
                 <MenubarCheckboxItem checked={showPanel} onCheckedChange={setShowPanel}>
                   Panel
                 </MenubarCheckboxItem>
+                <MenubarRadioGroup value={position} onValueChange={setPosition as (value: string) => void}>
+                  <MenubarRadioItem value='left'>Left</MenubarRadioItem>
+                  <MenubarRadioItem value='center'>Center</MenubarRadioItem>
+                  <MenubarRadioItem value='right'>Right</MenubarRadioItem>
+                </MenubarRadioGroup>
+                <MenubarRadioGroup value={position} onValueChange={setPosition as (value: string) => void}>
+                  <MenubarRadioItem value='left'>
+                    <IconAlignLeft className='size-4' />
+                    Left
+                  </MenubarRadioItem>
+                  <MenubarRadioItem value='center'>
+                    <IconAlignCenter className='size-4' />
+                    Center
+                  </MenubarRadioItem>
+                  <MenubarRadioItem value='right'>
+                    <IconAlignRight className='size-4' />
+                    Right
+                  </MenubarRadioItem>
+                </MenubarRadioGroup>
                 <MenubarLabel inset>Info</MenubarLabel>
                 <MenubarSeparator />
                 <MenubarSub>
@@ -143,15 +180,15 @@ export const Example: Story = {
                   <MenubarSubContent>
                     <MenubarRadioGroup value={position} onValueChange={setPosition as (value: string) => void}>
                       <MenubarRadioItem value='left'>
-                        <IconAlignLeft className='mr-1 size-4' />
+                        <IconAlignLeft className='size-4' />
                         Left
                       </MenubarRadioItem>
                       <MenubarRadioItem value='center'>
-                        <IconAlignCenter className='mr-1 size-4' />
+                        <IconAlignCenter className='size-4' />
                         Center
                       </MenubarRadioItem>
                       <MenubarRadioItem value='right'>
-                        <IconAlignRight className='mr-1 size-4' />
+                        <IconAlignRight className='size-4' />
                         Right
                       </MenubarRadioItem>
                     </MenubarRadioGroup>
@@ -165,6 +202,11 @@ export const Example: Story = {
                     </MenubarRadioGroup>
                   </MenubarSubContent>
                 </MenubarSub>
+                <MenubarItem inset>With Inset</MenubarItem>
+                <MenubarItem inset>
+                  <IconTrash />
+                  With Inset
+                </MenubarItem>
               </MenubarContent>
             </MenubarMenu>
 
@@ -173,26 +215,26 @@ export const Example: Story = {
               <MenubarContent>
                 <MenubarGroup>
                   <MenubarItem>
-                    <IconBold className='mr-1 size-4' />
+                    <IconBold className='size-4' />
                     Bold <MenubarShortcut>⌘B</MenubarShortcut>
                   </MenubarItem>
                   <MenubarItem>
-                    <IconItalic className='mr-1 size-4' />
+                    <IconItalic className='size-4' />
                     Italic <MenubarShortcut>⌘I</MenubarShortcut>
                   </MenubarItem>
                   <MenubarItem>
-                    <IconUnderline className='mr-1 size-4' />
+                    <IconUnderline className='size-4' />
                     Underline <MenubarShortcut>⌘U</MenubarShortcut>
                   </MenubarItem>
                 </MenubarGroup>
                 <MenubarSeparator />
                 <MenubarGroup>
                   <MenubarItem>
-                    <IconLink className='mr-1 size-4' />
+                    <IconLink className='size-4' />
                     Add Link
                   </MenubarItem>
                   <MenubarItem>
-                    <IconPhoto className='mr-1 size-4' />
+                    <IconPhoto className='size-4' />
                     Add Image
                   </MenubarItem>
                 </MenubarGroup>
@@ -212,7 +254,7 @@ export const Example: Story = {
                 <MenubarItem>Contact Support</MenubarItem>
                 <MenubarSeparator />
                 <MenubarItem>
-                  <IconSettings className='mr-1 size-4' />
+                  <IconSettings className='size-4' />
                   Preferences
                 </MenubarItem>
               </MenubarContent>
