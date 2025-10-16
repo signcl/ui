@@ -21,6 +21,7 @@ const RadioGroupItem = React.forwardRef<
   return (
     <RadioGroupPrimitive.Item
       ref={ref}
+      data-slot='radio-group-item'
       className={cn(
         'peer bg-bg/10 size-4 cursor-pointer appearance-none rounded-full border',
         'disabled:cursor-not-allowed disabled:opacity-50',
@@ -30,7 +31,10 @@ const RadioGroupItem = React.forwardRef<
       )}
       {...props}
     >
-      <RadioGroupPrimitive.Indicator className='text-bg flex items-center justify-center'>
+      <RadioGroupPrimitive.Indicator
+        data-slot='radio-group-indicator'
+        className='text-bg flex items-center justify-center'
+      >
         <IconCircle className='size-2 fill-current' />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
