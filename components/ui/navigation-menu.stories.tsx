@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { IconCheck, IconCircle, IconHelpCircle, IconRocket, IconSettings } from '@tabler/icons-react'
+import { IconCheck, IconCircle, IconHelpCircle } from '@tabler/icons-react'
 import Link from 'next/link'
 
 import {
