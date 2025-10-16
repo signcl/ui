@@ -62,7 +62,7 @@ function DropdownMenuItem({
       data-inset={inset}
       data-tint={tint}
       className={cn(
-        'focus:bg-ac/10 focus:text-ac relative flex cursor-default gap-2 px-3 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8',
+        'focus:bg-ac/10 focus:text-ac relative flex cursor-default gap-2 px-3 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-9',
 
         // Icon
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg]:mt-0.5",
@@ -90,12 +90,12 @@ function DropdownMenuCheckboxItem({
     <DropdownMenuPrimitive.CheckboxItem
       data-slot='dropdown-menu-checkbox-item'
       className={cn(
-        'focus:bg-ac/10 focus:text-ac relative flex cursor-default gap-2 py-1.5 pr-2 pl-8 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+        'focus:bg-ac/10 focus:text-ac relative flex cursor-default gap-2 py-1.5 pr-3 pl-9 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
 
         // Icon
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg]:mt-0.5",
 
-        hideIndicator && 'data-[state=checked]:text-ac pl-2',
+        hideIndicator && 'data-[state=checked]:text-ac pl-3',
 
         className
       )}
@@ -130,12 +130,12 @@ function DropdownMenuRadioItem({
     <DropdownMenuPrimitive.RadioItem
       data-slot='dropdown-menu-radio-item'
       className={cn(
-        'focus:bg-ac/10 focus:text-ac relative flex cursor-default gap-2 py-1.5 pr-2 pl-8 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+        'focus:bg-ac/10 focus:text-ac relative flex cursor-default gap-2 py-1.5 pr-3 pl-9 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
 
         // Icon
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg]:mt-0.5",
 
-        hideIndicator && 'data-[state=checked]:text-ac pl-2',
+        hideIndicator && 'data-[state=checked]:text-ac pl-3',
         className
       )}
       {...props}
@@ -163,7 +163,7 @@ function DropdownMenuLabel({
     <DropdownMenuPrimitive.Label
       data-slot='dropdown-menu-label'
       data-inset={inset}
-      className={cn('text-fg/60 px-2 py-1.5 text-xs leading-none uppercase data-[inset]:pl-8', className)}
+      className={cn('text-fg/60 px-3 py-1.5 text-xs leading-none uppercase data-[inset]:pl-9', className)}
       {...props}
     />
   )
@@ -206,7 +206,7 @@ function DropdownMenuSubTrigger({
       data-slot='dropdown-menu-sub-trigger'
       data-inset={inset}
       className={cn(
-        'focus:bg-ac/10 focus:text-ac flex cursor-default gap-2 px-2 py-1.5 text-sm outline-hidden select-none data-[inset]:pl-8',
+        'focus:bg-ac/10 focus:text-ac flex cursor-default gap-2 px-3 py-1.5 text-sm outline-hidden select-none data-[inset]:pl-9',
         'data-[state=open]:bg-fg/5',
         'data-[state=open]:data-[highlighted]:bg-ac/10 data-[state=open]:data-[highlighted]:text-ac',
 

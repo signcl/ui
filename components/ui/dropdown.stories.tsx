@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { IconArrowBackUpDouble, IconSettings, IconTools, IconTrash } from '@tabler/icons-react'
+import { IconArrowBackUpDouble, IconFiles, IconSettings, IconTools, IconTrash } from '@tabler/icons-react'
 import { useState } from 'react'
 import { userEvent, within } from 'storybook/test'
 
@@ -72,6 +72,10 @@ export const BasicOpen: Story = {
           <IconTrash />
           Delete
         </DropdownMenuItem>
+        <DropdownMenuLabel>Actions</DropdownMenuLabel>
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+        <DropdownMenuLabel inset>Actions</DropdownMenuLabel>
+        <DropdownMenuItem inset>Settings</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   ),
@@ -107,82 +111,118 @@ export const WithShortcuts: Story = {
 }
 
 export const WithSubmenus: Story = {
-  render: () => (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button>Edit</Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-        <DropdownMenuItem>
-          Copy
-          <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>
-            <IconTools />
-            <div>
-              <div>More Tools</div>
-              <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
-            </div>
-          </DropdownMenuSubTrigger>
-          <DropdownMenuSubContent>
-            <DropdownMenuItem>Save Page As...</DropdownMenuItem>
-            <DropdownMenuItem>Create Shortcut...</DropdownMenuItem>
-            <DropdownMenuItem>Name Window...</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuSub>
-              <DropdownMenuSubTrigger>More Tools</DropdownMenuSubTrigger>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>Save Page As...</DropdownMenuItem>
-                <DropdownMenuItem>Create Shortcut...</DropdownMenuItem>
-                <DropdownMenuItem>Name Window...</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-                <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuSub>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-            <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-        <DropdownMenuItem>General Menu Item</DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  ),
+  render: () => {
+    const [position, setPosition] = useState('bottom')
+
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button>Edit</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>Actions</DropdownMenuLabel>
+          <DropdownMenuItem>
+            Copy
+            <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
+          </DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuLabel inset>Submenu with Radio Group</DropdownMenuLabel>
+          <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+            <DropdownMenuRadioItem value='top'>Top</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='bottom'>Bottom</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='right'>Right</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value='right'>
+              <div>
+                <div>Right</div>
+                <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
+              </div>
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger inset>More Tools</DropdownMenuSubTrigger>
+            <DropdownMenuSubContent>
+              <DropdownMenuItem>Save Page As...</DropdownMenuItem>
+              <DropdownMenuItem>Create Shortcut...</DropdownMenuItem>
+              <DropdownMenuItem>Name Window...</DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger inset>
+              <IconFiles />
+              More Tools
+            </DropdownMenuSubTrigger>
+            <DropdownMenuSubContent>
+              <DropdownMenuItem>Save Page As...</DropdownMenuItem>
+              <DropdownMenuItem>Create Shortcut...</DropdownMenuItem>
+              <DropdownMenuItem>Name Window...</DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
+          <DropdownMenuLabel>Normal Submenu</DropdownMenuLabel>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>
+              <IconTools />
+              <div>
+                <div>More Tools</div>
+                <div className='opacity-60 text-xs'>Double-click an event to mark it as read</div>
+              </div>
+            </DropdownMenuSubTrigger>
+            <DropdownMenuSubContent>
+              <DropdownMenuItem>Save Page As...</DropdownMenuItem>
+              <DropdownMenuItem>Create Shortcut...</DropdownMenuItem>
+              <DropdownMenuItem>Name Window...</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>More Tools</DropdownMenuSubTrigger>
+                <DropdownMenuSubContent>
+                  <DropdownMenuItem>Save Page As...</DropdownMenuItem>
+                  <DropdownMenuItem>Create Shortcut...</DropdownMenuItem>
+                  <DropdownMenuItem>Name Window...</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                  <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+              <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+          <DropdownMenuItem>General Menu Item</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    )
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const trigger = canvas.getByText('Edit')
