@@ -1,83 +1,218 @@
-import {
-  composeRenderProps,
-  type FieldErrorProps,
-  Group,
-  type GroupProps,
-  type InputProps,
-  type LabelProps,
-  FieldError as RACFieldError,
-  Input as RACInput,
-  Label as RACLabel,
-  Text,
-  type TextProps,
-} from 'react-aria-components'
-import { twMerge } from 'tailwind-merge'
-import { tv } from 'tailwind-variants'
+'use client'
 
-import { composeTailwindRenderProps, focusRing } from '@/utils'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { useMemo } from 'react'
 
-export function Label(props: LabelProps) {
+import { cn } from '@/lib/cn'
+
+import { Label } from '@/components/ui/label'
+import { Separator } from '@/components/ui/separator'
+
+function FieldSet({ className, ...props }: React.ComponentProps<'fieldset'>) {
   return (
-    <RACLabel
+    <fieldset
+      data-slot='field-set'
+      className={cn(
+        'flex flex-col gap-4',
+        'has-[>[data-slot=checkbox-group]]:gap-2 has-[>[data-slot=radio-group]]:gap-2',
+        className
+      )}
       {...props}
-      className={twMerge('w-fit cursor-default text-sm font-medium text-gray-500 dark:text-zinc-400', props.className)}
     />
   )
 }
 
-export function Description(props: TextProps) {
-  return <Text {...props} slot='description' className={twMerge('text-sm text-gray-600', props.className)} />
-}
-
-export function FieldError(props: FieldErrorProps) {
+function FieldLegend({
+  className,
+  variant = 'legend',
+  ...props
+}: React.ComponentProps<'legend'> & { variant?: 'legend' | 'label' }) {
   return (
-    <RACFieldError
+    <legend
+      data-slot='field-legend'
+      data-variant={variant}
+      className={cn('mb-3 font-medium', 'data-[variant=legend]:text-base', 'data-[variant=label]:text-sm', className)}
       {...props}
-      className={composeTailwindRenderProps(props.className, 'text-sm text-red-600 forced-colors:text-[Mark]')}
     />
   )
 }
 
-export const fieldBorderStyles = tv({
+function FieldGroup({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot='field-group'
+      className={cn(
+        'group/field-group @container/field-group flex w-full flex-col gap-4 data-[slot=checkbox-group]:gap-2 [&>[data-slot=field-group]]:gap-3',
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+const fieldVariants = cva('group/field flex w-full gap-2 data-[invalid=true]:text-destructive', {
   variants: {
-    isFocusWithin: {
-      false: 'border-gray-300 dark:border-zinc-500 forced-colors:border-[ButtonBorder]',
-      true: 'border-gray-600 dark:border-zinc-300 forced-colors:border-[Highlight]',
+    orientation: {
+      vertical: ['flex-col [&>*]:w-full [&>.sr-only]:w-auto'],
+      horizontal: [
+        'flex-row items-center',
+        '[&>[data-slot=field-label]]:flex-auto',
+        'has-[>[data-slot=field-content]]:items-start has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px',
+      ],
+      responsive: [
+        'flex-col [&>*]:w-full [&>.sr-only]:w-auto @md/field-group:flex-row @md/field-group:items-center @md/field-group:[&>*]:w-auto',
+        '@md/field-group:[&>[data-slot=field-label]]:flex-auto',
+        '@md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px',
+      ],
     },
-    isInvalid: {
-      true: 'border-red-600 dark:border-red-600 forced-colors:border-[Mark]',
-    },
-    isDisabled: {
-      true: 'border-gray-200 dark:border-zinc-700 forced-colors:border-[GrayText]',
-    },
+  },
+  defaultVariants: {
+    orientation: 'vertical',
   },
 })
 
-export const fieldGroupStyles = tv({
-  extend: focusRing,
-  base: 'group flex items-center h-9 bg-white dark:bg-zinc-900 forced-colors:bg-[Field] border-2 rounded-lg overflow-hidden',
-  variants: fieldBorderStyles.variants,
-})
-
-export function FieldGroup(props: GroupProps) {
+function Field({
+  className,
+  orientation = 'vertical',
+  ...props
+}: React.ComponentProps<'div'> & VariantProps<typeof fieldVariants>) {
   return (
-    <Group
+    // biome-ignore lint/a11y/useSemanticElements: legit role
+    <div
+      role='group'
+      data-slot='field'
+      data-orientation={orientation}
+      className={cn(fieldVariants({ orientation }), className)}
       {...props}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        fieldGroupStyles({ ...renderProps, className })
-      )}
     />
   )
 }
 
-export function Input(props: InputProps) {
+function FieldContent({ className, ...props }: React.ComponentProps<'div'>) {
   return (
-    <RACInput
+    <div
+      data-slot='field-content'
+      className={cn('group/field-content flex flex-1 flex-col gap-1.5 leading-snug', className)}
       {...props}
-      className={composeTailwindRenderProps(
-        props.className,
-        'min-w-0 flex-1 bg-white px-2 py-1.5 text-sm text-gray-800 outline-0 disabled:text-gray-200 dark:bg-zinc-900 dark:text-zinc-200 dark:disabled:text-zinc-600'
-      )}
     />
   )
+}
+
+function FieldLabel({ className, ...props }: React.ComponentProps<typeof Label>) {
+  return (
+    <Label
+      data-slot='field-label'
+      className={cn(
+        'group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50',
+        'has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border [&>*]:data-[slot=field]:p-4',
+        'has-data-[state=checked]:bg-ac/5 has-data-[state=checked]:border-ac',
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function FieldTitle({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot='field-label'
+      className={cn(
+        'flex w-fit items-center gap-2 text-sm leading-snug font-medium group-data-[disabled=true]/field:opacity-50',
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function FieldDescription({ className, ...props }: React.ComponentProps<'p'>) {
+  return (
+    <p
+      data-slot='field-description'
+      className={cn(
+        'text-fg/60 text-sm leading-normal font-normal group-has-[[data-orientation=horizontal]]/field:text-balance',
+        'last:mt-0 nth-last-2:-mt-1 [[data-variant=legend]+&]:-mt-1.5',
+        '[&>a:hover]:text-fg [&>a]:underline [&>a]:underline-offset-2',
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function FieldSeparator({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<'div'> & {
+  children?: React.ReactNode
+}) {
+  return (
+    <div
+      data-slot='field-separator'
+      data-content={!!children}
+      className={cn('relative -my-2 h-5 text-sm group-data-[variant=outline]/field-group:-mb-2', className)}
+      {...props}
+    >
+      <Separator className='absolute inset-0 top-1/2' />
+      {children && (
+        <span className='bg-bg text-fg/60 relative mx-auto block w-fit px-2' data-slot='field-separator-content'>
+          {children}
+        </span>
+      )}
+    </div>
+  )
+}
+
+function FieldError({
+  className,
+  children,
+  errors,
+  ...props
+}: React.ComponentProps<'div'> & {
+  errors?: Array<{ message?: string } | undefined>
+}) {
+  const content = useMemo(() => {
+    if (children) {
+      return children
+    }
+
+    if (!errors?.length) {
+      return null
+    }
+
+    if (errors?.length === 1) {
+      return errors[0]?.message
+    }
+
+    return (
+      <ul className='ml-4 flex list-disc flex-col gap-1'>
+        {errors.map((error, index) => error?.message && <li key={index}>{error.message}</li>)}
+      </ul>
+    )
+  }, [children, errors])
+
+  if (!content) {
+    return null
+  }
+
+  return (
+    <div role='alert' data-slot='field-error' className={cn('text-rose-500 text-sm font-normal', className)} {...props}>
+      {content}
+    </div>
+  )
+}
+
+export {
+  Field,
+  FieldLabel,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldContent,
+  FieldTitle,
 }
