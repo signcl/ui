@@ -7,11 +7,13 @@ import type * as React from 'react'
 
 import { cn } from '@/lib/cn'
 
-const Popover = PopoverPrimitive.Root
+function Popover({ ...props }: React.ComponentProps<typeof PopoverPrimitive.Root>) {
+  return <PopoverPrimitive.Root data-slot='popover' {...props} />
+}
 
-const PopoverTrigger = PopoverPrimitive.Trigger
-
-const PopoverPortal = PopoverPrimitive.Portal
+function PopoverTrigger({ ...props }: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {
+  return <PopoverPrimitive.Trigger data-slot='popover-trigger' {...props} />
+}
 
 function PopoverContent({
   children,
@@ -21,7 +23,7 @@ function PopoverContent({
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Content>) {
   return (
-    <PopoverPortal>
+    <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
         data-slot='popover-content'
         align={align}
@@ -49,8 +51,12 @@ function PopoverContent({
         {/* does not work with translucent background */}
         {/* <PopoverPrimitive.Arrow className='fill-bg' /> */}
       </PopoverPrimitive.Content>
-    </PopoverPortal>
+    </PopoverPrimitive.Portal>
   )
 }
 
-export { Popover, PopoverTrigger, PopoverContent }
+function PopoverAnchor({ ...props }: React.ComponentProps<typeof PopoverPrimitive.Anchor>) {
+  return <PopoverPrimitive.Anchor data-slot='popover-anchor' {...props} />
+}
+
+export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor }
