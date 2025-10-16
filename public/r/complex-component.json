@@ -34,5 +34,10 @@
       "content": "'use client'\n\n// Totally unnecessary hook, but it's a good example of how to use a hook in a custom registry.\n\nexport function usePokemonImage(number: number) {\n  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png`\n}\n",
       "type": "registry:hook"
     }
-  ]
+  ],
+  "meta": {
+    "tags": [
+      "demo"
+    ]
+  }
 }

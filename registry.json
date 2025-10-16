@@ -9,6 +9,7 @@
       "title": "Example Form",
       "description": "A contact form with Zod validation.",
       "dependencies": ["zod"],
+      "meta": { "tags": ["demo"] },
       "registryDependencies": ["button", "input", "label", "textarea", "card"],
       "files": [
         {
@@ -22,6 +23,7 @@
       "type": "registry:component",
       "title": "Complex Component",
       "description": "A complex component showing hooks, libs and components.",
+      "meta": { "tags": ["demo"] },
       "registryDependencies": ["card"],
       "files": [
         {

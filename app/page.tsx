@@ -59,11 +59,15 @@ const Home = async () => {
               <TableRow key={item.name}>
                 <TableCell className='font-medium'>{item.title}</TableCell>
                 <TableCell>
-                  <Button tint={'rose'} size={'sm'} asChild>
-                    <a href={`${getBaseUrl()}/storybook/?path=/docs/ui-${item.name}--docs`} target='_blank'>
-                      Story
-                    </a>
-                  </Button>
+                  {!item.meta?.tags?.includes('demo') ? (
+                    <Button tint={'rose'} size={'sm'} asChild>
+                      <a href={`${getBaseUrl()}/storybook/?path=/docs/ui-${item.name}--docs`} target='_blank'>
+                        Story
+                      </a>
+                    </Button>
+                  ) : (
+                    'N/A'
+                  )}
                 </TableCell>
                 <TableCell>
                   <Button tint={'accent'} size={'sm'} asChild>
