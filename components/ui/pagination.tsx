@@ -16,7 +16,7 @@ function PaginationContent({ className, ...props }: ComponentProps<'div'>) {
 }
 
 function PaginationItem({ className, ...props }: ComponentProps<'div'>) {
-  return <div data-slot='pagination-item' className={cn('', className)} {...props} />
+  return <div data-slot='pagination-item' className={cn('text-sm', className)} {...props} />
 }
 
 type PaginationLinkProps = {
@@ -38,7 +38,7 @@ function PaginationPrevious({ className, ...props }: ComponentProps<typeof Pagin
   return (
     <PaginationLink
       data-slot='pagination-previous'
-      aria-label='访问上一页'
+      aria-label='Previous Page'
       className={cn('flex items-center gap-1 px-1.5 py-1', props.disabled && 'cursor-not-allowed', className)}
       {...props}
     >
@@ -51,7 +51,7 @@ function PaginationNext({ className, ...props }: ComponentProps<typeof Paginatio
   return (
     <PaginationLink
       data-slot='pagination-next'
-      aria-label='访问下一页'
+      aria-label='Next Page'
       className={cn('flex items-center gap-1 px-1.5 py-1', props.disabled && 'cursor-not-allowed', className)}
       {...props}
     >
@@ -77,7 +77,7 @@ function PaginationEllipsis({ className, pages, onPageChange, disabled, ...props
         {...props}
       >
         <IconDots className='size-4' />
-        <span className='sr-only'>更多页面</span>
+        <span className='sr-only'>More Pages</span>
       </span>
     )
   }
@@ -93,7 +93,7 @@ function PaginationEllipsis({ className, pages, onPageChange, disabled, ...props
       disabled={disabled}
     >
       <SelectTrigger className={'border-none [&>span]:flex'} withoutIcon>
-        <SelectValue aria-label='更多页面' placeholder={<IconDots className='size-4' />}>
+        <SelectValue aria-label='More Pages' placeholder={<IconDots className='size-4' />}>
           <IconDots className='size-4' />
         </SelectValue>
       </SelectTrigger>
