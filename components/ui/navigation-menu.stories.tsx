@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { IconCircle, IconRocket, IconSettings } from '@tabler/icons-react'
+import { IconCheck, IconCircle, IconHelpCircle, IconRocket, IconSettings } from '@tabler/icons-react'
 import Link from 'next/link'
 
 import {
@@ -61,75 +61,145 @@ const components: { title: string; href: string; description: string }[] = [
 
 // Basic example with dropdown menu
 export const Basic: Story = {
-  render: () => (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className='grid w-[400px] gap-3 p-4'>
-              <div className='grid grid-cols-[20px_1fr] items-start gap-2'>
-                <IconRocket className='h-5 w-5' />
-                <div>
-                  <NavigationMenuLink asChild>
-                    <a href='https://www.google.com' className='font-medium'>
-                      Introduction
-                    </a>
-                  </NavigationMenuLink>
-                  <p className='text-fg/60 text-sm'>A quick overview of the platform and its features.</p>
-                </div>
-              </div>
-              <div className='grid grid-cols-[20px_1fr] items-start gap-2'>
-                <IconSettings className='h-5 w-5' />
-                <div>
-                  <NavigationMenuLink asChild>
-                    <a href='https://www.google.com' className='font-medium'>
-                      Configuration
-                    </a>
-                  </NavigationMenuLink>
-                  <p className='text-fg/60 text-sm'>Learn how to configure the system to your needs.</p>
-                </div>
-              </div>
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Features</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className='grid w-[400px] gap-3 p-4'>
-              <div className='grid grid-cols-[20px_1fr] items-start gap-2'>
-                <IconCircle className='h-5 w-5' />
-                <div>
-                  <NavigationMenuLink asChild>
-                    <a href='https://www.google.com' className='font-medium'>
-                      Feature 1
-                    </a>
-                  </NavigationMenuLink>
-                  <p className='text-fg/60 text-sm'>Description of the first feature.</p>
-                </div>
-              </div>
-              <div className='grid grid-cols-[20px_1fr] items-start gap-2'>
-                <IconCircle className='h-5 w-5' />
-                <div>
-                  <NavigationMenuLink asChild>
-                    <a href='https://www.google.com' className='font-medium'>
-                      Feature 2
-                    </a>
-                  </NavigationMenuLink>
-                  <p className='text-fg/60 text-sm'>Description of the second feature.</p>
-                </div>
-              </div>
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()} href='#'>
-            Documentation
+  render: () => {
+    function ListItem({ title, children, href, ...props }: React.ComponentPropsWithoutRef<'li'> & { href: string }) {
+      return (
+        <li {...props}>
+          <NavigationMenuLink asChild>
+            <Link href={href}>
+              <div className='text-base leading-none font-medium'>{title}</div>
+              <p className='text-fg/60 line-clamp-2 text-sm leading-snug'>{children}</p>
+            </Link>
           </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-  ),
+        </li>
+      )
+    }
+
+    return (
+      <NavigationMenu viewport={false}>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className='grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
+                <li className='row-span-3'>
+                  <NavigationMenuLink asChild>
+                    <a
+                      className='from-ac/10 to-ac/5 flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md'
+                      href='/'
+                    >
+                      <div className='mt-4 mb-2 text-lg font-medium'>shadcn/ui</div>
+                      <p className='text-fg/60 text-sm leading-tight'>
+                        Beautifully designed components built with Tailwind CSS.
+                      </p>
+                    </a>
+                  </NavigationMenuLink>
+                </li>
+                <ListItem href='/docs' title='Introduction'>
+                  Re-usable components built using Radix UI and Tailwind CSS.
+                </ListItem>
+                <ListItem href='/docs/installation' title='Installation'>
+                  How to install dependencies and structure your app.
+                </ListItem>
+                <ListItem href='/docs/primitives/typography' title='Typography'>
+                  Styles for headings, paragraphs, lists...etc
+                </ListItem>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className='grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
+                {components.map(component => (
+                  <ListItem key={component.title} title={component.title} href={component.href}>
+                    {component.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <Link href='/docs'>Docs</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>List</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className='grid w-[300px] gap-4'>
+                <li>
+                  <NavigationMenuLink asChild>
+                    <Link href='#'>
+                      <div className='font-medium'>Components</div>
+                      <div className='text-fg/60'>Browse all components in the library.</div>
+                    </Link>
+                  </NavigationMenuLink>
+                  <NavigationMenuLink asChild>
+                    <Link href='#'>
+                      <div className='font-medium'>Documentation</div>
+                      <div className='text-fg/60'>Learn how to use the library.</div>
+                    </Link>
+                  </NavigationMenuLink>
+                  <NavigationMenuLink asChild>
+                    <Link href='#'>
+                      <div className='font-medium'>Blog</div>
+                      <div className='text-fg/60'>Read our latest blog posts.</div>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Simple</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className='grid w-[200px] gap-4'>
+                <li>
+                  <NavigationMenuLink asChild>
+                    <Link href='#'>Components</Link>
+                  </NavigationMenuLink>
+                  <NavigationMenuLink asChild>
+                    <Link href='#'>Documentation</Link>
+                  </NavigationMenuLink>
+                  <NavigationMenuLink asChild>
+                    <Link href='#'>Blocks</Link>
+                  </NavigationMenuLink>
+                </li>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className='grid w-[200px] gap-4'>
+                <li>
+                  <NavigationMenuLink asChild>
+                    <Link href='#' className='flex-row items-center gap-2'>
+                      <IconHelpCircle />
+                      Backlog
+                    </Link>
+                  </NavigationMenuLink>
+                  <NavigationMenuLink asChild>
+                    <Link href='#' className='flex-row items-center gap-2'>
+                      <IconCircle />
+                      To Do
+                    </Link>
+                  </NavigationMenuLink>
+                  <NavigationMenuLink asChild>
+                    <Link href='#' className='flex-row items-center gap-2'>
+                      <IconCheck />
+                      Done
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    )
+  },
 }
 
 // Example with horizontal links
