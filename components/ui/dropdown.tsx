@@ -62,7 +62,7 @@ function DropdownMenuItem({
       data-inset={inset}
       data-tint={tint}
       className={cn(
-        'focus:bg-ac/10 focus:text-ac relative flex cursor-default gap-2 px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8',
+        'focus:bg-ac/10 focus:text-ac relative flex cursor-default gap-2 px-3 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8',
 
         // Icon
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg]:mt-0.5",
