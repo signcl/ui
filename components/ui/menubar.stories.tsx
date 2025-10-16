@@ -8,7 +8,6 @@ import {
   IconCopy,
   IconCut,
   IconDeviceFloppy,
-  IconDeviceIpadHorizontalExclamation,
   IconFileText,
   IconItalic,
   IconLink,
