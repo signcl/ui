@@ -1,13 +1,41 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { IconChevronDown, IconCopy, IconDownload, IconMinus, IconPlus, IconSend, IconShare } from '@tabler/icons-react'
+import {
+  IconAlertTriangle,
+  IconArrowLeft,
+  IconArrowRight,
+  IconCheck,
+  IconChevronDown,
+  IconCopy,
+  IconMinus,
+  IconPlus,
+  IconRobot,
+  IconSearch,
+  IconShare,
+  IconSpeakerphone,
+  IconTrash,
+  IconUserX,
+  IconVolumeOff,
+} from '@tabler/icons-react'
+import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@/components/ui/button-group'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown'
-import { Input } from '@/components/ui/input'
+import { Divider } from '@/components/ui/divider'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown'
+import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from '@/components/ui/input-group'
+import { Input } from '@/components/ui/input-next'
 import { Label } from '@/components/ui/label'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { TooltipContent, TooltipRoot, TooltipTrigger } from '@/components/ui/tooltip'
 
 const meta = {
   title: 'UI/Button Group',
@@ -31,29 +59,22 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: () => (
     <ButtonGroup>
-      <Button>Button 1</Button>
-      <Button>Button 2</Button>
-    </ButtonGroup>
-  ),
-}
-
-// Orientation examples
-export const Horizontal: Story = {
-  render: () => (
-    <ButtonGroup orientation="horizontal">
-      <Button>Horizontal 1</Button>
-      <Button>Horizontal 2</Button>
-      <Button>Horizontal 3</Button>
+      <Button variant={'outline'}>Horizontal 1</Button>
+      <Button variant={'outline'}>Horizontal 2</Button>
+      <Button variant={'outline'}>Horizontal 3</Button>
     </ButtonGroup>
   ),
 }
 
 export const Vertical: Story = {
   render: () => (
-    <ButtonGroup orientation="vertical">
-      <Button>Vertical 1</Button>
-      <Button>Vertical 2</Button>
-      <Button>Vertical 3</Button>
+    <ButtonGroup orientation='vertical' aria-label='Media controls' className='h-fit'>
+      <Button variant='outline' size='icon'>
+        <IconPlus />
+      </Button>
+      <Button variant='outline' size='icon'>
+        <IconMinus />
+      </Button>
     </ButtonGroup>
   ),
 }
@@ -61,18 +82,42 @@ export const Vertical: Story = {
 // Size variations
 export const Sizes: Story = {
   render: () => (
-    <div className="flex flex-col gap-4">
+    <div className='flex flex-col items-start gap-8'>
       <ButtonGroup>
-        <Button size="sm">Small</Button>
-        <Button size="sm">Small</Button>
+        <Button variant='outline' size='sm'>
+          Small
+        </Button>
+        <Button variant='outline' size='sm'>
+          Button
+        </Button>
+        <Button variant='outline' size='sm'>
+          Group
+        </Button>
+        <Button variant='outline' size='icon-sm'>
+          <IconPlus />
+        </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button size="default">Default</Button>
-        <Button size="default">Default</Button>
+        <Button variant='outline'>Default</Button>
+        <Button variant='outline'>Button</Button>
+        <Button variant='outline'>Group</Button>
+        <Button variant='outline' size='icon'>
+          <IconPlus />
+        </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button size="lg">Large</Button>
-        <Button size="lg">Large</Button>
+        <Button variant='outline' size='lg'>
+          Large
+        </Button>
+        <Button variant='outline' size='lg'>
+          Button
+        </Button>
+        <Button variant='outline' size='lg'>
+          Group
+        </Button>
+        <Button variant='outline' size='icon-lg'>
+          <IconPlus />
+        </Button>
       </ButtonGroup>
     </div>
   ),
@@ -83,12 +128,29 @@ export const Nested: Story = {
   render: () => (
     <ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline">Group 1 - A</Button>
-        <Button variant="outline">Group 1 - B</Button>
+        <Button variant='outline' size='sm'>
+          1
+        </Button>
+        <Button variant='outline' size='sm'>
+          2
+        </Button>
+        <Button variant='outline' size='sm'>
+          3
+        </Button>
+        <Button variant='outline' size='sm'>
+          4
+        </Button>
+        <Button variant='outline' size='sm'>
+          5
+        </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline">Group 2 - A</Button>
-        <Button variant="outline">Group 2 - B</Button>
+        <Button variant='outline' size='icon-sm' aria-label='Previous'>
+          <IconArrowLeft />
+        </Button>
+        <Button variant='outline' size='icon-sm' aria-label='Next'>
+          <IconArrowRight />
+        </Button>
       </ButtonGroup>
     </ButtonGroup>
   ),
@@ -97,21 +159,15 @@ export const Nested: Story = {
 // Separator example
 export const WithSeparator: Story = {
   render: () => (
-    <div className="flex flex-col gap-4">
+    <div className='flex flex-col gap-4'>
       <ButtonGroup>
-        <Button>Primary</Button>
+        <Button size='sm' variant={'solid'} tint={'accent'}>
+          Copy
+        </Button>
         <ButtonGroupSeparator />
-        <Button>Primary</Button>
-      </ButtonGroup>
-      <ButtonGroup>
-        <Button variant="secondary">Secondary</Button>
-        <ButtonGroupSeparator />
-        <Button variant="secondary">Secondary</Button>
-      </ButtonGroup>
-      <ButtonGroup>
-        <Button variant="ghost">Ghost</Button>
-        <ButtonGroupSeparator />
-        <Button variant="ghost">Ghost</Button>
+        <Button size='sm' variant={'solid'} tint={'amber'}>
+          Paste
+        </Button>
       </ButtonGroup>
     </div>
   ),
@@ -121,14 +177,22 @@ export const WithSeparator: Story = {
 export const SplitButton: Story = {
   render: () => (
     <ButtonGroup>
-      <Button>
-        <IconSend className="size-4" />
-        Send
-      </Button>
+      <Button>Button</Button>
       <ButtonGroupSeparator />
-      <Button size="icon" aria-label="Options">
-        <IconChevronDown className="size-4" />
+      <Button size='icon'>
+        <IconPlus />
       </Button>
+    </ButtonGroup>
+  ),
+}
+
+export const WithText: Story = {
+  render: () => (
+    <ButtonGroup>
+      <ButtonGroupText asChild>
+        <Label htmlFor='name'>Text</Label>
+      </ButtonGroupText>
+      <Input placeholder='Type something here...' id='name' />
     </ButtonGroup>
   ),
 }
@@ -136,86 +200,104 @@ export const SplitButton: Story = {
 // Input integration
 export const WithInput: Story = {
   render: () => (
-    <div className="flex flex-col gap-4">
-      <ButtonGroup>
-        <Button size="icon" variant="secondary">
-          <IconMinus className="size-4" />
-        </Button>
-        <Input type="number" defaultValue="1" className="w-20 text-center" />
-        <Button size="icon" variant="secondary">
-          <IconPlus className="size-4" />
-        </Button>
-      </ButtonGroup>
-      <ButtonGroup>
-        <Input placeholder="Enter URL..." />
-        <Button>
-          <IconDownload className="size-4" />
-          Download
-        </Button>
-      </ButtonGroup>
-    </div>
+    <ButtonGroup>
+      <Input placeholder='Search...' />
+      <Button variant='outline' aria-label='Search'>
+        <IconSearch />
+      </Button>
+    </ButtonGroup>
   ),
 }
 
 // Input group with text
-export const InputGroup: Story = {
-  render: () => (
-    <div className="flex flex-col gap-4">
-      <ButtonGroup>
-        <ButtonGroupText>https://</ButtonGroupText>
-        <Input placeholder="example.com" />
-      </ButtonGroup>
-      <ButtonGroup>
-        <ButtonGroupText asChild>
-          <Label htmlFor="email">Email</Label>
-        </ButtonGroupText>
-        <Input id="email" type="email" placeholder="name@example.com" />
-        <Button>Subscribe</Button>
-      </ButtonGroup>
-    </div>
-  ),
+export const WithInputGroup: Story = {
+  render: () => {
+    const [voiceEnabled, setVoiceEnabled] = useState(false)
+
+    return (
+      <div className='flex flex-col gap-4'>
+        <ButtonGroup className='[--radius:9999rem]'>
+          <ButtonGroup>
+            <Button variant='outline' size='icon'>
+              <IconPlus />
+            </Button>
+          </ButtonGroup>
+          <ButtonGroup>
+            <InputGroup>
+              <InputGroupInput
+                placeholder={voiceEnabled ? 'Record and send audio...' : 'Send a message...'}
+                disabled={voiceEnabled}
+              />
+              <InputGroupAddon align='inline-end'>
+                <TooltipRoot>
+                  <TooltipTrigger asChild>
+                    <InputGroupButton
+                      onClick={() => setVoiceEnabled(!voiceEnabled)}
+                      size='icon-xs'
+                      data-active={voiceEnabled}
+                      className='data-[active=true]:bg-orange-100 data-[active=true]:text-orange-700 dark:data-[active=true]:bg-orange-800 dark:data-[active=true]:text-orange-100'
+                      aria-pressed={voiceEnabled}
+                    >
+                      <IconSpeakerphone />
+                    </InputGroupButton>
+                  </TooltipTrigger>
+                  <TooltipContent>Voice Mode</TooltipContent>
+                </TooltipRoot>
+              </InputGroupAddon>
+            </InputGroup>
+          </ButtonGroup>
+        </ButtonGroup>
+      </div>
+    )
+  },
 }
 
 // Dropdown menu integration
 export const WithDropdown: Story = {
   render: () => (
-    <div className="flex flex-col gap-4">
+    <div className='flex flex-col gap-4'>
       <ButtonGroup>
-        <Button>
-          <IconSend className="size-4" />
-          Send
-        </Button>
-        <ButtonGroupSeparator />
+        <Button variant='outline'>Follow</Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button size="icon" aria-label="More options">
-              <IconChevronDown className="size-4" />
+            <Button variant='outline' size='icon'>
+              <IconChevronDown />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem>Send now</DropdownMenuItem>
-            <DropdownMenuItem>Schedule send</DropdownMenuItem>
-            <DropdownMenuItem>Save as draft</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </ButtonGroup>
-      
-      <ButtonGroup>
-        <Button variant="outline">
-          <IconCopy className="size-4" />
-          Copy
-        </Button>
-        <ButtonGroupSeparator orientation="vertical" />
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon" aria-label="Copy options">
-              <IconChevronDown className="size-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem>Copy text</DropdownMenuItem>
-            <DropdownMenuItem>Copy HTML</DropdownMenuItem>
-            <DropdownMenuItem>Copy Markdown</DropdownMenuItem>
+          <DropdownMenuContent align='end' className='[--radius:1rem]'>
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <IconVolumeOff />
+                Mute Conversation
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <IconCheck />
+                Mark as Read
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <IconAlertTriangle />
+                Report Conversation
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <IconUserX />
+                Block User
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <IconShare />
+                Share Conversation
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <IconCopy />
+                Copy Conversation
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem tint='rose'>
+                <IconTrash />
+                Delete Conversation
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </ButtonGroup>
@@ -225,182 +307,112 @@ export const WithDropdown: Story = {
 
 // Select integration
 export const WithSelect: Story = {
-  render: () => (
-    <div className="flex flex-col gap-4">
-      <ButtonGroup>
-        <Select defaultValue="public">
-          <SelectTrigger>
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="public">Public</SelectItem>
-            <SelectItem value="private">Private</SelectItem>
-            <SelectItem value="team">Team only</SelectItem>
-          </SelectContent>
-        </Select>
-        <Button>
-          <IconShare className="size-4" />
-          Share
-        </Button>
-      </ButtonGroup>
-      
-      <ButtonGroup>
-        <Button variant="outline">Export</Button>
-        <Select defaultValue="pdf">
-          <SelectTrigger className="w-24">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="pdf">PDF</SelectItem>
-            <SelectItem value="csv">CSV</SelectItem>
-            <SelectItem value="xlsx">XLSX</SelectItem>
-          </SelectContent>
-        </Select>
-      </ButtonGroup>
-    </div>
-  ),
+  render: () => {
+    const CURRENCIES = [
+      {
+        value: '$',
+        label: 'US Dollar',
+      },
+      {
+        value: '€',
+        label: 'Euro',
+      },
+      {
+        value: '£',
+        label: 'British Pound',
+      },
+    ]
+
+    const [currency, setCurrency] = useState('$')
+
+    return (
+      <div className='flex flex-col gap-4'>
+        <ButtonGroup>
+          <ButtonGroup>
+            <Select value={currency} onValueChange={setCurrency}>
+              <SelectTrigger className='font-mono w-fit'>
+                <SelectValue>{currency}</SelectValue>
+              </SelectTrigger>
+              <SelectContent className='min-w-24'>
+                {CURRENCIES.map(currency => (
+                  <SelectItem key={currency.value} value={currency.value}>
+                    {currency.value} <span className='text-muted-foreground'>{currency.label}</span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Input placeholder='10.00' pattern='[0-9]*' />
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button aria-label='Send' size='icon' variant='outline'>
+              <IconArrowRight />
+            </Button>
+          </ButtonGroup>
+        </ButtonGroup>
+
+        <ButtonGroup>
+          <Select defaultValue='public'>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value='public'>Public</SelectItem>
+              <SelectItem value='private'>Private</SelectItem>
+              <SelectItem value='team'>Team only</SelectItem>
+            </SelectContent>
+          </Select>
+          <Button>
+            <IconShare className='size-4' />
+            Share
+          </Button>
+        </ButtonGroup>
+
+        <ButtonGroup>
+          <Button variant='outline'>Export</Button>
+          <Select defaultValue='pdf'>
+            <SelectTrigger className='w-24'>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value='pdf'>PDF</SelectItem>
+              <SelectItem value='csv'>CSV</SelectItem>
+              <SelectItem value='xlsx'>XLSX</SelectItem>
+            </SelectContent>
+          </Select>
+        </ButtonGroup>
+      </div>
+    )
+  },
 }
 
 // Popover integration
 export const WithPopover: Story = {
   render: () => (
     <ButtonGroup>
-      <Input placeholder="Type a message..." />
+      <Button variant='outline'>
+        <IconRobot /> Copilot
+      </Button>
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline">Emoji</Button>
+          <Button variant='outline' size='icon' aria-label='Open Popover'>
+            <IconChevronDown />
+          </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-80">
-          <div className="grid gap-4">
-            <div className="space-y-2">
-              <h4 className="font-medium leading-none">Select an emoji</h4>
-              <p className="text-sm text-muted-foreground">
-                Choose an emoji to add to your message.
-              </p>
-            </div>
-            <div className="grid grid-cols-8 gap-2">
-              {['😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣'].map((emoji) => (
-                <Button key={emoji} variant="ghost" size="sm" className="h-8 w-8 p-0">
-                  {emoji}
-                </Button>
-              ))}
-            </div>
+        <PopoverContent align='end' className='rounded-xl p-0 text-sm max-w-80'>
+          <div className='px-4 py-3'>
+            <div className='text-sm font-medium'>Agent Tasks</div>
+          </div>
+          <Divider />
+          <div className='p-4 space-y-2'>
+            <Textarea placeholder='Describe your task in natural language.' className='mb-4 resize-none' />
+            <p className='font-medium'>Start a new task with Copilot</p>
+            <p className='text-fg/60'>
+              Describe your task in natural language. Copilot will work in the background and open a pull request for
+              your review.
+            </p>
           </div>
         </PopoverContent>
       </Popover>
-      <Button>Send</Button>
     </ButtonGroup>
-  ),
-}
-
-// Complex example with multiple features
-export const ComplexExample: Story = {
-  render: () => (
-    <div className="flex flex-col gap-6">
-      <div>
-        <Label className="mb-2 block">File operations</Label>
-        <ButtonGroup>
-          <ButtonGroup>
-            <Button variant="outline">New</Button>
-            <Button variant="outline">Open</Button>
-            <Button variant="outline">Save</Button>
-          </ButtonGroup>
-          <ButtonGroupSeparator orientation="vertical" />
-          <ButtonGroup>
-            <Button variant="outline">Cut</Button>
-            <Button variant="outline">Copy</Button>
-            <Button variant="outline">Paste</Button>
-          </ButtonGroup>
-        </ButtonGroup>
-      </div>
-      
-      <div>
-        <Label className="mb-2 block">Text formatting</Label>
-        <ButtonGroup>
-          <Button variant="outline" size="sm">B</Button>
-          <Button variant="outline" size="sm">I</Button>
-          <Button variant="outline" size="sm">U</Button>
-          <ButtonGroupSeparator orientation="vertical" />
-          <Select defaultValue="12">
-            <SelectTrigger className="w-20">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="10">10pt</SelectItem>
-              <SelectItem value="12">12pt</SelectItem>
-              <SelectItem value="14">14pt</SelectItem>
-              <SelectItem value="16">16pt</SelectItem>
-            </SelectContent>
-          </Select>
-          <ButtonGroupSeparator orientation="vertical" />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm">
-                More
-                <IconChevronDown className="ml-1 size-3" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem>Strikethrough</DropdownMenuItem>
-              <DropdownMenuItem>Subscript</DropdownMenuItem>
-              <DropdownMenuItem>Superscript</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </ButtonGroup>
-      </div>
-    </div>
-  ),
-}
-
-// Accessibility example
-export const AccessibilityExample: Story = {
-  render: () => (
-    <div className="flex flex-col gap-4">
-      <ButtonGroup aria-label="Text alignment options">
-        <Button variant="outline" aria-label="Align left">Left</Button>
-        <Button variant="outline" aria-label="Align center">Center</Button>
-        <Button variant="outline" aria-label="Align right">Right</Button>
-        <Button variant="outline" aria-label="Justify">Justify</Button>
-      </ButtonGroup>
-      
-      <ButtonGroup aria-label="Playback controls">
-        <Button variant="secondary" aria-label="Previous track">Previous</Button>
-        <Button variant="secondary" aria-label="Play or pause">Play</Button>
-        <Button variant="secondary" aria-label="Next track">Next</Button>
-      </ButtonGroup>
-    </div>
-  ),
-}
-
-// Button variants in groups
-export const VariantCombinations: Story = {
-  render: () => (
-    <div className="flex flex-col gap-4">
-      <ButtonGroup>
-        <Button>Default</Button>
-        <Button>Default</Button>
-        <Button>Default</Button>
-      </ButtonGroup>
-      
-      <ButtonGroup>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="secondary">Secondary</Button>
-      </ButtonGroup>
-      
-      <ButtonGroup>
-        <Button variant="outline">Outline</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="outline">Outline</Button>
-      </ButtonGroup>
-      
-      <ButtonGroup>
-        <Button variant="ghost">Ghost</Button>
-        <ButtonGroupSeparator />
-        <Button variant="ghost">Ghost</Button>
-        <ButtonGroupSeparator />
-        <Button variant="ghost">Ghost</Button>
-      </ButtonGroup>
-    </div>
   ),
 }
