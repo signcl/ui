@@ -28,7 +28,7 @@ export const Basic: Story = {
         <Label htmlFor='option-two'>Option Two</Label>
       </div>
       <div className='flex items-center space-x-2'>
-        <RadioGroupItem value='option-three' id='option-three' />
+        <RadioGroupItem value='option-three' id='option-three' aria-invalid />
         <Label htmlFor='option-three'>Option Three</Label>
       </div>
     </RadioGroup>
