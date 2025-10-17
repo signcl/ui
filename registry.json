@@ -363,6 +363,22 @@
       ]
     },
     {
+      "name": "drawer",
+      "type": "registry:component",
+      "title": "Drawer",
+      "description": "Drawer component",
+      "files": [
+        {
+          "path": "components/ui/drawer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "lib/cn.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
       "name": "dropdown",
       "type": "registry:component",
       "title": "Dropdown Menu",
