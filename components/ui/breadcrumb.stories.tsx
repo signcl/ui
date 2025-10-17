@@ -1,5 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { IconChevronRight, IconHome, IconSlash } from '@tabler/icons-react'
+import { IconChevronDown, IconSlash } from '@tabler/icons-react'
+import Link from 'next/link'
+import * as React from 'react'
+
+import { useMediaQuery } from '@/hooks/use-media-query'
+
+import { Button } from '@/components/ui/button'
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown'
 
 import {
   Breadcrumb,
@@ -14,59 +31,44 @@ import {
 const meta = {
   title: 'UI/Breadcrumb',
   component: Breadcrumb,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
-  },
-  tags: ['autodocs'],
-  argTypes: {
-    separator: {
-      control: 'select',
-      options: ['chevron', 'slash', 'custom'],
-      mapping: {
-        chevron: <IconChevronRight />,
-        slash: <IconSlash />,
-        custom: '•',
-      },
-    },
   },
 } satisfies Meta<typeof Breadcrumb>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Breadcrumb>
 
-export const Default: Story = {
+// Demo
+export const Demo: Story = {
   render: () => (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/'>Home</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href='/components'>Components</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-        </BreadcrumbItem>
-      </BreadcrumbList>
-    </Breadcrumb>
-  ),
-}
-
-export const WithIcon: Story = {
-  render: () => (
-    <Breadcrumb>
-      <BreadcrumbList>
-        <BreadcrumbItem>
-          <BreadcrumbLink href='/'>
-            <IconHome className='h-4 w-4' />
-            <span className='sr-only'>Home</span>
+          <BreadcrumbLink asChild>
+            <Link href='/'>Home</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href='/components'>Components</BreadcrumbLink>
+          <DropdownMenu>
+            <DropdownMenuTrigger className='flex items-center gap-1'>
+              <BreadcrumbEllipsis className='size-4' />
+              <span className='sr-only'>Toggle menu</span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align='start'>
+              <DropdownMenuItem>Documentation</DropdownMenuItem>
+              <DropdownMenuItem>Themes</DropdownMenuItem>
+              <DropdownMenuItem>GitHub</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink asChild>
+            <Link href='/docs/components'>Components</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -77,18 +79,23 @@ export const WithIcon: Story = {
   ),
 }
 
-export const WithCustomSeparator: Story = {
+// Custom separator
+export const CustomSeparator: Story = {
   render: () => (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href='/'>Home</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
           <IconSlash />
         </BreadcrumbSeparator>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/components'>Components</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href='/components'>Components</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
           <IconSlash />
@@ -101,18 +108,35 @@ export const WithCustomSeparator: Story = {
   ),
 }
 
-export const WithTextSeparator: Story = {
+// Dropdown
+export const Dropdown: Story = {
   render: () => (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href='/'>Home</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator>•</BreadcrumbSeparator>
+        <BreadcrumbSeparator>
+          <IconSlash />
+        </BreadcrumbSeparator>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/components'>Components</BreadcrumbLink>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5">
+              Components
+              <IconChevronDown />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align='start'>
+              <DropdownMenuItem>Documentation</DropdownMenuItem>
+              <DropdownMenuItem>Themes</DropdownMenuItem>
+              <DropdownMenuItem>GitHub</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </BreadcrumbItem>
-        <BreadcrumbSeparator>•</BreadcrumbSeparator>
+        <BreadcrumbSeparator>
+          <IconSlash />
+        </BreadcrumbSeparator>
         <BreadcrumbItem>
           <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
         </BreadcrumbItem>
@@ -121,12 +145,15 @@ export const WithTextSeparator: Story = {
   ),
 }
 
-export const WithEllipsis: Story = {
+// Collapsed
+export const Collapsed: Story = {
   render: () => (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href='/'>Home</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -134,7 +161,9 @@ export const WithEllipsis: Story = {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href='/components'>Components</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href='/docs/components'>Components</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -145,96 +174,117 @@ export const WithEllipsis: Story = {
   ),
 }
 
-export const Dropdown: Story = {
+// Link component
+export const LinkComponent: Story = {
   render: () => (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href='/'>Home</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href='/products'>Products</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href='/components'>Components</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href='/products/electronics'>Electronics</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href='/products/electronics/computers'>Computers</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>Laptops</BreadcrumbPage>
+          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
   ),
 }
 
-export const ResponsiveWithEllipsis: Story = {
-  render: () => (
-    <div className='w-[300px] md:w-full'>
+// Responsive
+export const Responsive: Story = {
+  render: () => {
+    const items = [
+      { href: '#', label: 'Home' },
+      { href: '#', label: 'Documentation' },
+      { href: '#', label: 'Building Your Application' },
+      { href: '#', label: 'Data Fetching' },
+      { label: 'Caching and Revalidating' },
+    ]
+
+    const ITEMS_TO_DISPLAY = 3
+
+    const [open, setOpen] = React.useState(false)
+    const isDesktop = useMediaQuery('(min-width: 768px)')
+
+    return (
       <Breadcrumb>
         <BreadcrumbList>
-          <BreadcrumbItem className='hidden sm:inline-flex'>
-            <BreadcrumbLink href='/'>Home</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator className='hidden sm:flex' />
-          <BreadcrumbItem className='hidden sm:inline-flex'>
-            <BreadcrumbLink href='/products'>Products</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator className='hidden sm:flex' />
-          <BreadcrumbItem className='hidden md:inline-flex'>
-            <BreadcrumbLink href='/products/electronics'>Electronics</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator className='hidden md:flex' />
           <BreadcrumbItem>
-            <BreadcrumbEllipsis className='sm:hidden' />
-            <BreadcrumbLink className='hidden md:inline-flex' href='/products/electronics/computers'>
-              Computers
+            <BreadcrumbLink asChild>
+              <Link href={items?.[0]?.href ?? '/'}>{items?.[0]?.label}</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>Laptops</BreadcrumbPage>
-          </BreadcrumbItem>
+          {items.length > ITEMS_TO_DISPLAY ? (
+            <>
+              <BreadcrumbItem>
+                {isDesktop ? (
+                  <DropdownMenu open={open} onOpenChange={setOpen}>
+                    <DropdownMenuTrigger className='flex items-center gap-1' aria-label='Toggle menu'>
+                      <BreadcrumbEllipsis className='size-4' />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align='start'>
+                      {items.slice(1, -2).map((item, index) => (
+                        <DropdownMenuItem key={index}>
+                          <Link href={item.href ? item.href : '#'}>{item.label}</Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Drawer open={open} onOpenChange={setOpen}>
+                    <DrawerTrigger aria-label='Toggle Menu'>
+                      <BreadcrumbEllipsis className='h-4 w-4' />
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <DrawerHeader className='text-left'>
+                        <DrawerTitle>Navigate to</DrawerTitle>
+                        <DrawerDescription>Select a page to navigate to.</DrawerDescription>
+                      </DrawerHeader>
+                      <div className='grid gap-1 px-4'>
+                        {items.slice(1, -2).map((item, index) => (
+                          <Link key={index} href={item.href ? item.href : '#'} className='py-1 text-sm'>
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                      <DrawerFooter className='pt-4'>
+                        <DrawerClose asChild>
+                          <Button variant='outline'>Close</Button>
+                        </DrawerClose>
+                      </DrawerFooter>
+                    </DrawerContent>
+                  </Drawer>
+                )}
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+            </>
+          ) : null}
+          {items.slice(-ITEMS_TO_DISPLAY + 1).map((item, index) => (
+            <BreadcrumbItem key={index}>
+              {item.href ? (
+                <>
+                  <BreadcrumbLink asChild className='max-w-20 truncate md:max-w-none'>
+                    <Link href={item.href}>{item.label}</Link>
+                  </BreadcrumbLink>
+                  <BreadcrumbSeparator />
+                </>
+              ) : (
+                <BreadcrumbPage className='max-w-20 truncate md:max-w-none'>{item.label}</BreadcrumbPage>
+              )}
+            </BreadcrumbItem>
+          ))}
         </BreadcrumbList>
       </Breadcrumb>
-    </div>
-  ),
-}
-
-export const WithRichContent: Story = {
-  render: () => (
-    <Breadcrumb>
-      <BreadcrumbList>
-        <BreadcrumbItem>
-          <BreadcrumbLink href='/' className='flex items-center gap-2'>
-            <IconHome className='h-4 w-4' />
-            <span>Home</span>
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href='/components' className='flex items-center gap-2'>
-            <span className='flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-500'>
-              C
-            </span>
-            <span>Components</span>
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage className='flex items-center gap-2'>
-            <span className='flex h-6 w-6 items-center justify-center rounded-full bg-gray-100 text-xs font-bold text-gray-500'>
-              B
-            </span>
-            <span>Breadcrumb</span>
-          </BreadcrumbPage>
-        </BreadcrumbItem>
-      </BreadcrumbList>
-    </Breadcrumb>
-  ),
+    )
+  },
 }

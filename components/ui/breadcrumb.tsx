@@ -1,73 +1,82 @@
 import { Slot } from '@radix-ui/react-slot'
 import { IconChevronRight, IconDots } from '@tabler/icons-react'
-import * as React from 'react'
+import type * as React from 'react'
 
 import { cn } from '@/lib/cn'
 
-const Breadcrumb = React.forwardRef<
-  HTMLElement,
-  React.ComponentPropsWithoutRef<'nav'> & {
-    separator?: React.ReactNode
-  }
->(({ ...props }, ref) => <nav ref={ref} aria-label='breadcrumb' {...props} />)
-Breadcrumb.displayName = 'Breadcrumb'
+function Breadcrumb({ ...props }: React.ComponentProps<'nav'>) {
+  return <nav aria-label='breadcrumb' data-slot='breadcrumb' {...props} />
+}
 
-const BreadcrumbList = React.forwardRef<HTMLOListElement, React.ComponentPropsWithoutRef<'ol'>>(
-  ({ className, ...props }, ref) => (
+function BreadcrumbList({ className, ...props }: React.ComponentProps<'ol'>) {
+  return (
     <ol
-      ref={ref}
+      data-slot='breadcrumb-list'
       className={cn('text-fg/60 flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5', className)}
       {...props}
     />
   )
-)
-BreadcrumbList.displayName = 'BreadcrumbList'
+}
 
-const BreadcrumbItem = React.forwardRef<HTMLLIElement, React.ComponentPropsWithoutRef<'li'>>(
-  ({ className, ...props }, ref) => (
-    <li ref={ref} className={cn('inline-flex items-center gap-1.5', className)} {...props} />
-  )
-)
-BreadcrumbItem.displayName = 'BreadcrumbItem'
+function BreadcrumbItem({ className, ...props }: React.ComponentProps<'li'>) {
+  return <li data-slot='breadcrumb-item' className={cn('inline-flex items-center gap-1.5', className)} {...props} />
+}
 
-const BreadcrumbLink = React.forwardRef<
-  HTMLAnchorElement,
-  React.ComponentPropsWithoutRef<'a'> & {
-    asChild?: boolean
-  }
->(({ asChild, className, ...props }, ref) => {
+function BreadcrumbLink({
+  asChild,
+  className,
+  ...props
+}: React.ComponentProps<'a'> & {
+  asChild?: boolean
+}) {
   const Comp = asChild ? Slot : 'a'
 
-  return <Comp ref={ref} className={cn('hover:text-fg', className)} {...props} />
-})
-BreadcrumbLink.displayName = 'BreadcrumbLink'
+  return <Comp data-slot='breadcrumb-link' className={cn('hover:text-fg', className)} {...props} />
+}
 
-const BreadcrumbPage = React.forwardRef<HTMLSpanElement, React.ComponentPropsWithoutRef<'span'>>(
-  ({ className, ...props }, ref) => (
-    <span ref={ref} aria-current='page' className={cn('text-fg font-normal', className)} {...props} />
+function BreadcrumbPage({ className, ...props }: React.ComponentProps<'span'>) {
+  return (
+    // biome-ignore lint/a11y/useFocusableInteractive: expected component
+    // biome-ignore lint/a11y/useSemanticElements: expected role link
+    <span
+      data-slot='breadcrumb-page'
+      role='link'
+      aria-disabled='true'
+      aria-current='page'
+      className={cn('text-fg font-normal', className)}
+      {...props}
+    />
   )
-)
-BreadcrumbPage.displayName = 'BreadcrumbPage'
+}
 
-const BreadcrumbSeparator = ({ children, className, ...props }: React.ComponentProps<'li'>) => (
-  <li role='presentation' aria-hidden='true' className={cn('[&>svg]:h-3.5 [&>svg]:w-3.5', className)} {...props}>
-    {children ?? <IconChevronRight />}
-  </li>
-)
-BreadcrumbSeparator.displayName = 'BreadcrumbSeparator'
+function BreadcrumbSeparator({ children, className, ...props }: React.ComponentProps<'li'>) {
+  return (
+    <li
+      data-slot='breadcrumb-separator'
+      role='presentation'
+      aria-hidden='true'
+      className={cn('[&>svg]:size-3.5', className)}
+      {...props}
+    >
+      {children ?? <IconChevronRight />}
+    </li>
+  )
+}
 
-const BreadcrumbEllipsis = ({ className, ...props }: React.ComponentProps<'span'>) => (
-  <span
-    role='presentation'
-    aria-hidden='true'
-    className={cn('flex h-9 w-9 items-center justify-center', className)}
-    {...props}
-  >
-    <IconDots className='h-4 w-4' />
-    <span className='sr-only'>More</span>
-  </span>
-)
-BreadcrumbEllipsis.displayName = 'BreadcrumbElipssis'
+function BreadcrumbEllipsis({ className, ...props }: React.ComponentProps<'span'>) {
+  return (
+    <span
+      data-slot='breadcrumb-ellipsis'
+      role='presentation'
+      aria-hidden='true'
+      className={cn('flex size-9 items-center justify-center', className)}
+      {...props}
+    >
+      <IconDots className='size-4' />
+      <span className='sr-only'>More</span>
+    </span>
+  )
+}
 
 export {
   Breadcrumb,
