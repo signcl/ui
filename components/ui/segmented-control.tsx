@@ -13,6 +13,9 @@ const segmentedControlVariants = cva('bg-fg/5 gap-0', {
       sm: 'rounded-sm',
       default: 'rounded-md',
       lg: 'rounded-md',
+      icon: 'rounded-md',
+      'icon-sm': 'rounded-md',
+      'icon-lg': 'rounded-md',
     },
   },
   defaultVariants: {

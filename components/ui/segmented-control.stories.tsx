@@ -4,7 +4,7 @@ import { IconList, IconPhoto, IconSettings } from '@tabler/icons-react'
 import { SegmentedControl, SegmentedControlItem } from '@/components/ui/segmented-control'
 
 const meta = {
-  title: 'UI/Segmented Control',
+  title: 'Components/Segmented Control',
   component: SegmentedControl,
   parameters: {
     layout: 'centered',
