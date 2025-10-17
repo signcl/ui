@@ -39,6 +39,13 @@ export const Disabled: Story = {
   },
 }
 
+export const Invalid: Story = {
+  args: {
+    'aria-invalid': true,
+    placeholder: 'This textarea is invalid',
+  },
+}
+
 export const WithRows: Story = {
   args: {
     rows: 8,

@@ -34,7 +34,7 @@ function SelectTrigger({ className, children, size = 'default', withoutIcon, ico
         'flex w-full items-center justify-between gap-x-1 rounded-md border bg-transparent px-2.5 py-2 text-start text-sm font-medium whitespace-nowrap shadow-xs',
         'focus-ring',
         'placeholder:text-fg/60 data-[placeholder]:text-fg/60',
-        'aria-invalid:ring-rose-500/20 dark:aria-invalid:ring-rose-500/40 aria-invalid:border-rose-500',
+        'aria-invalid:ring-rose-500/30 aria-invalid:border-rose-500',
         'disabled:cursor-not-allowed disabled:opacity-50',
         'data-[size=default]:h-8 data-[size=sm]:h-6',
         "*:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",

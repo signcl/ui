@@ -94,7 +94,7 @@ function MenubarItem({
 
         // Tint Rose
         // Mapped to shadcn variant=destructive
-        'data-[tint=rose]:text-rose-500 data-[tint=rose]:focus:bg-rose-500/10 dark:data-[tint=rose]:focus:bg-rose-500/20 data-[tint=rose]:focus:text-rose-500 data-[tint=rose]:*:[svg]:!text-rose-500',
+        'data-[tint=rose]:text-rose-500 data-[tint=rose]:focus:bg-rose-500/10 data-[tint=rose]:focus:text-rose-500 data-[tint=rose]:*:[svg]:!text-rose-500',
         className
       )}
       {...props}

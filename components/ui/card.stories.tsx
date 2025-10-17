@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { IconCircleCheckFilled } from '@tabler/icons-react'
 
 import { Button } from './button' // Adjust import path as needed
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './card'
+import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './card'
 import { Input } from './input'
 import { Label } from './label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select'
@@ -29,6 +29,9 @@ export const Default: Story = {
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>Card Description</CardDescription>
+        <CardAction>
+          <Button variant='link'>Sign Up</Button>
+        </CardAction>
       </CardHeader>
       <CardContent>
         <p>Card Content</p>
@@ -87,7 +90,7 @@ export const WithImage: Story = {
   render: () => (
     <Card className='w-[350px] overflow-hidden'>
       <picture>
-        <img src='https://placehold.co/600x400' alt='Card cover' className='h-48 w-full object-cover' />
+        <img src='https://placehold.co/600x400' alt='Card cover' className='h-48 w-full -mt-4 object-cover' />
       </picture>
       <CardHeader>
         <CardTitle>Mountain Retreat</CardTitle>
@@ -179,11 +182,11 @@ export const Pricing: Story = {
 
 export const Compact: Story = {
   render: () => (
-    <Card className='w-[350px]'>
-      <CardHeader className='p-3'>
-        <CardTitle className='text-lg'>Quick Summary</CardTitle>
+    <Card className='w-[350px] gap-2 py-3'>
+      <CardHeader className='px-3'>
+        <CardTitle>Quick Summary</CardTitle>
       </CardHeader>
-      <CardContent className='p-3 pt-0'>
+      <CardContent className='px-3'>
         <div className='grid grid-cols-2 gap-2 text-sm'>
           <div>Total Revenue:</div>
           <div className='text-right font-medium'>$45,231.89</div>
@@ -202,7 +205,7 @@ export const Compact: Story = {
 export const HorizontalLayout: Story = {
   render: () => (
     <Card className='flex w-[600px] flex-row'>
-      <div className='w-1/3'>
+      <div className='w-1/3 -my-4'>
         <picture>
           <img src='https://placehold.co/300x400' alt='Product' className='h-full w-full object-cover' />
         </picture>
