@@ -13,32 +13,35 @@ const toggleVariants = cva(
       variant: {
         default: 'border border-transparent',
         outline: 'border hover:bg-fg/5 hover:text-ac hover:border-fg/40 data-[state=on]:border-ac',
-        icon: 'border border-transparent',
+        // icon: 'border border-transparent',
       },
       // Should match Button
       size: {
         sm: 'text-xs rounded-sm h-6 px-2',
-        default: 'text-sm rounded-md h-8 px-3 ',
+        default: 'text-sm rounded-md h-8 px-3',
         lg: 'text-base rounded-md h-10 px-4',
+        'icon-sm': 'text-xs rounded-sm size-6 [&>svg]:size-3',
+        icon: 'text-sm rounded-md size-8 [&>svg]:size-4',
+        'icon-lg': 'text-base rounded-md size-10 [&>svg]:size-5',
       },
     },
-    compoundVariants: [
-      {
-        variant: 'icon',
-        size: 'sm',
-        className: 'w-6 [&_svg]:size-3',
-      },
-      {
-        variant: 'icon',
-        size: 'default',
-        className: 'w-8 [&_svg]:size-4',
-      },
-      {
-        variant: 'icon',
-        size: 'lg',
-        className: 'w-10 [&_svg]:size-5',
-      },
-    ],
+    // compoundVariants: [
+    //   {
+    //     variant: 'icon',
+    //     size: 'sm',
+    //     className: 'w-6 [&_svg]:size-3',
+    //   },
+    //   {
+    //     variant: 'icon',
+    //     size: 'default',
+    //     className: 'w-8 [&_svg]:size-4',
+    //   },
+    //   {
+    //     variant: 'icon',
+    //     size: 'lg',
+    //     className: 'w-10 [&_svg]:size-5',
+    //   },
+    // ],
     defaultVariants: {
       variant: 'default',
       size: 'default',

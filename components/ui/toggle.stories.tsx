@@ -30,43 +30,36 @@ export const WithIcon: Story = {
       </>
     ),
   },
-}
-
-export const IconOnly: Story = {
-  args: {
-    variant: 'icon',
-    'aria-label': 'Toggle microphone',
-    children: <IconMicrophone />,
-  },
   render: args => {
     return (
       <div className='flex items-start gap-2'>
         <Toggle size={'sm'} {...args} />
         <Toggle size={'default'} {...args} />
         <Toggle size={'lg'} {...args} />
+        <Toggle variant={'outline'} size={'sm'} {...args} />
+        <Toggle variant={'outline'} size={'default'} {...args} />
+        <Toggle variant={'outline'} size={'lg'} {...args} />
       </div>
     )
   },
 }
 
-export const Outlined: Story = {
+export const IconOnly: Story = {
   args: {
-    variant: 'outline',
-    children: 'Outlined Toggle',
+    'aria-label': 'Toggle microphone',
+    children: <IconMicrophone />,
   },
-}
-
-export const Small: Story = {
-  args: {
-    size: 'sm',
-    children: 'Small',
-  },
-}
-
-export const Large: Story = {
-  args: {
-    size: 'lg',
-    children: 'Large',
+  render: args => {
+    return (
+      <div className='flex items-start gap-2'>
+        <Toggle size={'icon-sm'} {...args} />
+        <Toggle size={'icon'} {...args} />
+        <Toggle size={'icon-lg'} {...args} />
+        <Toggle variant={'outline'} size={'icon-sm'} {...args} />
+        <Toggle variant={'outline'} size={'icon'} {...args} />
+        <Toggle variant={'outline'} size={'icon-lg'} {...args} />
+      </div>
+    )
   },
 }
 
@@ -75,11 +68,35 @@ export const Pressed: Story = {
     pressed: true,
     children: 'Pressed State',
   },
+  render: args => {
+    return (
+      <div className='flex items-start gap-2'>
+        <Toggle size={'sm'} {...args} />
+        <Toggle size={'default'} {...args} />
+        <Toggle size={'lg'} {...args} />
+        <Toggle variant={'outline'} size={'sm'} {...args} />
+        <Toggle variant={'outline'} size={'default'} {...args} />
+        <Toggle variant={'outline'} size={'lg'} {...args} />
+      </div>
+    )
+  },
 }
 
 export const Disabled: Story = {
   args: {
     disabled: true,
     children: 'Disabled',
+  },
+  render: args => {
+    return (
+      <div className='flex items-start gap-2'>
+        <Toggle size={'sm'} {...args} />
+        <Toggle size={'default'} {...args} />
+        <Toggle size={'lg'} {...args} />
+        <Toggle variant={'outline'} size={'sm'} {...args} />
+        <Toggle variant={'outline'} size={'default'} {...args} />
+        <Toggle variant={'outline'} size={'lg'} {...args} />
+      </div>
+    )
   },
 }

@@ -19,7 +19,7 @@ import { Label } from '@/components/ui/label'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
 const meta = {
-  title: 'UI/ToggleGroup',
+  title: 'UI/Toggle Group',
   component: ToggleGroup,
   parameters: {
     layout: 'centered',
@@ -57,12 +57,27 @@ export const Basic: Story = {
   args: {
     type: 'single',
     defaultValue: 'center',
-    variant: 'icon',
+    size: 'icon',
   },
   render: args => (
     <div className='flex flex-col items-center space-y-4'>
       <Label htmlFor='text-alignment'>Text Alignment</Label>
       <ToggleGroup {...args} id='text-alignment' aria-label='Text alignment'>
+        <ToggleGroupItem value='left' aria-label='Left aligned'>
+          <IconAlignLeft />
+        </ToggleGroupItem>
+        <ToggleGroupItem value='center' aria-label='Center aligned'>
+          <IconAlignCenter />
+        </ToggleGroupItem>
+        <ToggleGroupItem value='right' aria-label='Right aligned'>
+          <IconAlignRight />
+        </ToggleGroupItem>
+        <ToggleGroupItem value='justify' aria-label='Justified'>
+          <IconAlignJustified />
+        </ToggleGroupItem>
+      </ToggleGroup>
+      <Label htmlFor='text-alignment'>Text Alignment Outline</Label>
+      <ToggleGroup {...args} id='text-alignment' variant={'outline'} aria-label='Text alignment'>
         <ToggleGroupItem value='left' aria-label='Left aligned'>
           <IconAlignLeft />
         </ToggleGroupItem>
@@ -83,23 +98,38 @@ export const Basic: Story = {
 export const Multiple: Story = {
   args: {
     type: 'multiple',
-    variant: 'icon',
+    size: 'icon',
     defaultValue: ['bold'],
   },
   render: args => (
     <div className='flex flex-col items-center space-y-4'>
       <Label htmlFor='text-formatting'>Text Formatting</Label>
       <ToggleGroup {...args} id='text-formatting' aria-label='Text formatting'>
-        <ToggleGroupItem variant={'icon'} value='bold' aria-label='Bold'>
+        <ToggleGroupItem variant={'default'} value='bold' aria-label='Bold'>
           <IconBold />
         </ToggleGroupItem>
-        <ToggleGroupItem variant={'icon'} value='italic' aria-label='Italic'>
+        <ToggleGroupItem variant={'default'} value='italic' aria-label='Italic'>
           <IconItalic />
         </ToggleGroupItem>
-        <ToggleGroupItem variant={'icon'} value='underline' aria-label='Underline'>
+        <ToggleGroupItem variant={'default'} value='underline' aria-label='Underline'>
           <IconUnderline />
         </ToggleGroupItem>
-        <ToggleGroupItem variant={'icon'} value='strikethrough' aria-label='Strikethrough'>
+        <ToggleGroupItem variant={'default'} value='strikethrough' aria-label='Strikethrough'>
+          <IconStrikethrough />
+        </ToggleGroupItem>
+      </ToggleGroup>
+      <Label htmlFor='text-formatting'>Text Formatting Outline</Label>
+      <ToggleGroup {...args} id='text-formatting' variant={'outline'} aria-label='Text formatting'>
+        <ToggleGroupItem value='bold' aria-label='Bold'>
+          <IconBold />
+        </ToggleGroupItem>
+        <ToggleGroupItem value='italic' aria-label='Italic'>
+          <IconItalic />
+        </ToggleGroupItem>
+        <ToggleGroupItem value='underline' aria-label='Underline'>
+          <IconUnderline />
+        </ToggleGroupItem>
+        <ToggleGroupItem value='strikethrough' aria-label='Strikethrough'>
           <IconStrikethrough />
         </ToggleGroupItem>
       </ToggleGroup>
@@ -112,14 +142,27 @@ export const Sizes: Story = {
     <div className='flex flex-col space-y-8'>
       <div className='flex flex-col items-center space-y-2'>
         <Label>Small</Label>
-        <ToggleGroup type='single' size='sm' defaultValue='list'>
-          <ToggleGroupItem variant={'icon'} value='list'>
+        <ToggleGroup type='single' size='icon-sm' defaultValue='list'>
+          <ToggleGroupItem value='list'>
             <IconLayoutList />
           </ToggleGroupItem>
-          <ToggleGroupItem variant={'icon'} value='grid'>
+          <ToggleGroupItem value='grid'>
             <IconLayoutGrid />
           </ToggleGroupItem>
-          <ToggleGroupItem variant={'icon'} value='cards'>
+          <ToggleGroupItem value='cards'>
+            <IconLayoutCards />
+          </ToggleGroupItem>
+        </ToggleGroup>
+
+        <Label>Small Outline</Label>
+        <ToggleGroup type='single' size='icon-sm' variant={'outline'} defaultValue='list'>
+          <ToggleGroupItem value='list'>
+            <IconLayoutList />
+          </ToggleGroupItem>
+          <ToggleGroupItem value='grid'>
+            <IconLayoutGrid />
+          </ToggleGroupItem>
+          <ToggleGroupItem value='cards'>
             <IconLayoutCards />
           </ToggleGroupItem>
         </ToggleGroup>
@@ -127,14 +170,27 @@ export const Sizes: Story = {
 
       <div className='flex flex-col items-center space-y-2'>
         <Label>Default</Label>
-        <ToggleGroup type='single' size='default' defaultValue='list'>
-          <ToggleGroupItem variant={'icon'} value='list'>
+        <ToggleGroup type='single' size='icon' defaultValue='list'>
+          <ToggleGroupItem value='list'>
             <IconLayoutList />
           </ToggleGroupItem>
-          <ToggleGroupItem variant={'icon'} value='grid'>
+          <ToggleGroupItem value='grid'>
             <IconLayoutGrid />
           </ToggleGroupItem>
-          <ToggleGroupItem variant={'icon'} value='cards'>
+          <ToggleGroupItem value='cards'>
+            <IconLayoutCards />
+          </ToggleGroupItem>
+        </ToggleGroup>
+
+        <Label>Default Outline</Label>
+        <ToggleGroup type='single' size='icon' variant={'outline'} defaultValue='list'>
+          <ToggleGroupItem value='list'>
+            <IconLayoutList />
+          </ToggleGroupItem>
+          <ToggleGroupItem value='grid'>
+            <IconLayoutGrid />
+          </ToggleGroupItem>
+          <ToggleGroupItem value='cards'>
             <IconLayoutCards />
           </ToggleGroupItem>
         </ToggleGroup>
@@ -142,14 +198,27 @@ export const Sizes: Story = {
 
       <div className='flex flex-col items-center space-y-2'>
         <Label>Large</Label>
-        <ToggleGroup type='single' size='lg' defaultValue='list'>
-          <ToggleGroupItem variant={'icon'} value='list'>
+        <ToggleGroup type='single' size='icon-lg' defaultValue='list'>
+          <ToggleGroupItem value='list'>
             <IconLayoutList />
           </ToggleGroupItem>
-          <ToggleGroupItem variant={'icon'} value='grid'>
+          <ToggleGroupItem value='grid'>
             <IconLayoutGrid />
           </ToggleGroupItem>
-          <ToggleGroupItem variant={'icon'} value='cards'>
+          <ToggleGroupItem value='cards'>
+            <IconLayoutCards />
+          </ToggleGroupItem>
+        </ToggleGroup>
+
+        <Label>Large Outline</Label>
+        <ToggleGroup type='single' size='icon-lg' variant={'outline'} defaultValue='list'>
+          <ToggleGroupItem value='list'>
+            <IconLayoutList />
+          </ToggleGroupItem>
+          <ToggleGroupItem value='grid'>
+            <IconLayoutGrid />
+          </ToggleGroupItem>
+          <ToggleGroupItem value='cards'>
             <IconLayoutCards />
           </ToggleGroupItem>
         </ToggleGroup>
@@ -199,20 +268,19 @@ export const Disabled: Story = {
   args: {
     type: 'single',
     defaultValue: 'center',
-    variant: 'icon',
     disabled: true,
   },
   render: args => (
     <div className='flex flex-col items-center space-y-4'>
       <Label htmlFor='text-alignment-disabled'>Text Alignment (Disabled)</Label>
-      <ToggleGroup {...args} id='text-alignment-disabled' aria-label='Text alignment'>
-        <ToggleGroupItem variant={'icon'} value='left' aria-label='Left aligned'>
+      <ToggleGroup {...args} size={'icon-lg'} id='text-alignment-disabled' aria-label='Text alignment'>
+        <ToggleGroupItem value='left' aria-label='Left aligned'>
           <IconAlignLeft />
         </ToggleGroupItem>
-        <ToggleGroupItem variant={'icon'} value='center' aria-label='Center aligned'>
+        <ToggleGroupItem value='center' aria-label='Center aligned'>
           <IconAlignCenter />
         </ToggleGroupItem>
-        <ToggleGroupItem variant={'icon'} value='right' aria-label='Right aligned'>
+        <ToggleGroupItem value='right' aria-label='Right aligned'>
           <IconAlignRight />
         </ToggleGroupItem>
       </ToggleGroup>
@@ -220,14 +288,20 @@ export const Disabled: Story = {
       <Label htmlFor='partially-disabled' className='mt-4'>
         Partially Disabled
       </Label>
-      <ToggleGroup type='single' id='partially-disabled' defaultValue='center' aria-label='Text alignment'>
-        <ToggleGroupItem variant={'icon'} value='left' aria-label='Left aligned'>
+      <ToggleGroup
+        size={'icon-lg'}
+        type='single'
+        id='partially-disabled'
+        defaultValue='center'
+        aria-label='Text alignment'
+      >
+        <ToggleGroupItem value='left' aria-label='Left aligned'>
           <IconAlignLeft />
         </ToggleGroupItem>
-        <ToggleGroupItem variant={'icon'} value='center' aria-label='Center aligned'>
+        <ToggleGroupItem value='center' aria-label='Center aligned'>
           <IconAlignCenter />
         </ToggleGroupItem>
-        <ToggleGroupItem variant={'icon'} value='right' disabled aria-label='Right aligned'>
+        <ToggleGroupItem value='right' disabled aria-label='Right aligned'>
           <IconAlignRight />
         </ToggleGroupItem>
       </ToggleGroup>
