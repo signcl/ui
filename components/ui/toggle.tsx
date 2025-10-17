@@ -2,7 +2,7 @@
 
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 import { cva, type VariantProps } from 'class-variance-authority'
-import * as React from 'react'
+import type * as React from 'react'
 
 import { cn } from '@/lib/cn'
 
@@ -15,27 +15,28 @@ const toggleVariants = cva(
         outline: 'border hover:bg-fg/5 hover:text-ac hover:border-fg/40 data-[state=on]:border-ac',
         icon: 'border border-transparent',
       },
+      // Should match Button
       size: {
-        sm: 'text-xs px-2 py-[calc(0.25rem-1px)] rounded-sm',
-        default: 'text-base px-2.5 py-[calc(0.25rem-1px)]',
-        lg: 'text-lg px-3 py-[calc(0.25rem-1px)]',
+        sm: 'text-xs rounded-sm h-6 px-2',
+        default: 'text-sm rounded-md h-8 px-3 ',
+        lg: 'text-base rounded-md h-10 px-4',
       },
     },
     compoundVariants: [
       {
         variant: 'icon',
         size: 'sm',
-        className: 'text-xs p-[calc(0.25rem-1px)] rounded-sm [&_svg]:size-4',
+        className: 'w-6 [&_svg]:size-3',
       },
       {
         variant: 'icon',
         size: 'default',
-        className: 'text-base p-[calc(0.25rem-1px)] [&_svg]:size-6',
+        className: 'w-8 [&_svg]:size-4',
       },
       {
         variant: 'icon',
         size: 'lg',
-        className: 'text-lg p-[calc(0.25rem-1px)] [&_svg]:size-7',
+        className: 'w-10 [&_svg]:size-5',
       },
     ],
     defaultVariants: {
@@ -45,13 +46,15 @@ const toggleVariants = cva(
   }
 )
 
-const Toggle = React.forwardRef<
-  React.ComponentRef<typeof TogglePrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> & VariantProps<typeof toggleVariants>
->(({ className, variant, size, ...props }, ref) => (
-  <TogglePrimitive.Root ref={ref} className={cn(toggleVariants({ variant, size, className }))} {...props} />
-))
-
-Toggle.displayName = TogglePrimitive.Root.displayName
+function Toggle({
+  className,
+  variant,
+  size,
+  ...props
+}: React.ComponentProps<typeof TogglePrimitive.Root> & VariantProps<typeof toggleVariants>) {
+  return (
+    <TogglePrimitive.Root data-slot='toggle' className={cn(toggleVariants({ variant, size, className }))} {...props} />
+  )
+}
 
 export { Toggle, toggleVariants }

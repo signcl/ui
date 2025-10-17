@@ -8,7 +8,7 @@ import { cn } from '@/lib/cn'
 import { Loading } from './loading'
 
 const buttonVariantsConfig = {
-  // Should match Input
+  // Should match Input, Toggle
   size: {
     sm: 'text-xs rounded-sm h-6 px-2 has-[>svg]:px-1.5 [&>svg]:size-3',
     default: 'text-sm rounded-md h-8 px-3 has-[>svg]:px-2 [&>svg]:size-4',
